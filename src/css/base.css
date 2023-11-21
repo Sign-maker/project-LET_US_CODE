@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Medium.woff2') format('woff2'),
+    url('../fonts/NeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FONTSPRING DEMO - Quincy CF';
+  src: url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.woff2') format('woff2'),
+    url('../fonts/FONTSPRINGDEMO-QuincyCFBlackRegular.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Regular.woff2') format('woff2'),
+    url('../fonts/NeueMontreal-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --main-bg: #e8e8e2;
+  --second-bg: #6d8434;
+  --third-bg: #fafafa;
+
+  --btn-green-dark: #586f1f;
+  --btn-gray: #e8e8e2;
+  --btn-black: #010101;
+
+  --text: #010101;
+  --second-text: #a3a3a3;
+
+  --transparent: #0101014d; /* rgba(1, 1, 1, 0.30);*/
+  --second-transparent: #e8e8e899; /* rgba(232, 232, 226, 0.60); */
+  --third-transparent: #01010112; /*rgba(1, 1, 1, 0.07);*/
+  --fourth-transparent: #e8e8e233; /*rgba(232, 232, 226, 0.20);;*/
+  --fifth-transparent: #e8e8e24d; /*rgba(232, 232, 226, 0.30);*/
+
+  --discount: #fdc152;
+
+  --transition-duration: 250ms;
+  --transition-timing-function: ease-in-out;
+  --transition-delay: 250ms;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Neue Montreal', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+  background-color: var(--main-bg);
+}
+
+/*==========container============================*/
+.container {
+  margin: 0 auto;
+  max-width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* outline: 1px solid red; */
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/*==========buttons============================*/
+.btn {
+  background-color: var(--second-bg);
+  color: var(--main-bg);
+}
+
+.btn:is(:hover, :focus) {
+  background-color: var(--btn-green-dark);
+}
+
+.btn svg {
+  fill: var(--main-bg);
+}

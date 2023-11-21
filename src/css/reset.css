@@ -22,14 +22,19 @@ ul {
 a {
   color: currentColor;
   text-decoration: none;
+  font-family: inherit;
 }
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+svg {
+  display: block;
 }
