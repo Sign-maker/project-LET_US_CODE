@@ -34,7 +34,7 @@
   border-radius: 30px;
 }
 
-.discount {
+/* .discount {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@
   background-color: var(--discount);
   border-radius: 50%;
   border: none;
-}
+} */
 
 .hero-discount-icon {
   display: flex;
