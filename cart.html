@@ -6,22 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Boutique Cart</title>
     
-    <script type="module" crossorigin src="/project-LET_US_CODE/assets/styles-2ce34a97.js"></script>
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/styles-3bbc2f72.css">
+    <script type="module" crossorigin src="/project-LET_US_CODE/assets/styles-9662fc92.js"></script>
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/styles-9400f3a4.css">
   </head>
   <body>
     <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./index.html" class="nav-link">Home</a>
-      </li>
+  <div class="container header-container">
+    <a class="logo-link" href="./index.html" aria-label="Food Boutique-logo">
+      <div class="logo-cont">
+        <svg class="logo-icon">
+          <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-logo"></use>
+        </svg>
+      </div>
+      <p class="text-logo">Food Boutique</p>
+    </a>
 
-      <li class="nav-item">
-        <a href="./cart.html" class="nav-link">Cart</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="nav">
+      <ul class="nav-header-list">
+        <li class="header-item">
+          <a class="btn-header-home" href="./index.html" type="button">
+            Home
+          </a>
+        </li>
+
+        <li class="header-item item-link">
+          <a class="button-buy js-add-product" href="./cart.html">
+            <svg class="add-product-icon" width="14" height="14">
+              <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-shopping-cart"></use>
+            </svg>
+          </a>
+          <p class="text-header-cart">
+            Cart (<span class="nav-span js-header-navSpan">0</span>)
+          </p>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 
