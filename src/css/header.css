@@ -1,0 +1,151 @@
+.header {
+  padding-top: 18px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-cont {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--second-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--btn-gray);
+}
+
+.text-logo {
+  font-family: 'FONTSPRING DEMO - Quincy CF', serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1.11;
+  letter-spacing: -0.02em;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 14px;
+}
+
+.nav-header-list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-header-home {
+  width: 77px;
+  max-height: 38px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--second-bg);
+  color: var(--btn-gray);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+.button-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--second-bg);
+  border: none;
+}
+
+.add-product-icon {
+  width: 14px;
+  height: 14px;
+  fill: var(--btn-gray);
+}
+
+@media (max-width: 767px) {
+  .text-header-cart {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-top: 24px;
+  }
+
+  .item-link {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .logo-link {
+    gap: 8px;
+  }
+  .logo-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .logo-cont {
+    width: 32px;
+    height: 32px;
+  }
+  .text-logo {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-header-list {
+    gap: 16px;
+  }
+
+  .btn-header-home {
+    width: 104px;
+    max-height: 48px;
+    padding: 12px 28px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+  .add-product-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--btn-gray);
+  }
+  .header-nav-span {
+    margin-left: 14px;
+    text-transform: uppercase;
+
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.33;
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav-header-list {
+    gap: 24px;
+  }
+
+  .btn-header-home {
+    font-style: normal;
+  }
+}
