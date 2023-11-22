@@ -27,11 +27,11 @@ import"./assets/styles-89979ba7.js";import{a}from"./assets/vendor-a61d8330.js";a
         >
           <svg class="popular-desc-svg">
             <use
-              href="/icons.svg#icon-shopping-cart"
+              href="./icons.svg#icon-shopping-cart"
               class="popular-desc-basket "
             ></use>
             <use
-              href="/icons.svg#icon-check"
+              href="./icons.svg#icon-check"
               class="popular-desc-added is-hidden"
             ></use>
           </svg>
@@ -55,11 +55,11 @@ import"./assets/styles-89979ba7.js";import{a}from"./assets/vendor-a61d8330.js";a
             >
               <svg class="discount-desc-svg">
                 <use
-                  href="/icons.svg#icon-shopping-cart"
+                  href="./icons.svg#icon-shopping-cart"
                   class="discount-desc-basket is-hidden"
                 ></use>
                 <use
-                  href="/icons.svg#icon-check"
+                  href="./icons.svg#icon-check"
                   class="discount-desc-added"
                 ></use>
               </svg>
@@ -68,7 +68,7 @@ import"./assets/styles-89979ba7.js";import{a}from"./assets/vendor-a61d8330.js";a
         </div>
         <div class="discount-box-label">
           <svg class="discount-label-svg">
-            <use href="/icons.svg#icon-discount"></use>
+            <use href="./icons.svg#icon-discount"></use>
           </svg>
         </div>
       </li>`}).join("")}
