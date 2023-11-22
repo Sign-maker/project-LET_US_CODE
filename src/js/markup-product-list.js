@@ -4,8 +4,8 @@ const products = new FoodBoutiqueAPI();
 const data = await products.getProducts();
 const productsObj = data.results;
 
-const ProductCardList = document.querySelector('.product-card-list');
-ProductCardList.innerHTML = createProductsList(productsObj);
+const productCardList = document.querySelector('.product-card-list');
+productCardList.innerHTML = createProductsList(productsObj);
 
 export function createProductsList(productsObj) {
   return productsObj
@@ -21,13 +21,12 @@ export function createProductsList(productsObj) {
         _id,
       }) => {
         return `<li class="products-card-item">
-                <img class="product-image" src="${img}" alt="${name}" />
-                <h3 class="product-name">${name}</h3>
-                    <ul class="procuct-description-list">
-                        <li><p class="procuct-text">Category:<b> ${category}</b></p></li>
-                        <li><p class="procuct-text">Size:<b> ${size}</b></p></li>
-                        <li><p class="procuct-text">Popularity:<b> ${popularity}</b></p></li>
-                    </ul>
+                <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
+                <a class="products-card-link" href="#"><h3 class="product-name">${name}</h3></a>
+                <ul class="product-description-list">
+                        <li><p class="product-text">Category:<span class="product-text-black"> ${category}</span>Size:<span class="product-text-black"> ${size}</span></p></li>
+                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${popularity}</span></p></li>
+                </ul>
                 <div class="wrap-prise-and-btn">
                     <h3 class="price">$${price}</h3>
                     <button class="btn btn-shopping-cart js-add-btn">
