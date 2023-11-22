@@ -3,7 +3,7 @@
     <a class="logo-link" href="./index.html" aria-label="Food Boutique-logo">
       <div class="logo-cont">
         <svg class="logo-icon">
-          <use href="../img/icons.svg#icon-logo"></use>
+          <use href="./img/icons.svg#icon-logo"></use>
         </svg>
       </div>
       <p class="text-logo">Food Boutique</p>
@@ -12,24 +12,22 @@
     <nav class="nav">
       <ul class="nav-header-list">
         <li class="header-item">
-          <button
-            class="btn-header-home"
-            onclick="location.href='../index.html'"
-            type="button"
-          >
+          <a class="btn-header-home" href="./index.html" type="button">
             Home
-          </button>
+          </a>
         </li>
 
-        <li class="header-item">
-          <button class="button-buy js-add-product">
+        <li class="header-item item-link">
+          <a class="button-buy js-add-product" href="./cart.html">
             <svg class="add-product-icon" width="14" height="14">
-              <use href="../img/icons.svg#icon-shopping-cart"></use>
+              <use href="./img/icons.svg#icon-shopping-cart"></use>
             </svg>
-          </button>
+          </a>
+          <p class="text-header-cart">
+            Cart (<span class="nav-span js-header-navSpan">0</span>)
+          </p>
         </li>
       </ul>
     </nav>
-    <span class="header-nav-span">Cart (3)</span>
   </div>
 </header>

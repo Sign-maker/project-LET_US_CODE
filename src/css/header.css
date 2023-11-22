@@ -24,7 +24,7 @@
 }
 
 .text-logo {
-  font-family: FONTSPRING DEMO - Quincy CF Black, serif;
+  font-family: 'FONTSPRING DEMO - Quincy CF', serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 900;
@@ -78,7 +78,7 @@
 }
 
 @media (max-width: 767px) {
-  .header-nav-span {
+  .text-header-cart {
     display: none;
   }
 }
@@ -87,6 +87,13 @@
   .header {
     padding-top: 24px;
   }
+
+  .item-link {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
   .logo-link {
     gap: 8px;
   }
@@ -127,7 +134,6 @@
     margin-left: 14px;
     text-transform: uppercase;
 
-    /* color: #010101; */
     font-size: 18px;
     font-style: normal;
     line-height: 1.33;
