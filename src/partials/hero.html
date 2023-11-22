@@ -1,5 +1,78 @@
-<section hero-section>
+<section class="hero-section">
   <div class="container hero-container">
-    <h1 class="page-title">Welcome to the Food Boutique!</h1>
+    <h1 class="hero-title">
+      Welcome to the <span class="span-title">Food</span> Boutique!
+    </h1>
+
+    <h3 class="hero-subtitle">
+      With Food Boutique, you're not just subscribing to food, you're signing up
+      for a fresher, fitter, and happier you.
+    </h3>
+    <div class="wripper-hero-pic">
+      <picture class="hero-pic">
+        <source
+          srcset="
+            ./img/hero/hero-mob-bg-1x.jpg 1x,
+            ./img/hero/hero-mob-bg-2x.jpg 2x
+          "
+          media="(max-width:767px)"
+          type="image/jpeg"
+        />
+
+        <source
+          srcset="
+            ./img/hero/hero-mob-bg-1x.webp 1x,
+            ./img/hero/hero-mob-bg-2x.webp 2x
+          "
+          media="(max-width: 767px)"
+          type="image/webp"
+        />
+
+        <source
+          srcset="
+            ./img/hero/hero-tab-bg-1x.jpg 1x,
+            ./img/hero/hero-tab-bg-2x.jpg 2x
+          "
+          media="(max-width:1439px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/hero/hero-tab-bg-1x.webp 1x,
+            ./img/hero/hero-tab-bg-2x.webp 2x
+          "
+          media="(max-width:1439px)"
+          type="image/webp"
+        />
+
+        <source
+          srcset="
+            ./img/hero/hero-pc-bg-1x.jpg 1x,
+            ./img/hero/hero-pc-bg-2x.jpg 2x
+          "
+          media="(min-width: 1440px)"
+          type="image/jpeg"
+        />
+        <source
+          srcset="
+            ./img/hero/hero-pc-bg-1x.webp 1x,
+            ./img/hero/hero-pc-bg-2x.webp 2x
+          "
+          media="(min-width: 1440px)"
+          type="image/webp"
+        />
+
+        <img
+          class="hero-img"
+          src="./img/hero/hero-mob-bg-1x.jpg"
+          alt="Welcome to the Food Boutique!"
+        />
+      </picture>
+    </div>
+    <div class="discount">
+      <svg class="hero-discount-icon">
+        <use href="./img/icons.svg#icon-discount"></use>
+      </svg>
+    </div>
   </div>
 </section>
