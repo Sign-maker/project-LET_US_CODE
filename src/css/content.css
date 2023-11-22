@@ -1,0 +1,9 @@
+@media screen and (min-width: 1440px) {
+  .content-wrapper {
+    display: flex;
+    column-gap: 40px;
+  }
+  .products-wrapper {
+    flex: 1 1 auto;
+  }
+}
