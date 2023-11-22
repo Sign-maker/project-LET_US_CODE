@@ -1,13 +1,35 @@
 <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./index.html" class="nav-link">Home</a>
-      </li>
+  <div class="container header-container">
+    <a class="logo-link" href="./index.html" aria-label="Food Boutique-logo">
+      <div class="logo-cont">
+        <svg class="logo-icon">
+          <use href="../img/icons.svg#icon-logo"></use>
+        </svg>
+      </div>
+      <p class="text-logo">Food Boutique</p>
+    </a>
 
-      <li class="nav-item">
-        <a href="./cart.html" class="nav-link">Cart</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="nav">
+      <ul class="nav-header-list">
+        <li class="header-item">
+          <button
+            class="btn-header-home"
+            onclick="location.href='../index.html'"
+            type="button"
+          >
+            Home
+          </button>
+        </li>
+
+        <li class="header-item">
+          <button class="button-buy js-add-product">
+            <svg class="add-product-icon" width="14" height="14">
+              <use href="../img/icons.svg#icon-shopping-cart"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <span class="header-nav-span">Cart (3)</span>
+  </div>
 </header>
