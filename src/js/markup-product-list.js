@@ -20,18 +20,22 @@ export function createProductsList(productsObj) {
         size,
         _id,
       }) => {
-        return `<li class="products-list-card">
+        return `<li class="products-card-item">
                 <img class="product-image" src="${img}" alt="${name}" />
                 <h3 class="product-name">${name}</h3>
-                <p>Category:<b>${category}</b></p>
-                <p>Size:<b>${size}</b></p>
-                <p>Popularity:<b>${popularity}</b></p>
-                <h3 class="price">$${price}</h3>
-                <button class="btn-shopping-cart js-add-btn">
-                    <svg class="icon-shopping-cart">
-                        <use href="./img/icons.svg#icon-shopping-cart"></use>
-                    </svg>
-                </button>
+                <div class="wrap-procuct-text">
+                    <p class="procuct-text">Category:<b> ${category}</b></p>
+                    <p class="procuct-text">Size:<b> ${size}</b></p>
+                    <p class="procuct-text">Popularity:<b> ${popularity}</b></p>
+                </div>
+                <div class="wrap-prise-and-btn">
+                    <h3 class="price">$${price}</h3>
+                    <button class="btn btn-shopping-cart js-add-btn">
+                        <svg class="icon-shopping-cart" width="18" height="18">
+                            <use href="./img/icons.svg#icon-shopping-cart"></use>
+                        </svg>
+                    </button>
+                </div>
             </li>`;
       }
     )
