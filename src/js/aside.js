@@ -7,9 +7,11 @@ const discountListRef = document.querySelector('.discount-list');
 
 async function popularProd() {
   try {
-    const popularProducts = await foodBoutiqueAPI.getPopularProducts();
+    const popularProductsData = await foodBoutiqueAPI.getPopularProducts(); 
 
-    popularListRef.innerHTML = markupPopular(popularProducts);
+    getToLocalStorage("popularProducts", popularProductsData)
+
+    popularListRef.innerHTML = markupPopular(popularProductsData);
   } catch (error) {
     error => console.log('ERROR', error);
   }
@@ -18,9 +20,11 @@ popularProd();
 
 async function discountedProd() {
   try {
-    const discProd = await foodBoutiqueAPI.getDiscountedProducts();
+    const discountProdData = await foodBoutiqueAPI.getDiscountedProducts();
 
-    discountListRef.innerHTML = markupDiscount(discProd);
+    getToLocalStorage("discountProducts", discountProdData)
+
+    discountListRef.innerHTML = markupDiscount(discountProdData);
   } catch (error) {
     error => console.log('ERROR', error);
   }
@@ -28,11 +32,31 @@ async function discountedProd() {
 
 discountedProd();
 
+popularListRef.addEventListener('click', onPopularCardClick)
+function onPopularCardClick (e) {
+  if (!e.target.closest('li') || e.target.closest('button')) {
+    return
+  }
+  console.dir('THIS IS FOR MODAL CLICK');
+}
+
+discountListRef.addEventListener('click', onDiscountCardClick)
+function onDiscountCardClick (e) {
+  if (!e.target.closest('li') || e.target.closest('button')) {
+    return
+  }
+  console.dir('THIS IS FOR MODAL CLICK');
+}
+
+function getToLocalStorage (name,arr) {
+  localStorage.setItem(`${name}`, JSON.stringify(arr))
+}
+
 function markupPopular(obj) {
   return obj
     .map(item => {
       const { _id, name, img, category, size, popularity } = item;
-      return `<li class="popular-item" id="${_id}">
+      return `<li class="popular-item" data-id="${_id}">
         <div class="popular-img-wrapper">
           <img
             src="${img}"
@@ -81,7 +105,7 @@ function markupDiscount(obj) {
     .map(item => {
       const { _id, name, img, price } = item;
 
-      return `<li class="discount-item" id="${_id}">
+      return `<li class="discount-item" data-id="${_id}">
         <div class="discount-img-wrapper">
           <img
             src="${img}"
@@ -105,7 +129,7 @@ function markupDiscount(obj) {
                 ></use>
                 <use
                   href="./icons.svg#icon-check"
-                  class="discount-desc-added"
+                  class="discount-desc-added "
                 ></use>
               </svg>
             </button>
