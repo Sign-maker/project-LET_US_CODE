@@ -61,11 +61,11 @@ function markupPopular(obj) {
         >
           <svg class="popular-desc-svg">
             <use
-              href="/icons.svg#icon-shopping-cart"
+              href="./icons.svg#icon-shopping-cart"
               class="popular-desc-basket "
             ></use>
             <use
-              href="/icons.svg#icon-check"
+              href="./icons.svg#icon-check"
               class="popular-desc-added is-hidden"
             ></use>
           </svg>
@@ -100,11 +100,11 @@ function markupDiscount(obj) {
             >
               <svg class="discount-desc-svg">
                 <use
-                  href="/icons.svg#icon-shopping-cart"
+                  href="./icons.svg#icon-shopping-cart"
                   class="discount-desc-basket is-hidden"
                 ></use>
                 <use
-                  href="/icons.svg#icon-check"
+                  href="./icons.svg#icon-check"
                   class="discount-desc-added"
                 ></use>
               </svg>
@@ -113,7 +113,7 @@ function markupDiscount(obj) {
         </div>
         <div class="discount-box-label">
           <svg class="discount-label-svg">
-            <use href="/icons.svg#icon-discount"></use>
+            <use href="./icons.svg#icon-discount"></use>
           </svg>
         </div>
       </li>`;
