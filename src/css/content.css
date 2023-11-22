@@ -1,0 +1,8 @@
+@media screen and (min-width: 1440px) {
+  .content-wrapper {
+    display: flex;
+  }
+  .products-wrapper {
+    flex: 1 1 auto;
+  }
+}
