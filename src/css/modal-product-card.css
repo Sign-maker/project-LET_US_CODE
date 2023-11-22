@@ -1,0 +1,104 @@
+/* mobile */
+.modal-prod-wrapper {
+    outline: 2px solid red;
+    outline-offset: -2px;
+}
+.modal-prod-card {
+    background-color: var(--third-bg);
+    border-radius: 20px;
+    min-height: 535px;
+    width: 335px;  
+
+    padding: 40px 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+  
+
+    position: relative;
+
+    }
+.modal-prod-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+.modal-prod-close-icon {
+}
+.modal-prod-img-wrap{
+width: 295px;
+height: 212px;
+border-radius: 10px;
+background-color: var(--main-bg);
+
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+margin-bottom: 20px;
+
+}
+.modal-prod-img {
+    width: 160px;
+    height: 160px;
+}
+.modal-prod-name {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+.modal-prod-list {
+    display: flex;
+    row-gap: 8px;
+    column-gap: 9px;
+
+    margin-bottom: 20px;
+}
+.modal-prod-item {
+}
+.modal-prod-text {
+    color: rgba(1, 1, 1, 0.30);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.16;  
+}
+.modal-prod-desc {
+    color: rgba(1, 1, 1, 0.70);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+
+    margin-bottom: 40px;
+}
+.modal-prod-price-elem {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+}
+.modal-prod-price {
+    font-size: 18px;
+    line-height: 1.1;
+}
+.modal-prod-add-btn {
+    background-color: var(--second-bg);
+    color: var(--btn-gray);
+    border-radius: 30px;
+    border: none;
+
+    display: flex;
+    min-width: 116px;       
+    padding: 12px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+cursor: pointer;
+}
+.modal-prod-add-text {
+}
+.modal-prod-basket-icon {
+    fill: var(--main-bg);
+}
