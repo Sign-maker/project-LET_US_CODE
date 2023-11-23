@@ -1,27 +1,4 @@
-:root {
-  --main-bg: #e8e8e2;
-  --second-bg: #6d8434;
-  --third-bg: #fafafa;
 
-  --btn-green-dark: #586f1f;
-  --btn-gray: #e8e8e2;
-  --btn-black: #010101;
-
-  --text: #010101;
-  --second-text: #a3a3a3;
-
-  --transparent: #0101014d; /* rgba(1, 1, 1, 0.30);*/
-  --second-transparent: #e8e8e899; /* rgba(232, 232, 226, 0.60); */
-  --third-transparent: #01010112; /*rgba(1, 1, 1, 0.07);*/
-  --fourth-transparent: #e8e8e233; /*rgba(232, 232, 226, 0.20);;*/
-  --fifth-transparent: #e8e8e24d; /*rgba(232, 232, 226, 0.30);*/
-
-  --discount: #fdc152;
-
-  --transition-duration: 250ms;
-  --transition-timing-function: ease-in-out;
-  --transition-delay: 250ms;
-}
 
 .cart-content-wrapper {
   margin-top: 89px;
@@ -221,11 +198,7 @@
 ==================================================== */
 
 @media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+ 
   .cart-bascet {
     margin-bottom: 31px;
   }
@@ -314,11 +287,7 @@
 /* ============================== */
 
 @media (min-width: 1440px) {
-  .container {
-    max-width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
+  
   .cart-bascet {
     margin-bottom: 21px;
   }
