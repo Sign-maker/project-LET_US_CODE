@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Boutique Cart</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <load src="partials/header.html" />
+
+    <main>
+      <section class="cart-content-section">
+        <h1 class="visually-hidden">Cart</h1>
+        <div class="container cart-content-container">
+          <load src="partials/cart-header.html" />
+          <div class="cart-content-wrapper">
+
+            <div class="cart-bascet">
+              <div class="card-bascet-icon">
+                <svg width="18" height="18">
+                  <use href="./img/icons.svg#icon-shopping-cart"></use>
+                </svg>
+              </div>
+              <p class="card-bascet-text">Cart (<span>3</span>)</p>
+            </div>
+            <div class="card-delete">
+              <p class="card-delete-text">Delete all</p>
+              <svg class="card-delete-icon" weight="24" height="24">
+                <use href="./img/icons.svg#icon-check"></use>
+              </svg>
+            </div>
+            <div class="card-product">
+              <ul class="cart-list">
+                <li class="cart-item">
+                  <div class="cart-item-img">
+                    <img class="cart-img" src="" alt="" />
+                  </div>
+                  <div class="card-description">
+                    <div class="card-name">
+                      <p class="card-name-text">Avokado</p>
+                      <svg class="card-image">
+                        <use href="./img/icons.svg#icon-check"></use>
+                      </svg>
+                    </div>
+                    <div class="card-category">
+                      <p class="card-category-text">
+                        Category:<span>Fresh Produce</span>
+                      </p>
+                      <p class="card-category-text">Size:<span>Each</span></p>
+                    </div>
+                    <p class="card-name-text">$1.99</p>
+                  </div>
+                </li>
+                <li class="cart-item">
+                  <div class="cart-item-img">
+                    <img class="cart-img" src="" alt="" />
+                  </div>
+                  <div class="card-description">
+                    <div class="card-name">
+                      <p class="card-name-text">Avokado</p>
+                      <svg class="card-image">
+                        <use href="./img/icons.svg#icon-check"></use>
+                      </svg>
+                    </div>
+                    <div class="card-category">
+                      <p class="card-category-text">
+                        Category:<span>Fresh Produce</span>
+                      </p>
+                      <p class="card-category-text">Size:<span>Each</span></p>
+                    </div>
+                    <p class="card-name-text">$1.99</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="card-ordered">
+                <p class="order-text">Your Order</p>
+                <div class="order-total">
+                  <p class="card-food-name">Total</p>
+                  <p class="card-ordered-sum"><span>Sum: </span>$12,94</p>
+                </div>
+                <form class="card-form" method="POST">
+                  <label for="email"></label>
+                  <input
+                    class="card-form-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Mail:Enter your email"
+                  />
+                  <button class="card-form-btn" type="submit">Checkout</button>
+                </form>
+              </div>
+            </div>
+
+
+            <load src="partials/order.html" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <load src="partials/footer.html" />
+
+    <script type="module" src="./js/cart.js"></script>
+  </body>
+</html>
