@@ -105,7 +105,8 @@ const listEl = document.querySelector('.product-card-list');
 listEl.addEventListener('click', onClickCart);
 
 function onClickCart (e) {
-  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H3') {
+ 
+  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H4') {
     openModal()
   } else {
     return;
