@@ -1,4 +1,4 @@
-import"./assets/styles-00a051a2.js";document.addEventListener("DOMContentLoaded",function(){const s=document.querySelector(".cart-list"),d=document.querySelector(".card-ordered-sum span"),i=document.querySelector(".card-form"),l=document.getElementById("email");let o=[];function m(){s.innerHTML="";let e=0;o.forEach(t=>{const c=document.createElement("li");c.classList.add("cart-item"),c.innerHTML=`
+import"./assets/styles-73380c3f.js";document.addEventListener("DOMContentLoaded",function(){const s=document.querySelector(".cart-list"),d=document.querySelector(".card-ordered-sum span"),i=document.querySelector(".card-form"),l=document.getElementById("email");let o=[];function m(){s.innerHTML="";let e=0;o.forEach(t=>{const c=document.createElement("li");c.classList.add("cart-item"),c.innerHTML=`
           <div class="cart-item-img">
             <img class="cart-img" src="${t.imgSrc}" alt="${t.name}" />
           </div>
