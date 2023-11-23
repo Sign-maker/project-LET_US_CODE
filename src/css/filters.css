@@ -28,7 +28,9 @@
   position: relative;
 }
 
-.search-btn {
+.search-btn,
+.sort-btn,
+.categories-btn {
   position: absolute;
   height: 48px;
   width: 48px;
@@ -98,11 +100,19 @@ line-height: 1.28;
 font-size: 14px;
 font-weight: 400;
 line-height: 1.28;
+padding: 14px 20px;
 }
 
-.custom-select:hover .select-options {
+.custom-select .select-options {
+  display: none;
+}
+.custom-select.active .select-options {
   display: block;
-  
+  cursor: pointer;
+}
+.custom-select.active .sort-select {
+  display: block;
+ 
 }
 
 .select-options li {
@@ -138,16 +148,36 @@ line-height: 1.28;
   font-weight: 400;
   line-height: 1.29;
 }
+.custom-select .categories-btn{
+  display: flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
 
+}
+.categories-btn
+.custom-select.active .text-options{
+  display: block;
+}
+.custom-select .text-options{
+  position: relative;
+
+}
 
 @media (min-width: 768px) {
+  
+  .selected-option{
+    max-width: 200px;
+  }
+  .selected-option-ctgr{
+    max-width: 189px;
+    
+  }
   .filter-container {
     flex-direction: row;
     column-gap: 8px;
   }
-  .search-form {
-    min-width: 268px;
-  }
+  
   .filter-text,
   .search-input,
   .search-input::placeholder,
@@ -163,6 +193,7 @@ line-height: 1.28;
   .custom-select {
     max-width: 189px;
   }
+ 
   .sort-select {
     max-width: 200px;
   }
@@ -186,14 +217,19 @@ width: 200px;
   }
 
   @media (max-width: 767px) {
+   
     .search-form,
     .selected-option,
     .sort-select {
       width: 100%;
     }
-    .search-btn {
+    .search-btn,.sort-btn,
+    .categories-btn {
       height: 52px;
       width: 52px;
+    }
+    .search-btn{
+      max-width: 269px;
     }
    
   }
@@ -202,5 +238,4 @@ width: 200px;
   .search-form {
     min-width: 269px;
   }
-  
 }    

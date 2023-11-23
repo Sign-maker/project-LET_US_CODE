@@ -1,36 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const customSelects = document.querySelectorAll('.custom-select');
-
-    customSelects.forEach((select) => {
-        const selectedOption = select.querySelector('.selected-option');
-        const selectOptions = select.querySelector('.select-options');
-        const optionsList = selectOptions.querySelectorAll('li');
-
-        selectedOption.addEventListener('click', function () {
-            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-            this.setAttribute('aria-expanded', !expanded);
-            selectOptions.setAttribute('aria-hidden', expanded);
-        });
-
-        optionsList.forEach((option) => {
-            option.addEventListener('click', function () {
-                selectedOption.textContent = this.textContent;
-                selectedOption.setAttribute('aria-expanded', 'false');
-                selectOptions.setAttribute('aria-hidden', 'true');
-            });
-
-            option.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    selectedOption.textContent = this.textContent;
-                    selectedOption.setAttribute('aria-expanded', 'false');
-                    selectOptions.setAttribute('aria-hidden', 'true');
-                }
-            });
-        });
-
-        select.addEventListener('blur', function () {
-            selectedOption.setAttribute('aria-expanded', 'false');
-            selectOptions.setAttribute('aria-hidden', 'true');
+    // Ваш исправленный код здесь
+    const optionMenu = document.querySelector('.custom-select');
+    const selectBtn = optionMenu.querySelector('.categories-btn');
+    const options = optionMenu.querySelectorAll('.text-options');
+    const sBtn_text = optionMenu.querySelector('.selected-option');
+    selectBtn.addEventListener('click', () =>optionMenu.classList.toggle('active'));
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            let selectedOption = option.innerText;
+            
+            sBtn_text.value = selectedOption;
+            optionMenu.classList.remove('active');
         });
     });
 });
+
+const optionMenuSort = document.querySelector('.custom-select-sort');
+const selectBtnSort = optionMenuSort.querySelector('.sort-btn');
+const optionsSort = optionMenuSort.querySelectorAll('.text-options-sort');
+const sBtn_textSort = optionMenuSort.querySelector('.selected-option');
+
+selectBtnSort.addEventListener('click', () =>
+  optionMenuSort.classList.toggle('active'));
+
+optionsSort.forEach(optionSort => {
+  optionSort.addEventListener('click', () => {
+    let selectedOptionSort = optionSort.innerText;
+    sBtn_textSort.value = selectedOptionSort;
+    optionMenuSort.classList.remove('active');
+  });
+});
+
+
