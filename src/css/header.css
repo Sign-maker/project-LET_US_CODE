@@ -45,6 +45,11 @@
   gap: 6px;
 }
 
+.header-item {
+  display: flex;
+  align-items: center;
+}
+
 .btn-header-home {
   width: 77px;
   max-height: 38px;
@@ -61,6 +66,12 @@
 }
 
 .button-buy {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-wripper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,7 +132,6 @@
     width: 104px;
     max-height: 48px;
     padding: 12px 28px;
-    font-style: normal;
     font-size: 18px;
     line-height: 1.33;
   }
@@ -132,8 +142,14 @@
   }
   .header-nav-span {
     margin-left: 14px;
-    text-transform: uppercase;
 
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.33;
+  }
+  .text-header-cart {
+    text-transform: uppercase;
+    color: var(--text);
     font-size: 18px;
     font-style: normal;
     line-height: 1.33;
@@ -143,9 +159,5 @@
 @media (min-width: 1440px) {
   .nav-header-list {
     gap: 24px;
-  }
-
-  .btn-header-home {
-    font-style: normal;
   }
 }
