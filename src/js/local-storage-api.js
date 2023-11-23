@@ -8,7 +8,7 @@ export class Storage {
   getItem() {
     return JSON.parse(localStorage.getItem(this.storageName));
   }
-  getItem() {
-    return JSON.parse(localStorage.getItem(this.storageName));
+  removeItem() {
+    localStorage.removeItem(this.storageName);
   }
 }
