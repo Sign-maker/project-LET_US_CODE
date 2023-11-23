@@ -116,7 +116,7 @@ function createPagination(totalPages, page) {
   }
 
   if (page > 2) {
-    liTag += `<li class="numb><span>1</span></li>`;
+    liTag += `<li class="numb"><span>1</span></li>`;
     if (page > 3) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
@@ -133,12 +133,12 @@ function createPagination(totalPages, page) {
     }
     liTag += `<li class="numb ${activeLi}"><span>${pageLength}</span></li>`;
   }
-  //   if (page < totalPages - 1) {
-  //     if (page < totalPages - 2) {
-  //       liTag += `<li class="dots"><span>...</span></li>`;
-  //     }
-  //     liTag += `<li class="numb><span>${totalPages}</span></li>`;
-  //   }
+  if (page < totalPages - 1) {
+    if (page < totalPages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="numb"><span>${totalPages}</span></li>`;
+  }
 
   if (page < totalPages) {
     liTag += `<li class="btn_next"><span> <svg class="paginations__icon" width="24" height="24">
@@ -157,7 +157,7 @@ function createPagination(totalPages, page) {
   }
   const btnNext = document.querySelector('.btn_next');
   //   console.log(btnNext);
-  if (btnBack) {
+  if (btnNext) {
     btnNext.addEventListener('click', function () {
       createPagination(totalPages, page + 1);
     });
