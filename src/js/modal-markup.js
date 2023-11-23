@@ -1,10 +1,10 @@
+
 const modalEl = document.querySelector('.modal-prod-wrapper');
 
-
-function openModal(id) {
-console.log(id);
-    modalEl.classList.add('modal-active');
-    // document.body.classList.add('stop-scroll');
+export function openModal(id) {
+  console.log(id);
+  modalEl.classList.add('modal-active');
+  document.body.classList.add('stop-scroll');
 
   modalEl.innerHTML = `
 <div class="modal-prod-card">
@@ -44,32 +44,43 @@ console.log(id);
 </div>
 </div>
 `;
-// const closeBtn = document.querySelector('.modal-prod-close-btn');
-// closeBtn.addEventListener('click', () => closeModal());
-};
+  const closeBtn = document.querySelector('.modal-prod-close-btn');
+  closeBtn.addEventListener('click', () => closeModal());
+
+  // Додаю слухачі подій
+  window.addEventListener('click', closeModalOnWindowClick);
+  window.addEventListener('keydown', closeModalOnEsc);
+ 
+
+}
+ 
+
+
+
 
 //! Функція закриття модалки при кліку на хрестик
 
-//  function closeModal() {
-//     modalEl.classList.remove('modal-active');
-//     // document.body.classList.remove('stop-scroll');
-//  }
+function closeModal() {
+  modalEl.classList.remove('modal-active');
+  document.body.classList.remove('stop-scroll');
 
- //! Закриття модалки при кліку по бекдропу
-//  window.addEventListener('click', (e) => {
-//     if(e.target === modalEl) {
-//         closeModal();
-//     }
-//  })
+  // Видаляю слухачі подій
+  window.removeEventListener('click', closeModalOnWindowClick);
+  window.removeEventListener('keydown', closeModalOnEsc);
+}
 
- //! Закриття модалки при кліку на кнопку ESC
+//! Закриття модалки при кліку по бекдропу
 
-//  window.addEventListener('keydown', (e) => {
-//     if (e.keyCode === 27) {
-//         closeModal();
-//     }
-//  })
+function closeModalOnWindowClick(e) {
+  if (e.target === modalEl) {
+    closeModal();
+  }
+}
 
+//! Закриття модалки при кліку на кнопку ESC
 
-
-
+function closeModalOnEsc(e) {
+  if (e.keyCode === 27) {
+    closeModal();
+  }
+}
