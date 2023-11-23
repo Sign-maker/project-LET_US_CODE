@@ -1,5 +1,5 @@
 import icons from '../img/icons.svg';
-console.log(icons);
+
 export function markupProductsList(productsObj) {
   return productsObj
     .map(
