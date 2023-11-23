@@ -1,4 +1,4 @@
-import"./assets/styles-4d2a7aff.js";function d(t){return t.map(({category:e,img:r,is10PercentOff:i,name:a,price:o,size:u,_id:p})=>`<li class="cart-item" data-id="${p}">
+import"./assets/styles-b7f1743f.js";function d(t){return t.map(({category:e,img:r,is10PercentOff:i,name:a,price:o,size:u,_id:p})=>`<li class="cart-item" data-id="${p}">
       <img class="cart-img-product" src="${r}" alt="${a}" />
       <div class="cart-product-description">
           <p class="cart-product-name">${a}</p>

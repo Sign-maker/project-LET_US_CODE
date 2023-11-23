@@ -7,9 +7,9 @@
     <title>Food Boutique</title>
     
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/styles-4d2a7aff.js">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/styles-b7f1743f.js">
     <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/vendor-a61d8330.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/styles-475a8d49.css">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/styles-f63ff510.css">
   </head>
   <body>
     <header class="header">
@@ -31,13 +31,16 @@
 
         <li class="header-item item-link">
           <a class="button-buy js-add-product" href="./cart.html">
-            <svg class="add-product-icon" width="14" height="14">
-              <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-shopping-cart"></use>
-            </svg>
+            <div class="nav-wripper">
+              <svg class="add-product-icon" width="14" height="14">
+                <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-shopping-cart"></use>
+              </svg>
+            </div>
+
+            <p class="text-header-cart">
+              Cart (<span class="nav-span js-header-navSpan">0</span>)
+            </p>
           </a>
-          <p class="text-header-cart">
-            Cart (<span class="nav-span js-header-navSpan">0</span>)
-          </p>
         </li>
       </ul>
     </nav>
@@ -57,6 +60,11 @@
       for a fresher, fitter, and happier you.
     </h3>
     <div class="wripper-hero-pic">
+      <div class="hero-icon-cont">
+        <svg class="hero-organic-food-icon">
+          <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-organic-food"></use>
+        </svg>
+      </div>
       <picture class="hero-pic">
         <source
           srcset="/project-LET_US_CODE/assets/hero-mob-bg-1x-93db3604.jpg 1x, /project-LET_US_CODE/assets/hero-mob-bg-2x-f230b034.jpg 2x"
@@ -98,11 +106,6 @@
           alt="Welcome to the Food Boutique!"
         />
       </picture>
-    </div>
-    <div class="discount">
-      <svg class="hero-discount-icon">
-        <use href="/project-LET_US_CODE/assets/icons-43d8cdaf.svg#icon-discount"></use>
-      </svg>
     </div>
   </div>
 </section>
