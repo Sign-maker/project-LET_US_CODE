@@ -1,5 +1,5 @@
 import { FoodBoutiqueAPI } from './food-api';
-
+import {openModal} from './modal-markup';
 const products = {
   page: 1,
   perPage: 9,
@@ -101,6 +101,19 @@ const productsObj = products.results;
 const productCardList = document.querySelector('.product-card-list');
 productCardList.innerHTML = createProductsList(productsObj);
 
+const listEl = document.querySelector('.product-card-list');
+listEl.addEventListener('click', onClickCart);
+
+function onClickCart (e) {
+  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H3') {
+    openModal()
+  } else {
+    return;
+  }
+  
+}
+
+
 export function createProductsList(productsObj) {
   return productsObj
     .map(
@@ -114,19 +127,25 @@ export function createProductsList(productsObj) {
         size,
         _id,
       }) => {
-        return `<li class="products-card-item">
+        return `<li class="products-card-item" data-id="${_id}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
-                <a class="products-card-link" href="#"><h3 class="product-name">${name}</h3></a>
+                <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
                 <ul class="product-description-list">
                         <li><p class="product-text">Category:<span class="product-text-black"> ${category}</span>Size:<span class="product-text-black"> ${size}</span></p></li>
                         <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${popularity}</span></p></li>
                 </ul>
                 <div class="wrap-prise-and-btn">
-                    <h3 class="price">$${price}</h3>
+                    <p class="price">$${price}</p>
                     <button class="btn btn-shopping-cart js-add-btn">
                         <svg class="icon-shopping-cart" width="18" height="18">
                             <use href="./icons.svg#icon-shopping-cart"></use>
+
+                            <use
+                              href="./icons.svg#icon-check"
+                              class="popular-desc-added is-hidden"
+                            ></use>
                         </svg>
+                        
                     </button>
                 </div>
             </li>`;
@@ -134,3 +153,7 @@ export function createProductsList(productsObj) {
     )
     .join('');
 }
+
+//Modal
+
+
