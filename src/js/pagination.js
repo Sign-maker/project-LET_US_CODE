@@ -1,10 +1,10 @@
 // import { FoodBoutiqueAPI } from './food-api';
-// const productList = new FoodBoutiqueAPI();
+// const products = new FoodBoutiqueAPI();
 
 const products = {
   page: 1,
   perPage: 9,
-  totalPages: 60,
+  totalPages: 7,
   results: [
     {
       _id: '640c2dd963a319ea671e383b',
@@ -101,93 +101,135 @@ const products = {
 // ______ref________
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
+const btnBack = document.querySelector('.btn_back');
+const btnNext = document.querySelector('.btn_next');
 console.log(ulTag);
 // ______змінні________
-let totalPages = 4;
-let page = 1;
-// ______функція________
+let totalPages = products.totalPages;
+let page = products.page;
+
+// ______слухачі________
+
+const backBtn = btnBack.addEventListener('click', () =>
+  createPagination(totalPages, page - 1)
+);
+console.log(backBtn);
+const forwarBtn = btnNext.addEventListener('click', () =>
+  createPagination(totalPages, page + 1)
+);
+
 function createPagination(totalPages, page) {
   let liTag = '';
   let activeLi;
   let beforePages = page - 1;
   let afterPages = page + 1;
-  // ______назад________
+
   if (page > 1) {
-    liTag += `<li class="btn_back"><span><svg class="paginations__icon" width="24" height="24">
-      <use href="../img/icons.svg#icon-caret-left"></use>
-    </svg></span></li>`;
+    backBtn;
   }
-  // ______умови як працюють не так як я думаю________
-  if (page > 2) {
-    liTag += `<li class="numb"><span>1</span></li>`;
-    if (page > 3) {
-      liTag += `<li class="dots"><span>...</span></li>`;
-    }
-  }
-  //   //   скільки сторінок показувати перед активним li
-  //   if (page === totalPages) {
-  //     beforePages = beforePages - 1;
-  //   }
-  // якщо одна сторінка
-  if (totalPages === 1) {
-    pagination.innerHTML = '';
-  }
-
-  for (
-    let pageLength = beforePages;
-    pageLength <= afterPages;
-    pageLength += 1
-  ) {
-    if (pageLength > totalPages) {
-      continue;
-    }
-    if (pageLength === 0) {
-      pageLength = pageLength + 1;
-    }
-    if (page === pageLength) {
-      activeLi = 'active';
-    } else {
-      activeLi = '';
-    }
-    liTag += `<li class="numb ${activeLi}"><span>${pageLength}</span></li>`;
-  }
-  if (page < totalPages - 1) {
-    if (page < totalPages - 2) {
-      liTag += `<li class="dots"><span>...</span></li>`;
-    }
-    liTag += `<li class="numb"><span>${totalPages}</span></li>`;
-  }
-
   if (page < totalPages) {
-    liTag += `<li class="btn_next"><span> <svg class="paginations__icon" width="24" height="24">
-      <use href="../img/icons.svg#icon-caret-right"></use>
-    </svg></span></li>`;
+    forwarBtn;
   }
-  // слухачі розмітку закинула
-  ulTag.innerHTML = liTag;
-
-  // слухачі вішаю
-  const btnBack = document.querySelector('.btn_back');
-  //   console.log(btnBack);
-  if (btnBack) {
-    btnBack.addEventListener('click', function () {
-      createPagination(totalPages, page - 1);
-    });
-  }
-  const btnNext = document.querySelector('.btn_next');
-  //   console.log(btnNext);
-  if (btnNext) {
-    btnNext.addEventListener('click', function () {
-      createPagination(totalPages, page + 1);
-    });
-  }
-  const btnNumbs = document.querySelectorAll('.numb');
-
-  btnNumbs.forEach(function (btnNumb) {
-    btnNumb.addEventListener('click', function () {
-      const pageLength = parseInt(btnNumb.textContent);
-      createPagination(totalPages, pageLength);
-    });
-  });
 }
-createPagination(totalPages, page);
+// ______функція________
+// function createPagination(totalPages, page) {
+//   let liTag = '';
+//   let activeLi;
+//   let beforePages = page - 1;
+//   let afterPages = page + 1;
+//   // ______назад________
+//   if (page > 1) {
+//     // liTag += `<button class="btn_back" type=button><svg class="paginations__icon">
+//     //   <use href="../img/icons.svg#icon-caret-left"></use>
+//     // </svg></button>`;
+//   }
+//   // ______умови як працюють не так як я думаю________
+//   if (page > 2) {
+//     liTag += `<li class="numb"><button type=button>1</button></li>`;
+//     if (page > 3) {
+//       liTag += `<li class="dots"><span>...</span></li>`;
+//     }
+//   }
+//   //   //   скільки сторінок показувати перед активним li
+//   //   if (page === totalPages) {
+//   //     beforePages;
+
+//   //     //   } else if (page === totalPages - 1) {
+//   //     //     beforePages = beforePages - 1;
+//   //   }
+//   //   if (page === 1) {
+//   //     afterPages;
+//   //     //   } else if (page === 2) {
+//   //     //     afterPages = afterPages + 1;
+//   //   }
+//   if (totalPages === 1) {
+//     ulTag.innerHTML = '';
+//   }
+//   for (
+//     let pageLength = beforePages;
+//     pageLength <= afterPages;
+//     pageLength += 1
+//   ) {
+//     if (pageLength > totalPages) {
+//       continue;
+//     }
+//     if (pageLength === 0) {
+//       pageLength = pageLength + 1;
+//     }
+//     if (page === pageLength) {
+//       activeLi = 'active';
+//     } else {
+//       activeLi = '';
+//     }
+//     liTag += `<li class="numb"><button type=button class="${activeLi}">${pageLength}</button></li>`;
+//   }
+
+//   //   if (page < totalPages - 1) {
+//   //     if (page < totalPages - 2) {
+//   //       liTag += `<li class="dots"><span>...</span></li>`;
+//   //     }
+//   //     liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
+//   //   }
+
+//   if (page < totalPages - 2) {
+//     liTag += `<li class="dots"><span>...</span></li>`;
+//     if (page < totalPages - 1) {
+//       liTag += `<li class="numb"><button type=button>${
+//         totalPages - 1
+//       }</button></li>`;
+//     }
+//     liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
+//   }
+
+//   //   if (page < totalPages) {
+//   //     liTag += `<button class="btn_next" type=button> <svg class="paginations__icon">
+//   //       <use href="../img/icons.svg#icon-caret-right"></use>
+//   //     </svg></button>`;
+//   //   }
+
+//   //  розмітку закинула
+//   ulTag.innerHTML = liTag;
+
+//   // слухачі вішаю
+
+//
+//   //   const btnNumbs = document.querySelectorAll('.numb');
+
+//   btnNumbs.forEach(function (btnNumb) {
+//     btnNumb.addEventListener('click', function () {
+//       const pageLength = parseInt(btnNumb.textContent);
+//       createPagination(totalPages, pageLength);
+//     });
+//   });
+//   // -------------------------------------------
+//   //   const activeEl = document.querySelector('.active');
+//   //   console.log(activeEl);
+
+//   //   activeEl.addEventListener('click', function (event) {
+//   //     const currentNumber = Number(event.target.textContent);
+//   //     console.log(currentNumber);
+//   //   });
+
+//   // -------------------------------------------
+// }
+// createPagination(totalPages, page);
