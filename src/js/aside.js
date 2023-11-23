@@ -9,7 +9,7 @@ async function popularProd() {
   try {
     const popularProductsData = await foodBoutiqueAPI.getPopularProducts(); 
 
-    getToLocalStorage("popularProducts", popularProductsData)
+    setToLocalStorage("popularProducts", popularProductsData)
 
     popularListRef.innerHTML = markupPopular(popularProductsData);
   } catch (error) {
@@ -22,7 +22,7 @@ async function discountedProd() {
   try {
     const discountProdData = await foodBoutiqueAPI.getDiscountedProducts();
 
-    getToLocalStorage("discountProducts", discountProdData)
+    setToLocalStorage("discountProducts", discountProdData)
 
     discountListRef.innerHTML = markupDiscount(discountProdData);
   } catch (error) {
@@ -48,7 +48,7 @@ function onDiscountCardClick (e) {
   console.dir('THIS IS FOR MODAL CLICK');
 }
 
-function getToLocalStorage (name,arr) {
+function setToLocalStorage (name,arr) {
   localStorage.setItem(`${name}`, JSON.stringify(arr))
 }
 
