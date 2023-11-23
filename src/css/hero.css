@@ -34,7 +34,7 @@
   border-radius: 30px;
 }
 
-/* .discount {
+/* .herodiscount {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,10 +45,28 @@
   border: none;
 } */
 
-.hero-discount-icon {
+.wripper-hero-pic {
+  position: relative;
+}
+
+.hero-icon-cont {
+  position: absolute;
   display: flex;
-  width: 80px;
-  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--discount);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: 83%;
+  top: 9.5%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-organic-food-icon {
+  width: 82px;
+  height: 82px;
+  transform: rotate (-90deg);
 }
 
 @media (min-width: 768px) {
@@ -72,6 +90,10 @@
   .hero-img {
     border-radius: 60px;
   }
+  .hero-icon-cont {
+    left: 91.2%;
+    top: 5%;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -83,13 +105,8 @@
     max-width: 1042px;
     letter-spacing: -0.02em;
   }
+  .hero-icon-cont {
+    left: 94.5%;
+    top: 1.5%;
+  }
 }
-
-/* .hero {
-    padding-top: 140px;
-    padding-bottom: 313px;
-    background-image: url(../img/hero/product-bg-mobile@1x.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 375px;
-  } */
