@@ -183,7 +183,7 @@
 
 .card-form-btn {
   display: inline-flex;
-  width: 100%;
+  /* width: 100%; */
   padding: 12px 138px;
   justify-content: center;
   align-items: center;
@@ -304,6 +304,7 @@
   }
   .card-product {
     display: flex;
+    flex-wrap: wrap;
     gap: 101px;
   }
   .cart-list {
@@ -325,7 +326,7 @@
     text-transform: uppercase;
   }
   .order-total{
-    width: 590px;
+    /* width: 590px; */
 
 }
 .card-form-input::placeholder{
