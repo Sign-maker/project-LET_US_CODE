@@ -102,29 +102,45 @@ const products = {
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
 console.log(ulTag);
-
+let totalPages = 20;
+// let page = 5;
 function createPagination(totalPages, page) {
   let liTag = '';
+  let activeLi;
   let beforePages = page - 1;
   let afterPages = page + 1;
   if (page > 1) {
-    liTag += `<li class="btn_back"><button> <svg class="paginations__icon" width="24" height="24">
+    liTag += `<li class="btn_back"><span><svg class="paginations__icon" width="24" height="24">
       <use href="../img/icons.svg#icon-caret-left"></use>
-    </svg></button></li>`;
+    </svg></span></li>`;
   }
+
   for (
     let pageLength = beforePages;
     pageLength <= afterPages;
     pageLength += 1
   ) {
-    liTag += `<li class="numb active"><button>1</button></li>`;
+    if (page === pageLength) {
+      activeLi = 'active';
+    } else {
+      activeLi = '';
+    }
+    liTag += `<li class="numb ${activeLi}"><span>${pageLength}</span></li>`;
   }
   if (page < totalPages) {
-    liTag += `<li class="btn_next"><button> <svg class="paginations__icon" width="24" height="24">
+    liTag += `<li class="btn_next"><span> <svg class="paginations__icon" width="24" height="24">
       <use href="../img/icons.svg#icon-caret-right"></use>
-    </svg></button></li>`;
+    </svg></span></li>`;
   }
 
   ulTag.innerHTML = liTag;
+
+  const btnBack = document.querySelector('.btn_back');
+  //   console.log(btnBack);
+  if (btnBack) {
+    btnBack.addEventListener('click', function () {
+      createPagination(totalPages, page - 1);
+    });
+  }
 }
-createPagination(20, 5);
+createPagination(totalPages, 5);

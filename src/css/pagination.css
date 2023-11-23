@@ -73,13 +73,13 @@ button {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: #6d8434;
+  background: var(--main-bg);
   padding: 8px;
   border-radius: 50px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 .pagination_list li {
-  color: #20b2aa;
+  color: var(--second-text);
   list-style: none;
   line-height: 45px;
   text-align: center;
@@ -107,13 +107,15 @@ button {
   font-size: 22px;
   cursor: default;
 }
-.pagination_list li.btn {
+.pagination_list li.btn_back,
+.pagination_list li.btn_next {
   padding: 0 20px;
   border-radius: 50px;
 }
-.pagination li.active,
+.pagination_list li.active,
 .pagination_list li.numb:hover,
 .pagination_list li:first-child:hover,
 .pagination_list li:last-child:hover {
-  color: #20b2aa;
+  color: var(--main-bg);
+  background-color: #6d8434;
 }
