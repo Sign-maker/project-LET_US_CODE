@@ -1,6 +1,6 @@
 // import { FoodBoutiqueAPI } from './food-api';
 // const productList = new FoodBoutiqueAPI();
-// // console.dir(productList);
+
 const products = {
   page: 1,
   perPage: 9,
@@ -103,7 +103,7 @@ const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
 console.log(ulTag);
 let totalPages = 20;
-// let page = 5;
+let page = 5;
 function createPagination(totalPages, page) {
   let liTag = '';
   let activeLi;
@@ -115,6 +115,12 @@ function createPagination(totalPages, page) {
     </svg></span></li>`;
   }
 
+  if (page > 2) {
+    liTag += `<li class="numb><span>1</span></li>`;
+    if (page > 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
   for (
     let pageLength = beforePages;
     pageLength <= afterPages;
@@ -127,6 +133,13 @@ function createPagination(totalPages, page) {
     }
     liTag += `<li class="numb ${activeLi}"><span>${pageLength}</span></li>`;
   }
+  //   if (page < totalPages - 1) {
+  //     if (page < totalPages - 2) {
+  //       liTag += `<li class="dots"><span>...</span></li>`;
+  //     }
+  //     liTag += `<li class="numb><span>${totalPages}</span></li>`;
+  //   }
+
   if (page < totalPages) {
     liTag += `<li class="btn_next"><span> <svg class="paginations__icon" width="24" height="24">
       <use href="../img/icons.svg#icon-caret-right"></use>
@@ -142,5 +155,12 @@ function createPagination(totalPages, page) {
       createPagination(totalPages, page - 1);
     });
   }
+  const btnNext = document.querySelector('.btn_next');
+  //   console.log(btnNext);
+  if (btnBack) {
+    btnNext.addEventListener('click', function () {
+      createPagination(totalPages, page + 1);
+    });
+  }
 }
-createPagination(totalPages, 5);
+createPagination(totalPages, page);
