@@ -102,30 +102,33 @@ const products = {
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
 console.log(ulTag);
+// ______змінні________
 let totalPages = 4;
 let page = 1;
+// ______функція________
 function createPagination(totalPages, page) {
   let liTag = '';
   let activeLi;
   let beforePages = page - 1;
   let afterPages = page + 1;
+  // ______назад________
   if (page > 1) {
     liTag += `<li class="btn_back"><span><svg class="paginations__icon" width="24" height="24">
       <use href="../img/icons.svg#icon-caret-left"></use>
     </svg></span></li>`;
   }
-
+  // ______умови як працюють не так як я думаю________
   if (page > 2) {
     liTag += `<li class="numb"><span>1</span></li>`;
     if (page > 3) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
   }
-  //   скільки сторінок показувати перед активним li
-  if (page === totalPages) {
-    beforePages = beforePages - 1;
-  }
-  // скільки сторінок показувати після активним li
+  //   //   скільки сторінок показувати перед активним li
+  //   if (page === totalPages) {
+  //     beforePages = beforePages - 1;
+  //   }
+  // якщо одна сторінка
   if (totalPages === 1) {
     pagination.innerHTML = '';
   }
@@ -160,9 +163,10 @@ function createPagination(totalPages, page) {
       <use href="../img/icons.svg#icon-caret-right"></use>
     </svg></span></li>`;
   }
-
+  // слухачі розмітку закинула
   ulTag.innerHTML = liTag;
 
+  // слухачі вішаю
   const btnBack = document.querySelector('.btn_back');
   //   console.log(btnBack);
   if (btnBack) {

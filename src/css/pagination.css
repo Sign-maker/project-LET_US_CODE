@@ -10,14 +10,15 @@
   width: 472px;
   justify-content: space-between;
   align-items: center;
-  /* background-color: var(--main-bg); */
 }
-/* .pagination_list {
+
+.pagination_list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 8px;
 }
+
 .numb,
 .dots {
   width: 40px;
@@ -30,26 +31,17 @@
   line-height: 1.42;
   padding: 8px;
   border-radius: 60px;
-  list-style: none;
+  cursor: pointer;
 }
 
-.numb:hover,
-.numb:active {
-  background-color: var(--second-bg);
-  color: var(--third-bg);
-}
-
-.paginations__btn {
+.btn_back,
+.btn_next {
   padding: 8px;
   border-radius: 60px;
   background: var(--third-bg);
   border-color: transparent;
   width: 40px;
   height: 40px;
-}
-.paginations__btn:hover,
-.paginations__btn:active {
-  background-color: var(--second-bg);
 }
 .paginations__icon {
   fill: var(--second-text);
@@ -58,64 +50,13 @@
 .paginations__icon:active {
   fill: var(--third-bg);
 }
-button {
-} */
-
-/* body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #20b2aa;
-  min-height: 100vh;
-  padding: 10px;
-} */
-.pagination_list {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background: var(--main-bg);
-  padding: 8px;
-  border-radius: 50px;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-}
-.pagination_list li {
-  color: var(--second-text);
-  list-style: none;
-  line-height: 45px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.3s ease;
-}
-.pagination_list li.numb {
-  list-style: none;
-  height: 45px;
-  width: 45px;
-  margin: 0 3px;
-  line-height: 45px;
-  border-radius: 50%;
-}
-.pagination_list li.numb.first {
-  margin: 0px 3px 0 -5px;
-}
-.pagination_list li.numb.last {
-  margin: 0px -5px 0 3px;
-}
-.pagination_list li.dots {
-  font-size: 22px;
-  cursor: default;
-}
-.pagination_list li.btn_back,
-.pagination_list li.btn_next {
-  padding: 0 20px;
-  border-radius: 50px;
-}
-.pagination_list li.active,
-.pagination_list li.numb:hover,
-.pagination_list li:first-child:hover,
-.pagination_list li:last-child:hover {
-  color: var(--main-bg);
-  background-color: #6d8434;
+li.active,
+li.numb:hover,
+li.numb:active,
+li:first-child:hover,
+li:first-child:active,
+li:last-child:hover,
+li:last-child:active {
+  color: var(--third-bg);
+  background-color: var(--second-bg);
 }
