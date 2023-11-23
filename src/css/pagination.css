@@ -1,18 +1,18 @@
-/* :root {
+:root {
   --main-bg: #e8e8e2;
   --second-bg: #6d8434;
   --third-bg: #fafafa;
   --second-text: #a3a3a3;
 }
 
-.paginations__container {
+.pagination {
   display: flex;
   width: 472px;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--main-bg);
+  /* background-color: var(--main-bg); */
 }
-.pagination_list {
+/* .pagination_list {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -69,16 +69,16 @@ button {
   min-height: 100vh;
   padding: 10px;
 } */
-.pagination ul {
+.pagination_list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: #fff;
+  background: #6d8434;
   padding: 8px;
   border-radius: 50px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
-.pagination ul li {
+.pagination_list li {
   color: #20b2aa;
   list-style: none;
   line-height: 45px;
@@ -89,7 +89,7 @@ button {
   user-select: none;
   transition: all 0.3s ease;
 }
-.pagination ul li.numb {
+.pagination_list li.numb {
   list-style: none;
   height: 45px;
   width: 45px;
@@ -97,23 +97,23 @@ button {
   line-height: 45px;
   border-radius: 50%;
 }
-.pagination ul li.numb.first {
+.pagination_list li.numb.first {
   margin: 0px 3px 0 -5px;
 }
-.pagination ul li.numb.last {
+.pagination_list li.numb.last {
   margin: 0px -5px 0 3px;
 }
-.pagination ul li.dots {
+.pagination_list li.dots {
   font-size: 22px;
   cursor: default;
 }
-.pagination ul li.btn {
+.pagination_list li.btn {
   padding: 0 20px;
   border-radius: 50px;
 }
 .pagination li.active,
-.pagination ul li.numb:hover,
-.pagination ul li:first-child:hover,
-.pagination ul li:last-child:hover {
+.pagination_list li.numb:hover,
+.pagination_list li:first-child:hover,
+.pagination_list li:last-child:hover {
   color: #20b2aa;
 }
