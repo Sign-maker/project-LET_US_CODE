@@ -64,11 +64,11 @@ export function markupCartProduct(arr) {
 const cartList = document.querySelector('.cart-list');
 cartList.innerHTML = markupCartProduct(localStorageCartProduct);
 
-console.log(localStorageCartProduct.length > 3);
-function addScrollProductInCart(localStorageCartProduct) {
-  if (localStorageCartProduct.length > 3) {
-    cartList.style.oveflow = 'overlay';
-  }
-  return;
-}
-addScrollProductInCart(localStorageCartProduct);
+// console.log(localStorageCartProduct.length > 3);
+// function addScrollProductInCart(localStorageCartProduct) {
+//   if (localStorageCartProduct.length > 3) {
+//     cartList.style.oveflow = 'overlay';
+//   }
+//   return;
+// }
+// addScrollProductInCart(localStorageCartProduct);
