@@ -182,6 +182,9 @@ margin-top: 40px;
 
 cursor: pointer;
 }
+.modal-prod-add-btn:hover, .modal-prod-add-btn:focus {
+    background-color: var(--btn-green-dark);
+}
 /* tablet */
 @media only screen and (min-width: 768px) {
     .modal-prod-add-btn {
