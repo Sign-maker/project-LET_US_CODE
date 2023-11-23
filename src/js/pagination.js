@@ -102,8 +102,8 @@ const products = {
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
 console.log(ulTag);
-let totalPages = 20;
-let page = 5;
+let totalPages = 4;
+let page = 1;
 function createPagination(totalPages, page) {
   let liTag = '';
   let activeLi;
@@ -121,11 +121,26 @@ function createPagination(totalPages, page) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
   }
+  //   скільки сторінок показувати перед активним li
+  if (page === totalPages) {
+    beforePages = beforePages - 1;
+  }
+  // скільки сторінок показувати після активним li
+  if (totalPages === 1) {
+    pagination.innerHTML = '';
+  }
+
   for (
     let pageLength = beforePages;
     pageLength <= afterPages;
     pageLength += 1
   ) {
+    if (pageLength > totalPages) {
+      continue;
+    }
+    if (pageLength === 0) {
+      pageLength = pageLength + 1;
+    }
     if (page === pageLength) {
       activeLi = 'active';
     } else {
@@ -162,5 +177,13 @@ function createPagination(totalPages, page) {
       createPagination(totalPages, page + 1);
     });
   }
+  const btnNumbs = document.querySelectorAll('.numb');
+
+  btnNumbs.forEach(function (btnNumb) {
+    btnNumb.addEventListener('click', function () {
+      const pageLength = parseInt(btnNumb.textContent);
+      createPagination(totalPages, pageLength);
+    });
+  });
 }
 createPagination(totalPages, page);
