@@ -57,8 +57,8 @@ async function testApi() {
     console.log('subscribeToNewsletter', subscribeToNewsletter);
 
     // ==========================================
-  } catch {
-    error => console.log('помилка', error);
+  } catch (error) {
+    console.log('помилка', error.response.data.message);
   } finally {
   }
 }
