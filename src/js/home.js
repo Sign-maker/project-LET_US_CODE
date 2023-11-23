@@ -1,12 +1,3 @@
-import './test-api';
-import './aside';
-import './modal-markup';
-import './aside';
-import './select';
-import './modal-success';
-import './markup-product-list';
-import './aside';
-
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage } from './local-storage-api';
 import { renderProductList } from './product-list/render-product-list';
@@ -22,7 +13,7 @@ const INIT_FILTER_PARAMS = {
   keyword: null,
   category: null,
   page: 1,
-  limit: 6,
+  limit: 9,
 };
 const productListRef = document.querySelector('.product-card-list');
 
@@ -64,7 +55,7 @@ async function getProducts(filterParams) {
     const products = await foodBoutique.getProducts(filterParams);
     productStorage.setValue(products);
     filterStorage.setValue(filterParams);
-    // renderProductList(productListRef, productStorage.getValue().results);
+    renderProductList(productListRef, productStorage.getValue().results);
   } catch (error) {
     console.log(error);
   } finally {
