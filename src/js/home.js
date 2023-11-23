@@ -1,6 +1,6 @@
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage } from './local-storage-api';
-import { renderProductList } from './product-list/render-product-list';
+import { renderProductList } from './render-product-list';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
