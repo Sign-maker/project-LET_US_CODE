@@ -3,6 +3,7 @@ import './aside';
 import './modal-markup';
 import './aside';
 import './select';
+import './modal-success';
 import './markup-product-list';
 import './aside';
 

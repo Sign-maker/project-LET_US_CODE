@@ -1,11 +1,10 @@
-
 const modalEl = document.querySelector('.modal-prod-wrapper');
 
 export function openModal(id) {
   console.log(id);
   modalEl.classList.add('modal-active');
   document.body.classList.add('stop-scroll');
-
+  
   modalEl.innerHTML = `
 <div class="modal-prod-card">
 <button type="button" class="modal-prod-close-btn">
@@ -44,19 +43,14 @@ export function openModal(id) {
 </div>
 </div>
 `;
+
   const closeBtn = document.querySelector('.modal-prod-close-btn');
   closeBtn.addEventListener('click', () => closeModal());
 
   // Додаю слухачі подій
   window.addEventListener('click', closeModalOnWindowClick);
   window.addEventListener('keydown', closeModalOnEsc);
- 
-
 }
- 
-
-
-
 
 //! Функція закриття модалки при кліку на хрестик
 
@@ -84,3 +78,4 @@ function closeModalOnEsc(e) {
     closeModal();
   }
 }
+
