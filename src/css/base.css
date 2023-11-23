@@ -37,11 +37,12 @@
   --text: #010101;
   --second-text: #a3a3a3;
 
-  --transparent: #0101014d; /* rgba(1, 1, 1, 0.30);*/
+  --black-transparent: #0101014d; /* rgba(1, 1, 1, 0.30);*/
   --second-transparent: #e8e8e899; /* rgba(232, 232, 226, 0.60); */
   --third-transparent: #01010112; /*rgba(1, 1, 1, 0.07);*/
   --fourth-transparent: #e8e8e233; /*rgba(232, 232, 226, 0.20);;*/
   --fifth-transparent: #e8e8e24d; /*rgba(232, 232, 226, 0.30);*/
+  --sixth-transparent: #010101cc; /*rgba(1, 1, 1, 0.8);*/
 
   --discount: #fdc152;
 
@@ -68,7 +69,6 @@ body {
   font-family: 'Neue Montreal', sans-serif;
   font-weight: 500;
   font-size: 20px;
-  font-weight: 500;
   line-height: 1.2;
   color: var(--text);
   background-color: var(--main-bg);
@@ -80,7 +80,7 @@ body {
   max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
 }
 @media (min-width: 768px) {
   .container {
@@ -89,6 +89,7 @@ body {
     padding-right: 32px;
   }
 }
+
 @media (min-width: 1440px) {
   .container {
     max-width: 1440px;
