@@ -7,8 +7,8 @@
     <title>Food Boutique Cart</title>
     
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-5bcfbd98.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-0b788e0f.css">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-e34f6672.js">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-386eacf4.css">
   </head>
   <body>
     <header class="header">
@@ -51,11 +51,48 @@
       <section class="cart-content-section">
         <div class="container cart-content-container">
           <h1 class="visually-hidden">Cart</h1>
-          
-          <div class="cart-content-wrapper">
-            <!-- cart + delbtn -->
+          <div class="cart-header-wrap">
+  <div class="cart-img-basket btn">
+    <svg>
+      <use href="../img/icons.svg#icon-shopping-cart"></use>
+    </svg>
+  </div>
 
-<ul class="cart-list"></ul>
+  <p class="title-cart">Cart (<span class="number-of-product"> 0</span>)</p>
+</div>
+
+          <div class="cart-content-wrapper">
+            <div class="empty-cart">
+  <img
+    class="empty-basket-image"
+    srcset="
+      ../img/empty-basket/shopping-basket-tab-ps@1x.png 1x,
+      ../img/empty-basket/shopping-basket-tab-ps@2x.png 2x
+    "
+    src="../img/empty-basket/shopping-basket-tab-ps@1x.png"
+    alt="empty-basket"
+    width="132"
+  />
+  <p class="empty-cart-text">
+    Your basket is<span class="yelow-empty"> empty...</span>
+  </p>
+  <p class="empty-cart-paragraf">
+    Go to the main page to select your favorite products and add them to the
+    cart.
+  </p>
+</div>
+
+            <!-- cart + delbtn -->
+<div hidden>
+  <button class="delete-all-btn js-delete-all-btn">
+    <span class="text-delete-all">Delete all</span>
+    <svg>
+      <use href="../img/icons.svg#icon-close"></use>
+    </svg>
+  </button>
+
+  <ul class="cart-list"></ul>
+</div>
 
             
 <div class="your-order">
