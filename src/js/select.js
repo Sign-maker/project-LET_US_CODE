@@ -1,34 +1,70 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Ваш исправленный код здесь
-    const optionMenu = document.querySelector('.custom-select');
-    const selectBtn = optionMenu.querySelector('.categories-btn');
-    const options = optionMenu.querySelectorAll('.text-options');
-    const sBtn_text = optionMenu.querySelector('.selected-option');
-    selectBtn.addEventListener('click', () =>optionMenu.classList.toggle('active'));
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            let selectedOption = option.innerText;
-            
-            sBtn_text.value = selectedOption;
-            optionMenu.classList.remove('active');
-        });
-    });
+const optionMenu = document.querySelector ('.custom-select-ctg');
+const selectBtnCtg = optionMenu.querySelector('.categories-btn');
+const options = optionMenu.querySelectorAll('.text-options');
+const selectCtgInput = optionMenu.querySelector('.selected-option');
+
+selectBtnCtg.addEventListener('click', () => {
+  optionMenu.classList.toggle('active');
 });
 
-const optionMenuSort = document.querySelector('.custom-select-sort');
-const selectBtnSort = optionMenuSort.querySelector('.sort-btn');
-const optionsSort = optionMenuSort.querySelectorAll('.text-options-sort');
-const sBtn_textSort = optionMenuSort.querySelector('.selected-option');
-
-selectBtnSort.addEventListener('click', () =>
-  optionMenuSort.classList.toggle('active'));
-
-optionsSort.forEach(optionSort => {
-  optionSort.addEventListener('click', () => {
-    let selectedOptionSort = optionSort.innerText;
-    sBtn_textSort.value = selectedOptionSort;
-    optionMenuSort.classList.remove('active');
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    let selectedOption = option.innerText;
+    selectCtgInput.value = selectedOption;
+    optionMenu.classList.remove('active');
+    console.log(selectedOption)
+    // Здесь должен быть код для выполнения запроса к API с параметром selectedOption
   });
 });
 
+const sortMenu = document.querySelector('.custom-select-sort');
+const selectBtnSort = sortMenu.querySelector('.sort-btn');
+const optionsSort = sortMenu.querySelectorAll('.text-options-sort');
+const selectInputSort = sortMenu.querySelector('.selected-option');
+
+selectBtnSort.addEventListener('click', () => {
+  sortMenu.classList.toggle('active');
+});
+
+optionsSort.forEach(option => {
+  option.addEventListener('click', () => {
+    let selectedOptionSort = option.innerText;
+    selectInputSort.value = selectedOptionSort;
+    sortMenu.classList.remove('active');
+    // Здесь должен быть код для выполнения запроса к API с параметром selectedOptionSort
+  });
+});
+document.addEventListener('click', function(event) {
+    const isClickInsideOptionMenu = optionMenu.contains(event.target);
+    const isClickInsideSortMenu = sortMenu.contains(event.target);
+  
+    if (!isClickInsideOptionMenu) {
+      optionMenu.classList.remove('active');
+    }
+  
+    if (!isClickInsideSortMenu) {
+      sortMenu.classList.remove('active');
+    }
+  });
+
+document.addEventListener('keyup', function(event) {
+    if (event.code === 'Escape') {
+      optionMenu.classList.remove('active');
+      sortMenu.classList.remove('active');
+    }
+  });
+
+// sortMenu.addEventListener('keydown', (event) => {
+//   if (event.code === 'Space') {
+//     sortMenu.classList.toggle('active');
+//     event.preventDefault();
+//   }
+// });
+
+// optionMenu.addEventListener('keydown', (event) => {
+//   if (event.code === 'Space') {
+//     optionMenu.classList.toggle('active');
+//     event.preventDefault();
+//   }
+// });
 
