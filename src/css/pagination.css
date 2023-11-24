@@ -29,7 +29,7 @@ span {
   width: 40px;
   height: 40px;
   /* border-radius: 4px; */
-  color: var(--second-text);
+  color: var(--second-bg);
   text-align: center;
   font-size: 14px;
   font-weight: 500;
@@ -50,6 +50,22 @@ button {
   border-color: transparent;
   width: 40px;
   height: 40px;
+}
+numb {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42;
+  padding: 8px;
+  border-radius: 60px;
+  background: transparent;
+  color: var(--second-text);
+  border-color: transparent;
+  width: 40px;
+  height: 40px;
+  opacity: 0.7;
 }
 .paginations__icon {
   fill: var(--second-text);
@@ -72,4 +88,7 @@ button:active {
 }
 .btn_next {
   margin-left: 40px;
+}
+li.active {
+  background-color: transparent;
 }

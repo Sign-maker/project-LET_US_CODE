@@ -2,9 +2,9 @@
 // const products = new FoodBoutiqueAPI();
 
 const products = {
-  page: 1,
+  page: 6,
   perPage: 9,
-  totalPages: 7,
+  totalPages: 8,
   results: [
     {
       _id: '640c2dd963a319ea671e383b',
@@ -101,209 +101,112 @@ const products = {
 // ______ref________
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
-// const btnBack = document.querySelector('.btn_back');
-// const btnNext = document.querySelector('.btn_next');
 console.log(ulTag);
 // ______змінні________
-// let totalPages = products.totalPages;
-// let currentPage = products.page;
+let totalPages = products.totalPages;
+let page = products.page;
 
-// ______слухачі________
-
-// const backBtn = btnBack.addEventListener('click', () =>
-//   createPagination(totalPages, page - 1)
-// );
-// console.log(backBtn);
-// const forwarBtn = btnNext.addEventListener('click', () =>
-//   createPagination(totalPages, page + 1)
-// );
-
-// btnBack.addEventListener('click', () => {
-//   if (page > 1) {
-//     page--;
-//     createPagination(totalPages, page);
-//   }
-// });
-
-// btnNext.addEventListener('click', () => {
-//   if (page < totalPages) {
-//     page++;
-//     createPagination(totalPages, page);
-//   }
-// });
-// function createPagination(totalPages, page) {
-//   let liTag = '';
-//   let activeLi;
-//   let beforePages = page - 1;
-//   let afterPages = page + 1;
-
-//   if (page > 2) {
-//     liTag = `<li class="numb"><button type=button>1</button></li>`;
-//     if (page > 3) {
-//       liTag = `<li class="dots"><span>...</span></li>`;
-//     }
-//   }
-
-//   ulTag.innerHTML = liTag;
-// }
 // ______функція________
-// function createPagination(totalPages, page) {
-//   let liTag = '';
-//   let activeLi;
-//   let beforePages = page - 1;
-//   let afterPages = page + 1;
-//   // ______назад________
-//   if (page > 1) {
-//     // liTag += `<button class="btn_back" type=button><svg class="paginations__icon">
-//     //   <use href="../img/icons.svg#icon-caret-left"></use>
-//     // </svg></button>`;
-//   }
-//   // ______умови як працюють не так як я думаю________
-//   if (page > 2) {
-//     liTag += `<li class="numb"><button type=button>1</button></li>`;
-//     if (page > 3) {
-//       liTag += `<li class="dots"><span>...</span></li>`;
-//     }
-//   }
-//   //   //   скільки сторінок показувати перед активним li
-//   //   if (page === totalPages) {
-//   //     beforePages;
-
-//   //     //   } else if (page === totalPages - 1) {
-//   //     //     beforePages = beforePages - 1;
-//   //   }
-//   //   if (page === 1) {
-//   //     afterPages;
-//   //     //   } else if (page === 2) {
-//   //     //     afterPages = afterPages + 1;
-//   //   }
-//   if (totalPages === 1) {
-//     ulTag.innerHTML = '';
-//   }
-//   for (
-//     let pageLength = beforePages;
-//     pageLength <= afterPages;
-//     pageLength += 1
-//   ) {
-//     if (pageLength > totalPages) {
-//       continue;
-//     }
-//     if (pageLength === 0) {
-//       pageLength = pageLength + 1;
-//     }
-//     if (page === pageLength) {
-//       activeLi = 'active';
-//     } else {
-//       activeLi = '';
-//     }
-//     liTag += `<li class="numb"><button type=button class="${activeLi}">${pageLength}</button></li>`;
-//   }
-
-//   //   if (page < totalPages - 1) {
-//   //     if (page < totalPages - 2) {
-//   //       liTag += `<li class="dots"><span>...</span></li>`;
-//   //     }
-//   //     liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
-//   //   }
-
-//   if (page < totalPages - 2) {
-//     liTag += `<li class="dots"><span>...</span></li>`;
-//     if (page < totalPages - 1) {
-//       liTag += `<li class="numb"><button type=button>${
-//         totalPages - 1
-//       }</button></li>`;
-//     }
-//     liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
-//   }
-
-//   //   if (page < totalPages) {
-//   //     liTag += `<button class="btn_next" type=button> <svg class="paginations__icon">
-//   //       <use href="../img/icons.svg#icon-caret-right"></use>
-//   //     </svg></button>`;
-//   //   }
-
-//   //  розмітку закинула
-//   ulTag.innerHTML = liTag;
-
-//   // слухачі вішаю
-
-//
-//   //   const btnNumbs = document.querySelectorAll('.numb');
-
-//   btnNumbs.forEach(function (btnNumb) {
-//     btnNumb.addEventListener('click', function () {
-//       const pageLength = parseInt(btnNumb.textContent);
-//       createPagination(totalPages, pageLength);
-//     });
-//   });
-//   // -------------------------------------------
-//   //   const activeEl = document.querySelector('.active');
-//   //   console.log(activeEl);
-
-//   //   activeEl.addEventListener('click', function (event) {
-//   //     const currentNumber = Number(event.target.textContent);
-//   //     console.log(currentNumber);
-//   //   });
-
-//   // -------------------------------------------
-// }
-// createPagination(totalPages, page);
-
-const btnBack = document.querySelector('.btn_back');
-const btnNext = document.querySelector('.btn_next');
-
-let totalPages = 7;
-let currentPage = 2;
-
-function updatePagination() {
+function createPagination(totalPages, page) {
   let liTag = '';
-
-  if (currentPage > 2) {
-    liTag += `<li class="dots"><span>...</span></li>`;
+  let activeLi;
+  let beforePages = page - 1;
+  let afterPages = page + 1;
+  // ______вставляю кнопку назад________
+  if (page > 0) {
+    liTag += `<li class="btn_back"><button type="button"><svg class="paginations__icon">
+        <use href="../img/icons.svg#icon-caret-left"></use>
+      </svg></button></li>`;
   }
-
-  for (let page = currentPage - 1; page <= currentPage + 1; page++) {
-    if (page > totalPages || page < 1) {
+  // ______вставляю перешу кнопку і крапки________
+  if (page > 2) {
+    liTag += `<li class="numb"><button type=button>1</button></li>`;
+    if (page > 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+  // ______скільки сторінок показувати перед активним li________
+  if (page === totalPages) {
+    beforePages;
+  }
+  // ______скільки сторінок показувати після активним li________
+  if (page === 1) {
+    afterPages;
+  }
+  // ______закинула активну кнопку і дві з різних боків, поставила умову щоб вони не ішли в мінус і більше сторінок________
+  for (
+    let pageNumber = beforePages;
+    pageNumber <= afterPages;
+    pageNumber += 1
+  ) {
+    if (pageNumber > totalPages || pageNumber < 1) {
       continue;
     }
-
-    if (currentPage === page) {
-      liTag += `<li class="numb active"><button class="active" type="button">${page}</button></li>`;
+    if (page === pageNumber) {
+      activeLi = 'active';
     } else {
-      liTag += `<li class="numb"><button type="button">${page}</button></li>`;
+      activeLi = '';
     }
+    liTag += `<li class="numb ${activeLi}"><button type="button" class="${activeLi}">${pageNumber}</button></li>`;
   }
-
-  if (currentPage < totalPages - 2) {
-    liTag += `<li class="dots"><span>...</span></li>`;
+  // ______вставляю  крапки і останню кнопку________
+  if (page < totalPages - 1) {
+    if (page < totalPages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
   }
-
+  // ______вставляю кнопку вперед________
+  if (page < totalPages + 1) {
+    liTag += `<li class="btn_next"><button type="button"><svg class="paginations__icon">
+        <use href="../img/icons.svg#icon-caret-right"></use>
+      </svg></button></li>`;
+  }
+  // ______закинула розмітку________
   ulTag.innerHTML = liTag;
+  // ______ховаю розмітку коли 1 сторінка________
+  if (totalPages === 1) {
+    ulTag.style.visibility = 'hidden';
+  } else {
+    ulTag.style.visibility = 'visible';
+  }
+  // ______ганяю кнопки щоб активна бігала________
+  const btnNumbs = document.querySelectorAll('.numb');
 
-  const numbButtons = document.querySelectorAll('.numb button');
-
-  numbButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const newPage = parseInt(button.textContent);
-      currentPage = newPage;
-      updatePagination();
+  btnNumbs.forEach(btnNumb => {
+    btnNumb.addEventListener('click', () => {
+      const pageNumber = parseInt(btnNumb.textContent);
+      createPagination(totalPages, pageNumber);
     });
   });
+  // ______пробую повязати події________
+
+  const btnBackUpdated = document.querySelector('.btn_back');
+  const btnNextUpdated = document.querySelector('.btn_next');
+  if (btnBackUpdated) {
+    btnBackUpdated.addEventListener('click', handlePaginationClick);
+  }
+
+  if (btnNextUpdated) {
+    btnNextUpdated.addEventListener('click', handlePaginationClick);
+  }
+}
+// ______Функція для обробки кліків на кнопки туди сюди________
+
+function handlePaginationClick(event) {
+  if (event.target.closest('.btn_back')) {
+    if (page > 1) {
+      page -= 1;
+      createPagination(totalPages, page);
+    }
+  } else if (event.target.closest('.btn_next')) {
+    // Обробка кліку на кнопку "вперед"
+    if (page < totalPages) {
+      page += 1;
+      createPagination(totalPages, page);
+    }
+  }
 }
 
-btnBack.addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage--;
-    updatePagination();
-  }
-});
-
-btnNext.addEventListener('click', () => {
-  if (currentPage < totalPages) {
-    currentPage++;
-    updatePagination();
-  }
-});
-
-// Ініціалізація при завантаженні сторінки
-updatePagination();
+// ______викликаю функцію________
+createPagination(totalPages, page);
