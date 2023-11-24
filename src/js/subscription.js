@@ -7,7 +7,7 @@ const form = document.querySelector('form[name="email_address"]');
 form.addEventListener('submit', async function (event) {
   event.preventDefault();
 
-  const emailInput = this.querySelector('input[name="footer-input-email"]');
+  const emailInput = event.currentTarget.elements['footer-input-email'];
   const emailValue = emailInput.value;
 
   try {
