@@ -49,6 +49,7 @@
   max-width: 335px;
   width: 100%;
   margin-bottom: 14px;
+  background: inherit;
 }
 .order-input::placeholder {
   color: #010101;
