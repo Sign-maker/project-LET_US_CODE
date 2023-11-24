@@ -1,6 +1,6 @@
 // import { FoodBoutiqueAPI } from './food-api';
 // const products = new FoodBoutiqueAPI();
-
+import icons from '../img/icons.svg';
 const products = {
   page: 6,
   perPage: 9,
@@ -115,13 +115,16 @@ function createPagination(totalPages, page) {
   // ______вставляю кнопку назад________
   if (page > 0) {
     liTag += `<li class="btn_back"><button type="button"><svg class="paginations__icon">
-        <use href="../img/icons.svg#icon-caret-left"></use>
+        <use href="${icons}#icon-caret-left"></use>
       </svg></button></li>`;
   }
   // ______вставляю перешу кнопку і крапки________
   if (page > 2) {
     liTag += `<li class="numb"><button type=button>1</button></li>`;
     if (page > 3) {
+      liTag += `<li class="numb"><button type=button>2</button></li>`;
+    }
+    if (page > 4) {
       liTag += `<li class="dots"><span>...</span></li>`;
     }
   }
@@ -134,11 +137,7 @@ function createPagination(totalPages, page) {
     afterPages;
   }
   // ______закинула активну кнопку і дві з різних боків, поставила умову щоб вони не ішли в мінус і більше сторінок________
-  for (
-    let pageNumber = beforePages;
-    pageNumber <= afterPages;
-    pageNumber += 1
-  ) {
+  for (let pageNumber = beforePages; pageNumber < afterPages; pageNumber += 1) {
     if (pageNumber > totalPages || pageNumber < 1) {
       continue;
     }
@@ -149,17 +148,24 @@ function createPagination(totalPages, page) {
     }
     liTag += `<li class="numb ${activeLi}"><button type="button" class="${activeLi}">${pageNumber}</button></li>`;
   }
+  // ______ховаю кнопку________
+  //   if (page === btnNumbs) {
+  //     btnNumbs.style.display = 'none';
+  //   }
   // ______вставляю  крапки і останню кнопку________
   if (page < totalPages - 1) {
+    liTag += `<li class="dots"><span>...</span></li>`;
     if (page < totalPages - 2) {
-      liTag += `<li class="dots"><span>...</span></li>`;
+      liTag += `<li class="numb"><button type=button>${
+        totalPages - 1
+      }</button></li>`;
     }
     liTag += `<li class="numb"><button type=button>${totalPages}</button></li>`;
   }
   // ______вставляю кнопку вперед________
   if (page < totalPages + 1) {
     liTag += `<li class="btn_next"><button type="button"><svg class="paginations__icon">
-        <use href="../img/icons.svg#icon-caret-right"></use>
+        <use href="${icons}#icon-caret-right"></use>
       </svg></button></li>`;
   }
   // ______закинула розмітку________
