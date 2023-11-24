@@ -1,41 +1,12 @@
-/* .container {
-    margin: 0 auto;
-    max-width: 375px;
-    padding-left: 20px;
-    padding-right: 20px;
-    outline: 1px solid red;
-  }
-  @media (min-width: 768px) {
-    .container {
-      max-width: 768px;
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-  }
-  
-  @media (min-width: 1440px) {
-    .container {
-      max-width: 1440px;
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  } */
-
 @media screen and (min-width: 1440px) {
   .aside-wrappeer {
     display: flex;
     flex-wrap: wrap;
     width: 275px;
+    /* BULLSHIT */
+    padding-top: 60px;
   }
 }
-
-/* .aside-wrappeer{
-    @media screen and (min-width: 1440px) {
-        display: flex;
-        flex-wrap: wrap;
-        width: 275px;
-    }
-} */
 
 .popular {
   padding-bottom: 80px;
@@ -53,13 +24,6 @@
   }
   }
 
-/* .popular-list {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-  }
-} */
 
 @media screen and (min-width: 768px) {
   .popular-list {
@@ -84,10 +48,6 @@
   padding: 12px;
   border-radius: 10px;
   background-color: var(--third-bg);
-
-  /* @media screen and (max-width: 375px) {
-    width: 100%;
-  } */
 }
 
 @media screen and (max-width: 375px) {
@@ -95,12 +55,6 @@
     width: 100%;
   }
 }
-
-/* .popular-item:not(:last-child) {
-  @media screen and (max-width: 767px) {
-    margin-bottom: 14px;
-  }
-} */
 
 @media screen and (max-width: 767px) {
   .popular-item:not(:last-child) {
@@ -133,10 +87,6 @@
   line-height: 1.1;
   margin-bottom: 12px;
 
-  /* @media screen and (min-width: 768px) {
-    font-size: 20px;
-    line-height: 1.1;
-  } */
 }
 
 @media screen and (min-width: 768px) {
@@ -161,11 +111,6 @@
   line-height: 1.2;
   color: var(--black-transparent);
 
-  /* @media screen and (min-width: 768px) {
-    font-weight: 400;
-    font-size: 12;
-    line-height: 1.1;
-  } */
 }
 
 @media screen and (min-width: 768px) {
@@ -226,11 +171,14 @@
 }
 
 /*--------------------------------------------*/
+.popular-item,
+.discount-item{
+  cursor: default;
+}
+
 .discount {
   padding-bottom: 80px;
-  /* @media screen and (min-width: 1440px) {
-    width: 100%;
-  } */
+
 }
 
 @media screen and (min-width: 768px) {
@@ -240,13 +188,14 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .discount {
+  .discount,
+  .popular {
+    padding-bottom: 0;
     width: 100%;
   }
 }
 
 .discount-caption {
-  /* font-family: ; */
   font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
@@ -254,16 +203,6 @@
   margin-bottom: 20px;
 }
 
-/* .discount-list {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 32px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    display: block;
-  }
-} */
 @media screen and (min-width: 768px) {
   .discount-list {
     display: flex;
@@ -280,7 +219,6 @@
 .discount-item {
   position: relative;
   width: 100%;
-  /* width: 335px; */
   padding: 16px;
   border-radius: 10px;
   background-color: var(--third-bg);
@@ -298,15 +236,6 @@
   }
 }
 
-/* .discount-item:not(:last-child) {
-  @media screen and (max-width: 767px) {
-    margin-bottom: 20px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 20px;
-  }
-} */
 
 .discount-img-wrapper {
   position: relative;
@@ -347,6 +276,21 @@
   border-radius: 50%;
 }
 
+
+.discount-btn .discount-desc-added{
+  display: none;
+}
+
+.discount-btn.is-added .discount-desc-added{
+  display: block;
+}
+
+.discount-btn.is-added .discount-desc-basket{
+  display: none;
+}
+
+
+
 .discount-desc-svg {
   position: absolute;
   top: 50%;
@@ -372,10 +316,6 @@
   z-index: 1;
   background-color: var(--btn-green-dark);
   fill: var(--third-bg);
-
-  /* @media screen and (min-width: 1440px) {
-    top: -3px;
-  } */
 }
 
 @media screen and (min-width: 1440px) {
