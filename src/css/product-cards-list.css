@@ -5,6 +5,7 @@
   padding: 40px 0;
 }
 .products-card-item {
+  cursor: default;
   max-width: 335px;
   height: auto;
   border-radius: 20px;
