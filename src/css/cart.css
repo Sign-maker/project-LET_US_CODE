@@ -1,0 +1,139 @@
+.your-order {
+  padding: 80px 0;
+}
+.order-text {
+  font-size: 24px;
+  line-height: 1.16;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.order-prise {
+  display: flex;
+  padding: 18px 18px 14px 18px;
+  border-radius: 8px;
+  background: rgba(109, 132, 52, 0.05);
+  max-width: 335px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.order-total {
+  font-size: 18px;
+  line-height: 1.1;
+  margin-right: auto;
+}
+.orser-sum {
+  color: rgba(1, 1, 1, 0.2);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.16;
+  margin-right: 4px;
+  margin-top: auto;
+}
+.order-prise-total {
+  font-size: 24px;
+  line-height: 1.16;
+}
+.order-form {
+  display: flex;
+  flex-direction: column;
+}
+.order-input {
+  border-radius: 30px;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+  display: inline-flex;
+  padding: 12px 20px;
+  justify-content: center;
+  align-items: center;
+  max-width: 335px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+.order-input::placeholder {
+  color: rgba(1, 1, 1, 0.5);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.order-btn {
+  border-radius: 30px;
+  background: var(--second-bg);
+  display: inline-flex;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  max-width: 335px;
+  width: 100%;
+  border: none;
+  color: var(--main-bg);
+  font-size: 14px;
+  font-weight: 500;
+}
+/* ===============================================================================
+=============================================================================== */
+
+@media (min-width: 768px) {
+  .your-order {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+  .order-text {
+    font-size: 32px;
+    line-height: 1;
+  }
+  .order-prise {
+    max-width: 590px;
+    padding: 14px 28px;
+    margin-bottom: 40px;
+  }
+  .order-total {
+    font-size: 20px;
+  }
+  .order-prise-total {
+    font-size: 32px;
+    line-height: 1;
+  }
+  .order-input {
+    padding: 15px 20px;
+    max-width: 359px;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+  .order-input::placeholder {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .order-btn {
+    max-width: 215px;
+    padding: 15px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+@media (min-width: 1440px) {
+  .cart-content-container {
+    display: flex;
+    gap: 101px;
+  }
+  .your-order {
+    width: 100%;
+    padding: 0;
+  }
+  .order-input {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  #subscription-form {
+    display: flex;
+  }
+  .cart-list {
+    width: 100%;
+  }
+  .order-btn {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
