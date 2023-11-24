@@ -1,8 +1,27 @@
-.scroll-content {
+.delete-all-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  margin-right: 7px;
+  margin-left: auto;
+  padding: 0;
+}
+.text-delete-all {
+  color: var(--btn-black);
+  font-size: 14px;
+  line-height: 1.28;
+  font-weight: 500;
+}
+.delete-all-btn svg {
+  width: 24px;
+  height: 24px;
 }
 
 .cart-list {
-  border: 1px solid blueviolet;
+  /* border: 1px solid blueviolet; */
   max-height: 485px;
   overflow: auto;
 }
@@ -72,6 +91,14 @@
 
 
 @media screen and (min-width: 768px) {
+  .delete-all-btn {
+    margin-right: 39px;
+  }
+  .text-delete-all {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
   .cart-list {
     max-height: 600px;
   }
@@ -113,7 +140,4 @@
     width: 20px;
     height: 20px;
   }
-}
-
-@media screen and (min-width: 1440px) {
 }
