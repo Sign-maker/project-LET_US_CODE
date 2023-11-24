@@ -6,6 +6,7 @@ import './select';
 import './modal-success';
 import './markup-product-list';
 import './aside';
+import './subscription';
 
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage } from './local-storage-api';
