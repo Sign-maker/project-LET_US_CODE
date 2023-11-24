@@ -1,55 +1,84 @@
 import { FoodBoutiqueAPI } from './food-api';
+import icons from '../img/icons.svg';
+import { Storage } from './local-storage-api';
 
 const foodBoutiqueAPI = new FoodBoutiqueAPI();
+
+const discountStorage = new Storage('discount-storage');
+const popularStorage = new Storage('popularity-storage');
+const shopStorage = new Storage('shop-storage');
+
 
 const popularListRef = document.querySelector('.popular-list');
 const discountListRef = document.querySelector('.discount-list');
 
-async function popularProd() {
-  try {
-    const popularProductsData = await foodBoutiqueAPI.getPopularProducts(); 
+popularListRef.addEventListener('click', onPopularCardClick);
+discountListRef.addEventListener('click', onDiscountCardClick);
 
-    setToLocalStorage("popularProducts", popularProductsData)
 
-    popularListRef.innerHTML = markupPopular(popularProductsData);
-  } catch (error) {
-    error => console.log('ERROR', error);
-  }
+
+renderPopularProd(popularListRef,popularStorage.getValue())
+renderDiscountProd(discountListRef,discountStorage.getValue())
+// popularProd();
+// discountedProd();
+
+// async function popularProd() {
+//   try {
+//     const popularProductsData = await foodBoutiqueAPI.getPopularProducts();
+
+//     popularListRef.innerHTML = markupPopular(popularProductsData);
+//   } catch (error) {
+//     error => console.log('ERROR', error);
+//   }
+// }
+
+// async function discountedProd() {
+//   try {
+//     const discountProdData = await foodBoutiqueAPI.getDiscountedProducts();
+
+//     discountListRef.innerHTML = markupDiscount(discountProdData);
+//   } catch (error) {
+//     error => console.log('ERROR', error);
+//   }
+// }
+
+//EXPORT TO HOME.JS STRING --------->  66
+
+ function renderPopularProd(listenerPopularListRef, dataPopularProduct) {
+  listenerPopularListRef.innerHTML = markupPopular(dataPopularProduct);
 }
-popularProd();
 
-async function discountedProd() {
-  try {
-    const discountProdData = await foodBoutiqueAPI.getDiscountedProducts();
+// EXPORT TO HOME.JS STRING --------->  79
 
-    setToLocalStorage("discountProducts", discountProdData)
-
-    discountListRef.innerHTML = markupDiscount(discountProdData);
-  } catch (error) {
-    error => console.log('ERROR', error);
-  }
+ function renderDiscountProd(listenerDiscountListRef, dataDiscountProduct) {
+    listenerDiscountListRef.innerHTML = markupDiscount(dataDiscountProduct);
 }
 
-discountedProd();
-
-popularListRef.addEventListener('click', onPopularCardClick)
-function onPopularCardClick (e) {
-  if (!e.target.closest('li') || e.target.closest('button')) {
-    return
+function onPopularCardClick(e) {
+  if (!e.target.closest('a') || e.target.closest('button')) {
+    return;
   }
   console.dir('THIS IS FOR MODAL CLICK');
 }
 
-discountListRef.addEventListener('click', onDiscountCardClick)
-function onDiscountCardClick (e) {
-  if (!e.target.closest('li') || e.target.closest('button')) {
-    return
-  }
-  console.dir('THIS IS FOR MODAL CLICK');
+function onDiscountCardClick(e) {
+  if (!e.target.closest('button')) return;
+
+  const li = e.target.closest('li');
+  const idCard = li.dataset.id;
+
+  const getArrFromDiscountStorage = discountStorage.getValue();
+
+  const newOrderToCart = findElInDiscountStorage(getArrFromDiscountStorage, idCard);
+  console.log(newOrderToCart);
+
+  shopStorage.setValue(newOrderToCart)
+
+  e.target.closest('button').classList.add('is-added');
 }
 
-function setToLocalStorage (name,arr) {
-  localStorage.setItem(`${name}`, JSON.stringify(arr))
+function findElInDiscountStorage(arr, idCard) {
+  return arr.find(el => el._id === idCard);
 }
 
 function markupPopular(obj) {
@@ -58,14 +87,18 @@ function markupPopular(obj) {
       const { _id, name, img, category, size, popularity } = item;
       return `<li class="popular-item" data-id="${_id}">
         <div class="popular-img-wrapper">
+         <a class="products-card-link" href="#"> 
           <img
             src="${img}"
             alt="${name}"
             class="popular-img"
           />
+          </a>
         </div>
         <div class="popular-desc-wrapper">
+          <a class="products-card-link" href="#">
           <h3 class="popular-desc-name">${name}</h3>
+          </a>
           <h4 class="popular-desc-text">
             Category: <span class="popular-desc-span">${category}</span>
           </h4>
@@ -85,12 +118,12 @@ function markupPopular(obj) {
         >
           <svg class="popular-desc-svg">
             <use
-              href="./icons.svg#icon-shopping-cart"
-              class="popular-desc-basket "
+              href="${icons}#icon-shopping-cart"
+              class="popular-desc-basket is-hidden"
             ></use>
             <use
-              href="./icons.svg#icon-check"
-              class="popular-desc-added is-hidden"
+              href="${icons}#icon-check"
+              class="popular-desc-added "
             ></use>
           </svg>
         </button>
@@ -106,16 +139,20 @@ function markupDiscount(obj) {
       const { _id, name, img, price } = item;
 
       return `<li class="discount-item" data-id="${_id}">
+        <a class="products-card-link" href="#">
         <div class="discount-img-wrapper">
           <img
             src="${img}"
             alt="${name}"
             class="discount-img"
-          />
+          />   
         </div>
-        <div class="discount-desc-wrapper">
-          <p class="discount-desc-text">${name}</p>
-          <div class="discount-box">
+        </a>
+        <div class="discount-desc-wrapper">    
+        <a class="products-card-link" href="#">      
+            <p class="discount-desc-text">${name}</p> 
+            </a> 
+          <div class="discount-box">    
             <p class="discount-desc-text">$${price}</p>
             <button
               type="button"
@@ -124,12 +161,12 @@ function markupDiscount(obj) {
             >
               <svg class="discount-desc-svg">
                 <use
-                  href="./icons.svg#icon-shopping-cart"
-                  class="discount-desc-basket is-hidden"
+                  href="${icons}#icon-shopping-cart"
+                  class="discount-desc-basket "
                 ></use>
                 <use
-                  href="./icons.svg#icon-check"
-                  class="discount-desc-added "
+                  href="${icons}#icon-check"
+                  class="discount-desc-added"
                 ></use>
               </svg>
             </button>
@@ -137,10 +174,12 @@ function markupDiscount(obj) {
         </div>
         <div class="discount-box-label">
           <svg class="discount-label-svg">
-            <use href="./icons.svg#icon-discount"></use>
+            <use href="${icons}#icon-discount"></use>
           </svg>
         </div>
       </li>`;
     })
     .join('');
 }
+
+// export {renderPopularProd, renderDiscountProd, markupPopular, markupDiscount}
