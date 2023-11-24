@@ -243,7 +243,6 @@
 }
 
 
-
 /* ----------MEDIA------------ */
 
 @media (min-width: 768px) {
@@ -328,4 +327,21 @@
     .footer-form-button {
         margin-bottom: 148px;
     }
+
 }
+
+/* ---sweetalert2--- */
+
+.small-popup {
+    width: 450px;
+}
+
+.custom-title {
+    font-size: 20px;
+}
+
+.custom-icon svg {
+    width: 24px;
+    height: 24px;
+}
+

@@ -1,4 +1,5 @@
 import { FoodBoutiqueAPI } from './food-api.js';
+import Swal from 'sweetalert2';
 
 const foodApi = new FoodBoutiqueAPI();
 
@@ -12,13 +13,39 @@ form.addEventListener('submit', async function (event) {
 
   try {
     await foodApi.subscribeToNewsletter({ email: emailValue });
+    emailInput.value = '';
+  
+    Swal.fire({
+      icon: 'success',
+      title: 'Successfully subscribed!',
+      showConfirmButton: true,
+      confirmButtonColor: '#6D8434',
+      showCancelButton: false,
+      customClass: {
+        popup: 'small-popup',
+        title: 'custom-title',
+        icon: 'custom-icon',
 
-    alert('Successfully subscribed!');
+      },
+    });
   } catch (error) {
     console.error('Error:', error);
 
-    alert('There was an error subscribing. Please try again.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'There was an error subscribing. Please try again.',
+      showConfirmButton: true,
+      confirmButtonColor: '#6D8434',
+      showCancelButton: false,
+      customClass: {
+        popup: 'small-popup',
+        title: 'custom-title',
+        icon: 'custom-icon',
+      },
+    });
   }
 });
+
 
 
