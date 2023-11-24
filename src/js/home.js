@@ -1,3 +1,6 @@
+
+import './subscription';
+
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
