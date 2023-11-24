@@ -1,47 +1,47 @@
-import{S as n}from"./assets/local-storage-api-3d6fd6cf.js";import{a as i,S as b}from"./assets/vendor-bb007519.js";i.defaults.baseURL="https://food-boutique.b.goit.study/api";class f{constructor(){}async getProductCategories(){const{data:e}=await i("/products/categories");return e}async getProducts(e){const{data:s}=await i("/products",{params:{...e}});return s}async getProductDetails(e){const{data:s}=await i(`/products/${e}`);return s}async getPopularProducts(){const{data:e}=await i("/products/popular");return e}async getDiscountedProducts(){const{data:e}=await i("/products/discount");return e}async subscribeToNewsletter(e){return await i.post("/subscription",e,{headers:{"Content-Type":"application/json"}})}async placeOrder(e){const{data:s}=await i.post("/orders",e,{headers:{"Content-Type":"application/json"}});return s}}const $=new f,A=document.querySelector('form[name="email_address"]');A.addEventListener("submit",async function(t){t.preventDefault();const e=t.currentTarget.elements["footer-input-email"],s=e.value;try{await $.subscribeToNewsletter({email:s}),e.value="",b.fire({icon:"success",title:"Successfully subscribed!",showConfirmButton:!0,confirmButtonColor:"#6D8434",showCancelButton:!1,customClass:{popup:"small-popup",title:"custom-title",icon:"custom-icon"}})}catch(o){console.error("Error:",o),b.fire({icon:"error",title:"Error",text:"There was an error subscribing. Please try again.",showConfirmButton:!0,confirmButtonColor:"#6D8434",showCancelButton:!1,customClass:{popup:"small-popup",title:"custom-title",icon:"custom-icon"}})}});const l="/project-LET_US_CODE/assets/icons-9e2cefcb.svg";function x(t){return t.map(({category:e,img:s,is10PercentOff:o,name:a,popularity:c,price:r,size:u,_id:m})=>`<li class="products-card-item" data-id="${m}">
-                <a class="products-card-link" href="#"><img class="product-image" src="${s}" alt="${a}" /></a>
-                <a class="products-card-link" href="#"><h4 class="product-name">${a}</h4></a>
+import{S as a}from"./assets/local-storage-api-57177191.js";import{a as r,S as w}from"./assets/vendor-bb007519.js";r.defaults.baseURL="https://food-boutique.b.goit.study/api";class h{constructor(){}async getProductCategories(){const{data:s}=await r("/products/categories");return s}async getProducts(s){const{data:e}=await r("/products",{params:{...s}});return e}async getProductDetails(s){const{data:e}=await r(`/products/${s}`);return e}async getPopularProducts(){const{data:s}=await r("/products/popular");return s}async getDiscountedProducts(){const{data:s}=await r("/products/discount");return s}async subscribeToNewsletter(s){return await r.post("/subscription",s,{headers:{"Content-Type":"application/json"}})}async placeOrder(s){const{data:e}=await r.post("/orders",s,{headers:{"Content-Type":"application/json"}});return e}}const O=new h,x=document.querySelector('form[name="email_address"]');x.addEventListener("submit",async function(t){t.preventDefault();const s=t.currentTarget.elements["footer-input-email"],e=s.value;try{await O.subscribeToNewsletter({email:e}),s.value="",w.fire({icon:"success",title:"Successfully subscribed!",showConfirmButton:!0,confirmButtonColor:"#6D8434",showCancelButton:!1,customClass:{popup:"small-popup",title:"custom-title",icon:"custom-icon"}})}catch(c){console.error("Error:",c),w.fire({icon:"error",title:"Error",text:"There was an error subscribing. Please try again.",showConfirmButton:!0,confirmButtonColor:"#6D8434",showCancelButton:!1,customClass:{popup:"small-popup",title:"custom-title",icon:"custom-icon"}})}});const p="/project-LET_US_CODE/assets/icons-9e2cefcb.svg";function D(t){return t.map(({category:s,img:e,is10PercentOff:c,name:o,popularity:l,price:d,size:g,_id:v})=>`<li class="products-card-item" data-id="${v}">
+                <a class="products-card-link" href="#"><img class="product-image" src="${e}" alt="${o}" /></a>
+                <a class="products-card-link" href="#"><h4 class="product-name">${o}</h4></a>
                 <ul class="product-description-list">
-                        <li><p class="product-text">Category:<span class="product-text-black"> ${e}</span>Size:<span class="product-text-black"> ${u}</span></p></li>
-                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${c}</span></p></li>
+                        <li><p class="product-text">Category:<span class="product-text-black"> ${s}</span>Size:<span class="product-text-black"> ${g}</span></p></li>
+                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${l}</span></p></li>
                 </ul>
                 <div class="wrap-prise-and-btn">
-                    <p class="price">$${r}</p>
+                    <p class="price">$${d}</p>
                     <button class="btn btn-shopping-cart js-add-btn">
                         <svg class="icon-shopping-cart" width="18" height="18">
-                            <use href="${l}#icon-shopping-cart"></use>
+                            <use href="${p}#icon-shopping-cart"></use>
 
                             <use
-                              href="${l}#icon-check"
+                              href="${p}#icon-check"
                               class="popular-desc-added is-hidden"
                             ></use>
                         </svg>
                         
                     </button>
                 </div>
-            </li>`).join("")}function T(t,e){t.innerHTML=x(e)}const O="filter-storage",D="category-storage",q="product-storage",I="popularity-storage",R="discount-storage",_="shop-storage",B={keyword:null,category:null,page:1,limit:9},M=document.querySelector(".product-card-list"),g=new f,w=new n(O),V=new n(D),y=new n(q),N=new n(I),G=new n(R);new n(_);const j=w.getItem??B;H(j);function H(t){F(),U(t),z(),Y()}async function F(){try{const t=await g.getProductCategories();V.setValue(t)}catch(t){console.log(t)}finally{}}async function U(t){try{const e=await g.getProducts(t);y.setValue(e),w.setValue(t),T(M,y.getValue().results)}catch(e){console.log(e)}finally{}}async function z(){try{const t=await g.getPopularProducts();N.setValue(t)}catch(t){console.log(t)}finally{}}async function Y(){try{const t=await g.getDiscountedProducts();G.setValue(t)}catch(t){console.log(t)}finally{}}const d=new f;async function K(){try{const t=await d.getProductCategories();console.log("productCategories",t);const e={keyword:"apple",category:"Fresh_Produce",byABC:!0,byPrice:!0,byPopularity:!0,page:1,limit:6},s=await d.getProducts(e);console.log("products",s);const o="640c2dd963a319ea671e3676",a=await d.getProductDetails(o);console.log("productsDetails",a);const c=await d.getPopularProducts();console.log("popularProducts",c);const r=await d.getDiscountedProducts();console.log("discountedProducts",r);const u={email:"test@gmail.com",products:[{productId:"640c2dd963a319ea671e383b",amount:2}]},m=await d.placeOrder(u);console.log("placeOrder",m);const L={email:"test@gmail.com"},E=await d.subscribeToNewsletter(L);console.log("subscribeToNewsletter",E)}catch(t){console.log("помилка",t.response.data.message)}finally{}}K();const v=new n("discount-storage"),W=new n("popularity-storage"),J=new n("shop-storage"),P=document.querySelector(".popular-list"),k=document.querySelector(".discount-list");P.addEventListener("click",Z);k.addEventListener("click",tt);Q(P,W.getValue());X(k,v.getValue());function Q(t,e){t.innerHTML=st(e)}function X(t,e){t.innerHTML=ot(e)}function Z(t){!t.target.closest("a")||t.target.closest("button")||console.dir("THIS IS FOR MODAL CLICK")}function tt(t){if(!t.target.closest("button"))return;const s=t.target.closest("li").dataset.id,o=v.getValue(),a=et(o,s);console.log(a),J.setValue(a),t.target.closest("button").classList.add("is-added")}function et(t,e){return t.find(s=>s._id===e)}function st(t){return t.map(e=>{const{_id:s,name:o,img:a,category:c,size:r,popularity:u}=e;return`<li class="popular-item" data-id="${s}">
+            </li>`).join("")}function A(t,s){t.innerHTML=D(s)}const q="filter-storage",I="category-storage",R="product-storage",M="popularity-storage",_="discount-storage",B="shop-storage",V={keyword:null,category:null,page:1,limit:9},N=document.querySelector(".product-card-list"),f=new h,S=new a(q),G=new a(I),b=new a(R),j=new a(M),H=new a(_);new a(B);const F=S.getItem??V;U(F);function U(t){z(),Y(t),K(),W()}async function z(){try{const t=await f.getProductCategories();G.setValue(t)}catch(t){console.log(t)}finally{}}async function Y(t){try{const s=await f.getProducts(t);b.setValue(s),S.setValue(t),A(N,b.getValue().results)}catch(s){console.log(s)}finally{}}async function K(){try{const t=await f.getPopularProducts();j.setValue(t)}catch(t){console.log(t)}finally{}}async function W(){try{const t=await f.getDiscountedProducts();H.setValue(t)}catch(t){console.log(t)}finally{}}const u=new h;async function J(){try{const t=await u.getProductCategories();console.log("productCategories",t);const s={keyword:"apple",category:"Fresh_Produce",byABC:!0,byPrice:!0,byPopularity:!0,page:1,limit:6},e=await u.getProducts(s);console.log("products",e);const c="640c2dd963a319ea671e3676",o=await u.getProductDetails(c);console.log("productsDetails",o);const l=await u.getPopularProducts();console.log("popularProducts",l);const d=await u.getDiscountedProducts();console.log("discountedProducts",d);const g={email:"test@gmail.com",products:[{productId:"640c2dd963a319ea671e383b",amount:2}]},v=await u.placeOrder(g);console.log("placeOrder",v);const $={email:"test@gmail.com"},T=await u.subscribeToNewsletter($);console.log("subscribeToNewsletter",T)}catch(t){console.log("помилка",t.response.data.message)}finally{}}J();const P=new a("discount-storage"),Q=new a("popularity-storage"),X=new a("shop-storage"),k=document.querySelector(".popular-list"),L=document.querySelector(".discount-list");k.addEventListener("click",st);L.addEventListener("click",et);Z(k,Q.getValue());tt(L,P.getValue());function Z(t,s){t.innerHTML=ct(s)}function tt(t,s){t.innerHTML=at(s)}function st(t){!t.target.closest("a")||t.target.closest("button")||console.dir("THIS IS FOR MODAL CLICK")}function et(t){if(!t.target.closest("button"))return;const e=t.target.closest("li").dataset.id,c=P.getValue(),o=ot(c,e);console.log(o),X.setValue(o),t.target.closest("button").classList.add("is-added")}function ot(t,s){return t.find(e=>e._id===s)}function ct(t){return t.map(s=>{const{_id:e,name:c,img:o,category:l,size:d,popularity:g}=s;return`<li class="popular-item" data-id="${e}">
         <div class="popular-img-wrapper">
          <a class="products-card-link" href="#"> 
           <img
-            src="${a}"
-            alt="${o}"
+            src="${o}"
+            alt="${c}"
             class="popular-img"
           />
           </a>
         </div>
         <div class="popular-desc-wrapper">
           <a class="products-card-link" href="#">
-          <h3 class="popular-desc-name">${o}</h3>
+          <h3 class="popular-desc-name">${c}</h3>
           </a>
           <h4 class="popular-desc-text">
-            Category: <span class="popular-desc-span">${c}</span>
+            Category: <span class="popular-desc-span">${l}</span>
           </h4>
           <div class="popular-desc-inner">
             <h4 class="popular-desc-text">
-              Size: <span class="popular-desc-span">${r}</span>
+              Size: <span class="popular-desc-span">${d}</span>
             </h4>
             <h4 class="popular-desc-text">
-              Popularity: <span class="popular-desc-span">${u}</span>
+              Popularity: <span class="popular-desc-span">${g}</span>
             </h4>
           </div>
         </div>
@@ -52,31 +52,31 @@ import{S as n}from"./assets/local-storage-api-3d6fd6cf.js";import{a as i,S as b}
         >
           <svg class="popular-desc-svg">
             <use
-              href="${l}#icon-shopping-cart"
+              href="${p}#icon-shopping-cart"
               class="popular-desc-basket is-hidden"
             ></use>
             <use
-              href="${l}#icon-check"
+              href="${p}#icon-check"
               class="popular-desc-added "
             ></use>
           </svg>
         </button>
-      </li>`}).join("")}function ot(t){return t.slice(0,2).map(s=>{const{_id:o,name:a,img:c,price:r}=s;return`<li class="discount-item" data-id="${o}">
+      </li>`}).join("")}function at(t){return t.slice(0,2).map(e=>{const{_id:c,name:o,img:l,price:d}=e;return`<li class="discount-item" data-id="${c}">
         <a class="products-card-link" href="#">
         <div class="discount-img-wrapper">
           <img
-            src="${c}"
-            alt="${a}"
+            src="${l}"
+            alt="${o}"
             class="discount-img"
           />   
         </div>
         </a>
         <div class="discount-desc-wrapper">    
         <a class="products-card-link" href="#">      
-            <p class="discount-desc-text">${a}</p> 
+            <p class="discount-desc-text">${o}</p> 
             </a> 
           <div class="discount-box">    
-            <p class="discount-desc-text">$${r}</p>
+            <p class="discount-desc-text">$${d}</p>
             <button
               type="button"
               class="discount-btn btn"
@@ -84,11 +84,11 @@ import{S as n}from"./assets/local-storage-api-3d6fd6cf.js";import{a as i,S as b}
             >
               <svg class="discount-desc-svg">
                 <use
-                  href="${l}#icon-shopping-cart"
+                  href="${p}#icon-shopping-cart"
                   class="discount-desc-basket "
                 ></use>
                 <use
-                  href="${l}#icon-check"
+                  href="${p}#icon-check"
                   class="discount-desc-added"
                 ></use>
               </svg>
@@ -97,10 +97,10 @@ import{S as n}from"./assets/local-storage-api-3d6fd6cf.js";import{a as i,S as b}
         </div>
         <div class="discount-box-label">
           <svg class="discount-label-svg">
-            <use href="${l}#icon-discount"></use>
+            <use href="${p}#icon-discount"></use>
           </svg>
         </div>
-      </li>`}).join("")}const p=document.querySelector(".modal-prod-wrapper");function at(t){console.log(t),p.classList.add("modal-active"),document.body.classList.add("stop-scroll"),p.innerHTML=`
+      </li>`}).join("")}const m=document.querySelector(".modal-prod-wrapper");function rt(t){console.log(t),m.classList.add("modal-active"),document.body.classList.add("stop-scroll"),m.innerHTML=`
 <div class="modal-prod-card">
 <button type="button" class="modal-prod-close-btn">
   <svg class="modal-prod-close-icon" width="22" height="22">
@@ -137,5 +137,5 @@ import{S as n}from"./assets/local-storage-api-3d6fd6cf.js";import{a as i,S as b}
 </button>
 </div>
 </div>
-`,document.querySelector(".modal-prod-close-btn").addEventListener("click",()=>h()),window.addEventListener("click",S),window.addEventListener("keydown",C)}function h(){p.classList.remove("modal-active"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",S),window.removeEventListener("keydown",C)}function S(t){t.target===p&&h()}function C(t){t.keyCode===27&&h()}document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".custom-select").forEach(e=>{const s=e.querySelector(".selected-option"),o=e.querySelector(".select-options"),a=o.querySelectorAll("li");s.addEventListener("click",function(){const c=this.getAttribute("aria-expanded")==="true"||!1;this.setAttribute("aria-expanded",!c),o.setAttribute("aria-hidden",c)}),a.forEach(c=>{c.addEventListener("click",function(){s.textContent=this.textContent,s.setAttribute("aria-expanded","false"),o.setAttribute("aria-hidden","true")}),c.addEventListener("keydown",function(r){(r.key==="Enter"||r.key===" ")&&(s.textContent=this.textContent,s.setAttribute("aria-expanded","false"),o.setAttribute("aria-hidden","true"))})}),e.addEventListener("blur",function(){s.setAttribute("aria-expanded","false"),o.setAttribute("aria-hidden","true")})})});document.querySelector(".modal-order-wrap");const ct=document.querySelector(".product-card-list");ct.addEventListener("click",rt);function rt(t){if(t.preventDefault(),t.target.nodeName==="IMG"||t.target.nodeName==="H4")at();else return}
+`,document.querySelector(".modal-prod-close-btn").addEventListener("click",()=>y()),window.addEventListener("click",C),window.addEventListener("keydown",E)}function y(){m.classList.remove("modal-active"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",C),window.removeEventListener("keydown",E)}function C(t){t.target===m&&y()}function E(t){t.keyCode===27&&y()}const n=document.querySelector(".custom-select-ctg"),nt=n.querySelector(".categories-btn"),it=n.querySelectorAll(".text-options"),lt=n.querySelector(".selected-option");nt.addEventListener("click",()=>{n.classList.toggle("active")});it.forEach(t=>{t.addEventListener("click",()=>{let s=t.innerText;lt.value=s,n.classList.remove("active"),console.log(s)})});const i=document.querySelector(".custom-select-sort"),dt=i.querySelector(".sort-btn"),ut=i.querySelectorAll(".text-options-sort"),pt=i.querySelector(".selected-option");dt.addEventListener("click",()=>{i.classList.toggle("active")});ut.forEach(t=>{t.addEventListener("click",()=>{let s=t.innerText;pt.value=s,i.classList.remove("active")})});document.addEventListener("click",function(t){const s=n.contains(t.target),e=i.contains(t.target);s||n.classList.remove("active"),e||i.classList.remove("active")});document.addEventListener("keyup",function(t){t.code==="Escape"&&(n.classList.remove("active"),i.classList.remove("active"))});document.querySelector(".modal-order-wrap");const gt=document.querySelector(".product-card-list");gt.addEventListener("click",mt);function mt(t){if(t.preventDefault(),t.target.nodeName==="IMG"||t.target.nodeName==="H4")rt();else return}
 //# sourceMappingURL=commonHelpers2.js.map

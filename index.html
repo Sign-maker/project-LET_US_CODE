@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/project-LET_US_CODE/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Boutique</title>
     
+
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-3d6fd6cf.js">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-57177191.js">
     <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/vendor-bb007519.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-7c22b59c.css">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-da3b444f.css">
   </head>
   <body>
     <header class="header">
@@ -116,47 +118,72 @@
           <div class="filters">
   <p class="filter-text">Filters:</p>
   <div class="filter-container">
-    <form class="search-form">
-      <div class="custom-input">
-        <input
-          class="search-input"
-          type="text"
-          name="search"
-          placeholder="Search for anything"
-        />
-        <button class="search-btn">
-          <span>
-            <svg width="20" height="20">
-              <use href="/project-LET_US_CODE/assets/icons-9e2cefcb.svg#icon-mag-search" />
-            </svg>
-          </span>
-        </button>
-      </div>
+    <form class="custom-input">
+      <input
+        class="search-input"
+        type="text"
+        name="search"
+        placeholder="Search for anything"
+      />
+
+      <button class="search-btn filter-btn" type="button">
+        <span>
+          <svg width="20" height="20">
+            <use href="/project-LET_US_CODE/assets/icons-9e2cefcb.svg#icon-mag-search" />
+          </svg>
+        </span>
+      </button>
     </form>
 
-    <div class="custom-select " tabindex="0">
-      <span class="selected-option" tabindex="0" contenteditable="true">Categories</span>
-      <ul class="select-options select-opt" tabindex="0">
-        <li class="text-options" tabindex="0">Breads / Bakery</li>
-        <li class="text-options" tabindex="0">Prepared Foods</li>
-        <li class="text-options" tabindex="0">Eggs</li>
-      </ul>
+    <div class="custom-select custom-select-ctg">
+      <input
+        type="text"
+        class="selected-option selected-option-ctgr"
+        tabindex="-1"
+        placeholder="Categories"
+        readonly
+        disabled
+      />
+      <button class="categories-btn filter-btn" type="button">
+        <span>
+          <svg width="20" height="20">
+            <use href="/project-LET_US_CODE/assets/icons-9e2cefcb.svg#icon-mag-search" />
+          </svg>
+        </span>
+      </button>
+      <div class="select-options select-opt" tabindex="0">
+        <div class="text-options" tabindex="0">Breads / Bakery</div>
+        <div class="text-options" tabindex="0">Prepared Foods</div>
+        <div class="text-options" tabindex="0">Eggs</div>
+      </div>
     </div>
 
-    <div class="custom-select" tabindex="0">
-      <span class="selected-option sort-select" tabindex="0" contenteditable="true">Sort</span>
-      <ul class="select-options" tabindex="0">
-        <li class="text-options-sort" tabindex="0">A to Z</li>
-        <li class="text-options-sort" tabindex="0">Z to A</li>
-        <li class="text-options-sort" tabindex="0">Less than 10$</li>
-        <li class="text-options-sort" tabindex="0">Greater than 10$</li>
-      </ul>
+    <div class="custom-select custom-select-sort">
+      <input
+        type="text"
+        class="selected-option sort-select"
+        tabindex="0"
+        placeholder="Sort"
+        tabindex="-1"
+        readonly
+        disabled
+      />
+      <button class="sort-btn filter-btn" type="button">
+        <span>
+          <svg width="20" height="20">
+            <use href="/project-LET_US_CODE/assets/icons-9e2cefcb.svg#icon-mag-search" />
+          </svg>
+        </span>
+      </button>
+      <div class="select-options" tabindex="0">
+        <div class="text-options-sort" tabindex="0">A to Z</div>
+        <div class="text-options-sort" tabindex="0">Z to A</div>
+        <div class="text-options-sort" tabindex="0">Less than 10$</div>
+        <div class="text-options-sort" tabindex="0">Greater than 10$</div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
 
 
 
