@@ -101,36 +101,51 @@ const products = {
 // ______ref________
 const pagination = document.querySelector('.pagination');
 const ulTag = document.querySelector('.pagination_list');
-const btnBack = document.querySelector('.btn_back');
-const btnNext = document.querySelector('.btn_next');
+// const btnBack = document.querySelector('.btn_back');
+// const btnNext = document.querySelector('.btn_next');
 console.log(ulTag);
 // ______змінні________
-let totalPages = products.totalPages;
-let page = products.page;
+// let totalPages = products.totalPages;
+// let currentPage = products.page;
 
 // ______слухачі________
 
-const backBtn = btnBack.addEventListener('click', () =>
-  createPagination(totalPages, page - 1)
-);
-console.log(backBtn);
-const forwarBtn = btnNext.addEventListener('click', () =>
-  createPagination(totalPages, page + 1)
-);
+// const backBtn = btnBack.addEventListener('click', () =>
+//   createPagination(totalPages, page - 1)
+// );
+// console.log(backBtn);
+// const forwarBtn = btnNext.addEventListener('click', () =>
+//   createPagination(totalPages, page + 1)
+// );
 
-function createPagination(totalPages, page) {
-  let liTag = '';
-  let activeLi;
-  let beforePages = page - 1;
-  let afterPages = page + 1;
+// btnBack.addEventListener('click', () => {
+//   if (page > 1) {
+//     page--;
+//     createPagination(totalPages, page);
+//   }
+// });
 
-  if (page > 1) {
-    backBtn;
-  }
-  if (page < totalPages) {
-    forwarBtn;
-  }
-}
+// btnNext.addEventListener('click', () => {
+//   if (page < totalPages) {
+//     page++;
+//     createPagination(totalPages, page);
+//   }
+// });
+// function createPagination(totalPages, page) {
+//   let liTag = '';
+//   let activeLi;
+//   let beforePages = page - 1;
+//   let afterPages = page + 1;
+
+//   if (page > 2) {
+//     liTag = `<li class="numb"><button type=button>1</button></li>`;
+//     if (page > 3) {
+//       liTag = `<li class="dots"><span>...</span></li>`;
+//     }
+//   }
+
+//   ulTag.innerHTML = liTag;
+// }
 // ______функція________
 // function createPagination(totalPages, page) {
 //   let liTag = '';
@@ -233,3 +248,62 @@ function createPagination(totalPages, page) {
 //   // -------------------------------------------
 // }
 // createPagination(totalPages, page);
+
+const btnBack = document.querySelector('.btn_back');
+const btnNext = document.querySelector('.btn_next');
+
+let totalPages = 7;
+let currentPage = 2;
+
+function updatePagination() {
+  let liTag = '';
+
+  if (currentPage > 2) {
+    liTag += `<li class="dots"><span>...</span></li>`;
+  }
+
+  for (let page = currentPage - 1; page <= currentPage + 1; page++) {
+    if (page > totalPages || page < 1) {
+      continue;
+    }
+
+    if (currentPage === page) {
+      liTag += `<li class="numb active"><button class="active" type="button">${page}</button></li>`;
+    } else {
+      liTag += `<li class="numb"><button type="button">${page}</button></li>`;
+    }
+  }
+
+  if (currentPage < totalPages - 2) {
+    liTag += `<li class="dots"><span>...</span></li>`;
+  }
+
+  ulTag.innerHTML = liTag;
+
+  const numbButtons = document.querySelectorAll('.numb button');
+
+  numbButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const newPage = parseInt(button.textContent);
+      currentPage = newPage;
+      updatePagination();
+    });
+  });
+}
+
+btnBack.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    updatePagination();
+  }
+});
+
+btnNext.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    updatePagination();
+  }
+});
+
+// Ініціалізація при завантаженні сторінки
+updatePagination();
