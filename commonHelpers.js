@@ -1,4 +1,4 @@
-import{S as d}from"./assets/local-storage-api-c1a4955d.js";const g="shop-storage";new d(g);function m(t){return t.map(({category:e,img:r,is10PercentOff:i,name:a,price:o,size:p,_id:u})=>`<li class="cart-item" data-id="${u}">
+import{S as d}from"./assets/local-storage-api-4fb0926b.js";const g="shop-storage";new d(g);function m(t){return t.map(({category:e,img:r,is10PercentOff:i,name:a,price:o,size:p,_id:u})=>`<li class="cart-item" data-id="${u}">
       <img class="cart-img-product" src="${r}" alt="${a}" />
       <div class="cart-product-description">
           <p class="cart-product-name">${a}</p>

@@ -7,8 +7,8 @@
     <title>Food Boutique Cart</title>
     
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-c1a4955d.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-0b378ec1.css">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-4fb0926b.js">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-cf29723d.css">
   </head>
   <body>
     <header class="header">
@@ -57,7 +57,29 @@
 
 <ul class="cart-list"></ul>
 
-            your order
+            
+<div class="your-order">
+  <p class="order-text">Your Order</p>
+  <div class="order-prise">
+    <p class="order-total">Total</p>
+    <p class="orser-sum">Sum:</p>
+    <p class="order-prise-total">$12,94</p>
+  </div>
+  <div class="order-form">
+    <form id="subscription-form">
+      <label for="email"></label>
+      <input
+        class="order-input"
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Mail: Enter your email"
+      />
+      <button class="order-btn" type="submit">Checkout</button>
+    </form>
+  </div>
+</div>
 
           </div>
         </div>
