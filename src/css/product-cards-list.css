@@ -51,6 +51,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.btn-shopping-cart .products-desc-added{
+  display: none;
+}
+
+.btn-shopping-cart.is-added .products-desc-added{
+  display: block;
+}
+
+.btn-shopping-cart.is-added .products-desc-basket{
+  display: none;
+}
+
 .is-hidden {
   visibility: hidden;
 }
