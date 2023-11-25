@@ -1,2 +1,2 @@
-import{S as o}from"./assets/local-storage-api-545a95e4.js";const S="shop-storage";new o(S);
+import{S as o}from"./assets/subscription-3cafee09.js";import"./assets/vendor-bb007519.js";const r="shop-storage";new o(r);
 //# sourceMappingURL=commonHelpers.js.map
