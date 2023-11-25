@@ -6,4 +6,3 @@ import './js/select';
 import './js/modal-success';
 import './js/product-list-click';
 // import './js/markup-product-list';
-import './cart';
