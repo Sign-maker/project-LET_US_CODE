@@ -36,6 +36,7 @@
 }
 .cart-item:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 .cart-img-product {
   width: 100px;
@@ -88,8 +89,6 @@
   height: 18px;
 }
 
-
-
 @media screen and (min-width: 768px) {
   .delete-all-btn {
     margin-right: 39px;
@@ -103,9 +102,12 @@
     max-height: 600px;
   }
   .cart-item {
-    padding: 40px 0;
+    padding-top: 40px;
     gap: 40px;
     margin-right: 40px;
+  }
+  .cart-item:last-child {
+    padding-bottom: 0;
   }
   .cart-img-product {
     width: 120px;
