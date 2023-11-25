@@ -1,7 +1,10 @@
 .empty-cart {
   padding-top: 86px;
   padding-bottom: 120px;
-  display: inline-block;
+  /* *Коли є товари у кошику */
+  /* display: none; */
+  /* /* *Коли немає товарів у кошику: */
+  /* display: block; */
 }
 .empty-basket-image {
   display: block;
@@ -28,6 +31,8 @@
   font-weight: 400;
   line-height: 1.29;
   width: 279px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (min-width: 768px) {

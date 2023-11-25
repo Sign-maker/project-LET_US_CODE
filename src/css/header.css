@@ -5,6 +5,7 @@
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo-cont {
@@ -35,7 +36,6 @@
 .logo-link {
   display: flex;
   align-items: center;
-  flex-grow: 1;
   gap: 14px;
 }
 

@@ -24,11 +24,11 @@ export function markupProductsList(productsObj) {
                     <p class="price">$${price}</p>
                     <button class="btn btn-shopping-cart js-add-btn">
                         <svg class="icon-shopping-cart" width="18" height="18">
-                            <use href="${icons}#icon-shopping-cart"></use>
+                            <use href="${icons}#icon-shopping-cart" class="products-desc-basket"></use>
 
                             <use
                               href="${icons}#icon-check"
-                              class="popular-desc-added is-hidden"
+                              class="products-desc-added"
                             ></use>
                         </svg>
                         

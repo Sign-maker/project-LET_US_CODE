@@ -34,6 +34,7 @@ form.addEventListener('submit', async function (event) {
     });
   } catch (error) {
     console.error('Error:', error);
+    error;
 
     let errorMessage = 'There was an error subscribing. Please try again.';
 
@@ -56,4 +57,3 @@ form.addEventListener('submit', async function (event) {
     });
   }
 });
-
