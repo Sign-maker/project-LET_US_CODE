@@ -15,7 +15,7 @@ cardListOrder.addEventListener('click', onRemoveOrderFromCartClick);
 function checkedLocalStorage() {
   const getLocalCart =
     // JSON.parse(localStorage.getItem('popularity-storage')) ?? [];
-  JSON.parse(localStorage.getItem('shop-storage')) ?? [];
+    JSON.parse(localStorage.getItem('shop-storage')) ?? [];
 
   const getLocalCartArray = [];
   getLocalCartArray.push(shopStorage.getValue());
@@ -64,7 +64,7 @@ function onRemoveOrderFromCartClick(e) {
 
   const getLocalCart =
     // JSON.parse(localStorage.getItem('shop-storage')) ?? [];
-    shopStorage.getValue() ?? []
+    shopStorage.getValue() ?? [];
 
   const findElementFromLocalStorage = getLocalCart.filter(
     item => item._id !== dataIdItem
