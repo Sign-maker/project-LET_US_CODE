@@ -14,7 +14,7 @@ form.addEventListener('submit', async function (event) {
   try {
     await foodApi.subscribeToNewsletter({ email: emailValue });
     emailInput.value = '';
-  
+
     Swal.fire({
       icon: 'success',
       title: 'Successfully subscribed!',
@@ -25,11 +25,11 @@ form.addEventListener('submit', async function (event) {
         popup: 'small-popup',
         title: 'custom-title',
         icon: 'custom-icon',
-
       },
     });
   } catch (error) {
     console.error('Error:', error);
+    error;
 
     Swal.fire({
       icon: 'error',
@@ -46,6 +46,3 @@ form.addEventListener('submit', async function (event) {
     });
   }
 });
-
-
-

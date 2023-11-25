@@ -1,7 +1,8 @@
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage, ShopStorage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
-import { renderPopularProd, renderDiscountProd} from './aside';
+import { renderPopularProd, renderDiscountProd } from './aside';
+import { filterHandler } from './filter';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -27,7 +28,6 @@ const categoryStorage = new Storage(CATEGORY_STORAGE);
 const productStorage = new Storage(PRODUCT_STORAGE);
 const popularityStorage = new Storage(POPULARITY_STORAGE);
 const discountStorage = new Storage(DISCOUNT_STORAGE);
-const shopStorage = new Storage(SHOP_STORAGE);
 
 const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
 initLoad(filterParams);
@@ -71,7 +71,7 @@ async function getPopularProducts() {
     // loader show
     const popularProducts = await foodBoutique.getPopularProducts();
     popularityStorage.setValue(popularProducts);
-    renderPopularProd (popularProductListRef, popularityStorage.getValue());
+    renderPopularProd(popularProductListRef, popularityStorage.getValue());
   } catch (error) {
     console.log(error);
   } finally {
@@ -84,13 +84,15 @@ async function getDiscountedProducts() {
     // loader show
     const discountedProducts = await foodBoutique.getDiscountedProducts();
     discountStorage.setValue(discountedProducts);
-    renderDiscountProd (discountProductListRef, discountStorage.getValue());
+    renderDiscountProd(discountProductListRef, discountStorage.getValue());
   } catch (error) {
     console.log(error);
   } finally {
     //  loader hide
   }
 }
+//-----------filter--------------------------------------------------------------------------
+filterHandler();
 
 //-------------------------------------------------------------------------------------------
 
@@ -136,7 +138,7 @@ const product3 = {
 // console.log(shopStorage.getAllProducts());
 // shopStorage.removeAllProducts();
 // console.log(shopStorage.getAllProducts());
-const newShopStorage = new ShopStorage(SHOP_STORAGE);
+const shopStorage = new ShopStorage(SHOP_STORAGE);
 
 ///delete this fucking storage
 // shopStorage.setProduct(product1);
@@ -169,24 +171,23 @@ function onButtonCartClick(e) {
   const objFromPopStor = objFromLocStor(arrPopStor, idCard);
   const objFromDiscStor = objFromLocStor(arrDiscStor, idCard);
 
-  switch ("object") {
+  switch ('object') {
     case typeof objFromProdStor:
-      newShopStorage.setProduct(objFromProdStor);
+      shopStorage.setProduct(objFromProdStor);
       break;
     case typeof objFromPopStor:
-      newShopStorage.setProduct(objFromPopStor);
+      shopStorage.setProduct(objFromPopStor);
       break;
     case typeof objFromDiscStor:
-      newShopStorage.setProduct(objFromDiscStor);
+      shopStorage.setProduct(objFromDiscStor);
       break;
     default:
       alert('Нет таких значений');
   }
-
 }
 
 function checkNewIDinBasket(id) {
-  const shopStorageProducts = newShopStorage.getAllProducts();
+  const shopStorageProducts = shopStorage.getAllProducts();
   return shopStorageProducts.some(el => el._id === id);
 }
 
@@ -194,4 +195,3 @@ function objFromLocStor(arrDataLocalStorage, idCard) {
   const obj = arrDataLocalStorage.find(el => el._id === idCard);
   return obj;
 }
-
