@@ -1,3 +1,10 @@
+.cart-content-container {
+  /* *Коли є товари у кошику */
+  /* display: flex; */
+  flex-direction: column;
+  /* *Коли немає товарів у кошику */
+  display: none;
+}
 .your-order {
   padding: 80px 0;
 }
@@ -89,7 +96,7 @@
 
 @media (min-width: 768px) {
   .your-order {
-    padding-top: 60px;
+    padding-top: 100px;
     padding-bottom: 100px;
   }
   .order-text {
@@ -133,12 +140,17 @@
 
 @media (min-width: 1440px) {
   .cart-content-container {
-    display: flex;
+    flex-direction: row;
     gap: 101px;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  .cart-product-wrap {
+    width: 50%;
   }
   .your-order {
-    width: 100%;
-    padding: 0;
+    width: 50%;
+    padding-top: 68px;
   }
   .order-input {
     font-size: 18px;
