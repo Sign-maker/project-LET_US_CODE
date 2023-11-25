@@ -61,8 +61,8 @@ export function markupCartProduct(arr) {
     .join('');
 }
 
-const cartList = document.querySelector('.cart-list');
-cartList.innerHTML = markupCartProduct(localStorageCartProduct);
+// const cartList = document.querySelector('.cart-list');
+// cartList.innerHTML = markupCartProduct(localStorageCartProduct);
 
 // console.log(localStorageCartProduct.length > 3);
 // function addScrollProductInCart(localStorageCartProduct) {
