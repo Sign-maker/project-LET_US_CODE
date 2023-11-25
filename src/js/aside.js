@@ -1,95 +1,15 @@
-import { FoodBoutiqueAPI } from './food-api';
 import icons from '../img/icons.svg';
-import { Storage } from './local-storage-api';
-
-const foodBoutiqueAPI = new FoodBoutiqueAPI();
-
-const discountStorage = new Storage('discount-storage');
-const popularStorage = new Storage('popularity-storage');
-const shopStorage = new Storage('shop-storage');
-
-
-const popularListRef = document.querySelector('.popular-list');
-const discountListRef = document.querySelector('.discount-list');
-
-popularListRef.addEventListener('click', onPopularCardClick);
-discountListRef.addEventListener('click', onDiscountCardClick);
-
-
-
-renderPopularProd(popularListRef,popularStorage.getValue())
-renderDiscountProd(discountListRef,discountStorage.getValue())
-// popularProd();
-// discountedProd();
-
-// async function popularProd() {
-//   try {
-//     const popularProductsData = await foodBoutiqueAPI.getPopularProducts();
-
-//     popularListRef.innerHTML = markupPopular(popularProductsData);
-//   } catch (error) {
-//     error => console.log('ERROR', error);
-//   }
-// }
-
-// async function discountedProd() {
-//   try {
-//     const discountProdData = await foodBoutiqueAPI.getDiscountedProducts();
-
-//     discountListRef.innerHTML = markupDiscount(discountProdData);
-//   } catch (error) {
-//     error => console.log('ERROR', error);
-//   }
-// }
 
 //EXPORT TO HOME.JS STRING --------->  66
 
- function renderPopularProd(listenerPopularListRef, dataPopularProduct) {
+function renderPopularProd(listenerPopularListRef, dataPopularProduct) {
   listenerPopularListRef.innerHTML = markupPopular(dataPopularProduct);
 }
 
 // EXPORT TO HOME.JS STRING --------->  79
 
- function renderDiscountProd(listenerDiscountListRef, dataDiscountProduct) {
+function renderDiscountProd(listenerDiscountListRef, dataDiscountProduct) {
     listenerDiscountListRef.innerHTML = markupDiscount(dataDiscountProduct);
-}
-
-function onPopularCardClick(e) {
-  if (!e.target.closest('button')) return;
-
-  const li = e.target.closest('li');
-  const idCard = li.dataset.id;
-
-  const getArrFromDiscountStorage = discountStorage.getValue();
-
-  const newOrderToCart = findElInDiscountStorage(getArrFromDiscountStorage, idCard);
-  console.log(newOrderToCart);
-
-  shopStorage.setValue(newOrderToCart)
-
-  e.target.closest('button').classList.add('is-added');
-  e.target.closest('button').style.backgroundColor = "#6d8434"
-  console.dir('THIS IS FOR MODAL CLICK');
-}
-
-function onDiscountCardClick(e) {
-  if (!e.target.closest('button')) return;
-
-  const li = e.target.closest('li');
-  const idCard = li.dataset.id;
-
-  const getArrFromDiscountStorage = discountStorage.getValue();
-
-  const newOrderToCart = findElInDiscountStorage(getArrFromDiscountStorage, idCard);
-  console.log(newOrderToCart);
-
-  shopStorage.setValue(newOrderToCart)
-
-  e.target.closest('button').classList.add('is-added');
-}
-
-function findElInDiscountStorage(arr, idCard) {
-  return arr.find(el => el._id === idCard);
 }
 
 function markupPopular(obj) {
@@ -124,7 +44,7 @@ function markupPopular(obj) {
         </div>
         <button
           type="button"
-          class="popular-btn btn"
+          class="popular-btn btn js-add-btn"
           aria-label="add the product to the basket"
         >
           <svg class="popular-desc-svg">
@@ -167,7 +87,7 @@ function markupDiscount(obj) {
             <p class="discount-desc-text">$${price}</p>
             <button
               type="button"
-              class="discount-btn btn"
+              class="discount-btn btn js-add-btn"
               aria-label="add the product to the basket"
             >
               <svg class="discount-desc-svg">
@@ -193,4 +113,4 @@ function markupDiscount(obj) {
     .join('');
 }
 
-// export {renderPopularProd, renderDiscountProd, markupPopular, markupDiscount}
+export {renderPopularProd, renderDiscountProd, markupPopular, markupDiscount}

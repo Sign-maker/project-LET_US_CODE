@@ -65,6 +65,10 @@
   overflow: hidden;
 }
 
+.is-hidden {
+  display: none;
+}
+
 body {
   font-family: 'Neue Montreal', sans-serif;
   font-weight: 500;

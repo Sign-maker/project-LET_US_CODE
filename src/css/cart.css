@@ -1,3 +1,10 @@
+.cart-content-container {
+  /* *Коли є товари у кошику */
+  display: flex;
+  flex-direction: column;
+  /* *Коли немає товарів у кошику */
+  /* display: none; */
+}
 .your-order {
   padding: 80px 0;
 }
@@ -50,13 +57,15 @@
   width: 100%;
   margin-bottom: 14px;
   background: inherit;
+  padding-left: 47px;
 }
 .order-input::placeholder {
   color: var(--btn-black);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.3;
-  padding-left: 25px;
+ 
+
 }
 
 .order-btn {
@@ -80,7 +89,7 @@
   font-weight: 400;
   line-height: 1.3;
   position: absolute;
-  top: 17px;
+  top: 18px;
   left: 20px;
 }
 
@@ -89,7 +98,7 @@
 
 @media (min-width: 768px) {
   .your-order {
-    padding-top: 60px;
+    padding-top: 100px;
     padding-bottom: 100px;
   }
   .order-text {
@@ -107,6 +116,7 @@
   .order-prise-total {
     font-size: 32px;
     line-height: 1;
+    
   }
 
   .order-input {
@@ -114,11 +124,12 @@
     max-width: 359px;
     margin-right: 16px;
     margin-bottom: 0;
+    padding-left: 55px;
   }
   .order-input::placeholder {
     font-size: 18px;
     line-height: 1.3;
-    padding-left: 33px;
+    
   }
   .order-btn {
     max-width: 215px;
@@ -128,17 +139,23 @@
   }
   .form-span {
     font-size: 18px;
+    top:16px
   }
 }
 
 @media (min-width: 1440px) {
   .cart-content-container {
-    display: flex;
+    flex-direction: row;
     gap: 101px;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  .cart-product-wrap {
+    width: 50%;
   }
   .your-order {
-    width: 100%;
-    padding: 0;
+    width: 50%;
+    padding-top: 68px;
   }
   .order-input {
     font-size: 18px;

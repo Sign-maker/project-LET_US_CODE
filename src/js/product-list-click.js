@@ -1,12 +1,25 @@
+import { markupProductsList } from './markup-product-list';
 import { openModal } from './modal-markup';
 const listEl = document.querySelector('.product-card-list');
 listEl.addEventListener('click', onClickCart);
 
-function onClickCart(e) {
+// export function onClickCart(e) {
+//   e.preventDefault();
+//   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H4') {
+//     openModal();
+//   } else {
+//     return;
+//   }
+// }
+  export function onClickCart(e) {
   e.preventDefault();
-  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H4') {
-    openModal();
+  const clickedElement = e.target;
+  if (clickedElement.nodeName === 'IMG' || clickedElement.nodeName === 'H4') {
+    const Id = clickedElement.closest('.products-card-item').dataset.id;
+    openModal(Id);
   } else {
     return;
   }
 }
+
+
