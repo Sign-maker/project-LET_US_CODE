@@ -1,9 +1,9 @@
 .cart-content-container {
   /* *Коли є товари у кошику */
-  /* display: flex; */
+  display: flex;
   flex-direction: column;
   /* *Коли немає товарів у кошику */
-  display: none;
+  /* display: none; */
 }
 .your-order {
   padding: 80px 0;

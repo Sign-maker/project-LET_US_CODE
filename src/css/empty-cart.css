@@ -4,7 +4,7 @@
   /* *Коли є товари у кошику */
   /* display: none; */
   /* /* *Коли немає товарів у кошику: */
-  display: block;
+  /* display: block; */
 }
 .empty-basket-image {
   display: block;
