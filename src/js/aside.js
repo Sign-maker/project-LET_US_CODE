@@ -55,9 +55,20 @@ renderDiscountProd(discountListRef,discountStorage.getValue())
 }
 
 function onPopularCardClick(e) {
-  if (!e.target.closest('a') || e.target.closest('button')) {
-    return;
-  }
+  if (!e.target.closest('button')) return;
+
+  const li = e.target.closest('li');
+  const idCard = li.dataset.id;
+
+  const getArrFromDiscountStorage = discountStorage.getValue();
+
+  const newOrderToCart = findElInDiscountStorage(getArrFromDiscountStorage, idCard);
+  console.log(newOrderToCart);
+
+  shopStorage.setValue(newOrderToCart)
+
+  e.target.closest('button').classList.add('is-added');
+  e.target.closest('button').style.backgroundColor = "#6d8434"
   console.dir('THIS IS FOR MODAL CLICK');
 }
 
@@ -119,11 +130,11 @@ function markupPopular(obj) {
           <svg class="popular-desc-svg">
             <use
               href="${icons}#icon-shopping-cart"
-              class="popular-desc-basket is-hidden"
+              class="popular-desc-basket"
             ></use>
             <use
               href="${icons}#icon-check"
-              class="popular-desc-added "
+              class="popular-desc-added"
             ></use>
           </svg>
         </button>
