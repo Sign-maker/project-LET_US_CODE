@@ -7,8 +7,8 @@
     <title>Food Boutique Cart</title>
     
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-c31d5bee.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-58230a24.css">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/local-storage-api-579d8235.js">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/local-storage-api-64268cfc.css">
   </head>
   <body>
     <header class="header">
@@ -49,12 +49,12 @@
 
     <main>
       <section class="cart-content-section">
-        <div class="container cart-content-container">
+        <div class="container">
           <h1 class="visually-hidden">Cart</h1>
           <div class="cart-header-wrap">
   <div class="cart-img-basket btn">
     <svg>
-      <use href="../img/icons.svg#icon-shopping-cart"></use>
+      <use href="/project-LET_US_CODE/assets/icons-9e2cefcb.svg#icon-shopping-cart"></use>
     </svg>
   </div>
 
@@ -65,11 +65,8 @@
             <div class="empty-cart">
   <img
     class="empty-basket-image"
-    srcset="
-      ../img/empty-basket/shopping-basket-tab-ps@1x.png 1x,
-      ../img/empty-basket/shopping-basket-tab-ps@2x.png 2x
-    "
-    src="../img/empty-basket/shopping-basket-tab-ps@1x.png"
+    srcset="/project-LET_US_CODE/assets/shopping-basket-tab-ps@1x-8d1fa0db.png 1x, /project-LET_US_CODE/assets/shopping-basket-tab-ps@2x-36112229.png 2x"
+    src="/project-LET_US_CODE/assets/shopping-basket-tab-ps@1x-8d1fa0db.png"
     alt="empty-basket"
     width="132"
   />
@@ -82,8 +79,9 @@
   </p>
 </div>
 
-            <!-- cart + delbtn -->
-<div hidden>
+            <div class="cart-content-container">
+              <!-- cart + delbtn -->
+<div class="cart-product-wrap">
   <button class="delete-all-btn js-delete-all-btn">
     <span class="text-delete-all">Delete all</span>
     <svg>
@@ -94,7 +92,7 @@
   <ul class="cart-list"></ul>
 </div>
 
-            
+              
 <div class="your-order">
   <p class="order-text">Your Order</p>
   <div class="order-prise">
@@ -117,6 +115,7 @@
     </form>
   </div>
 </div>
+            </div>
           </div>
         </div>
       </section>
