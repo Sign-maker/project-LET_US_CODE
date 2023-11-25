@@ -1,5 +1,4 @@
 import { FoodBoutiqueAPI } from './food-api';
-import {openModal} from './modal-markup';
 const products = {
   page: 1,
   perPage: 9,
@@ -101,19 +100,6 @@ const productsObj = products.results;
 const productCardList = document.querySelector('.product-card-list');
 productCardList.innerHTML = createProductsList(productsObj);
 
-const listEl = document.querySelector('.product-card-list');
-listEl.addEventListener('click', onClickCart);
-
-function onClickCart (e) {
- 
-  if (e.target.nodeName === 'IMG' || e.target.nodeName === 'H4') {
-    openModal()
-  } else {
-    return;
-  }
-  
-}
-
 
 export function createProductsList(productsObj) {
   return productsObj
@@ -154,7 +140,3 @@ export function createProductsList(productsObj) {
     )
     .join('');
 }
-
-//Modal
-
-

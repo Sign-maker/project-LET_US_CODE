@@ -1,6 +1,11 @@
+import { Storage } from "./local-storage-api";
+const SHOP_STORAGE = 'shop-storage';
+const shopStorage = new Storage(SHOP_STORAGE);
+
 const modalSuccesEl = document.querySelector('.modal-order-wrap')
-// const opnBtn = document.querySelector('.open');
-// opnBtn.addEventListener('click', () => openSuccessModal());
+const opnBtn = document.querySelector('.open');
+opnBtn.addEventListener('click', () => openSuccessModal());
+
 
 export function openSuccessModal(id) {
     console.log(id);
