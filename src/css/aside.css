@@ -48,7 +48,7 @@
 .popular-item {
   position: relative;
   display: flex;
-  width: 275px;
+  width: 335px;
   padding: 12px;
   border-radius: 10px;
   background-color: var(--third-bg);
@@ -333,7 +333,7 @@
   height: 60px;
   border-radius: 50%;
   z-index: 1;
-  background-color: var(--btn-green-dark);
+  background-color: transparent;
   fill: var(--third-bg);
 }
 
