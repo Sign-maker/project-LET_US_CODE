@@ -12,9 +12,13 @@
   padding-bottom: 80px;
 }
 
+.discount-desc-text {
+  font-size: 18px;
+}
+
 @media screen and (min-width: 768px) {
-    .popular {
-        padding-bottom: 64px;
+  .popular {
+    padding-bottom: 64px;
   }
 }
 
@@ -202,7 +206,7 @@
 @media screen and (min-width: 1440px) {
   .discount,
   .popular {
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
     width: 100%;
   }
 }
@@ -219,6 +223,9 @@
   .discount-list {
     display: flex;
     gap: 32px;
+  }
+  .discount-desc-text {
+    font-size: 20px;
   }
 }
 
