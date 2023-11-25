@@ -170,6 +170,18 @@
   visibility: hidden;
 }
 
+.popular-btn .popular-desc-added{
+  display: none;
+}
+
+.popular-btn.is-added .popular-desc-added{
+  display: block;
+}
+
+.popular-btn.is-added .popular-desc-basket{
+  display: none;
+}
+
 /*--------------------------------------------*/
 .popular-item,
 .discount-item{
