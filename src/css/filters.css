@@ -107,16 +107,16 @@
   transition: background-color 0.3s ease;
 }
 .text-options:hover {
-  color: #010101;
+  color: var(--text);
 }
 .text-options:focus {
-  color: #010101;
+  color: var(--text);
 }
 .text-options-sort:hover {
-  color: #010101;
+  color: var(--text);
 }
 .text-options-sort:focus {
-  color: #010101;
+  color: var(--text);
 }
 .search-input:focus,
 .custom-select.active .selected-option {
@@ -127,10 +127,10 @@
   position: relative;
 }
 .selected-option-ctgr::placeholder{
-  color: #010101;
+  color: var(--text);
 }
 .sort-select::placeholder{
-  color: #010101;;
+  color: var(--text);
 }
 @media (min-width: 768px) {
  
@@ -192,7 +192,5 @@
   }
 }
 @media (min-width: 1440px) {
-  /* .text-options-sort{
-    
-  } */
+ 
 }
