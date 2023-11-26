@@ -27,29 +27,32 @@ overflow: hidden;
 
 /* 320px */
 .modal-prod-card {
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 100%;
-  min-height: 535px;
+  max-height: 535px;
   background-color: var(--third-bg);
   border-radius: 20px;
   padding: 40px 20px;
   position: relative;
 }
+.modal-prod-info {
+  color: var(--text);
+
+}
 /* mobile */
-@media only screen and (min-width: 374.8px) {
+@media only screen and (min-width: 375px) {
 
     .modal-prod-card {
-        min-height: 535px;
         width: 335px;  
         }
 }
     /* tablet */
      @media only screen and (min-width: 768px) {
         .modal-prod-card {
-            min-height: 380px;
+            max-height: 380px;
             width: 600px; 
             padding: 40px;
         }
@@ -162,6 +165,7 @@ max-width: 256px;
 /* mobile */
 .modal-prod-list {
   display: flex;
+  flex-wrap: wrap;
   row-gap: 8px;
   column-gap: 9px;
 
@@ -190,13 +194,15 @@ max-width: 256px;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.29;
-
+    overflow: auto;
+    max-height: 54px;
 }
 /* tablet */
 @media only screen and (min-width: 768px) {
   .modal-prod-desc {
     font-size: 16px;
     line-height: 1.25;
+    max-height: 80px;
   }
 }
 .modal-prod-price-elem {
