@@ -1,47 +1,47 @@
-import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./assets/vendor-bb007519.js";const u="/project-LET_US_CODE/assets/icons-b681127c.svg";function K(t){return t.map(({category:e,img:s,is10PercentOff:a,name:o,popularity:c,price:r,size:l,_id:n})=>`<li class="products-card-item js-card-item" data-id="${n}">
-                <a class="products-card-link" href="#"><img class="product-image" src="${s}" alt="${o}" /></a>
-                <a class="products-card-link" href="#"><h4 class="product-name">${o}</h4></a>
+import{a as h,S as Y,F as Q}from"./assets/subscription-99a8ffbd.js";import"./assets/vendor-bb007519.js";const m="/project-LET_US_CODE/assets/icons-b681127c.svg";function dt(t){return t.map(({category:e,img:s,is10PercentOff:l,name:a,popularity:r,price:u,size:p,_id:n})=>`<li class="products-card-item js-card-item" data-id="${n}">
+                <a class="products-card-link" href="#"><img class="product-image" src="${s}" alt="${a}" /></a>
+                <a class="products-card-link" href="#"><h4 class="product-name">${a}</h4></a>
                 <ul class="product-description-list">
-                        <li><p class="product-text">Category:<span class="product-text-black"> ${e}</span>Size:<span class="product-text-black"> ${l}</span></p></li>
-                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${c}</span></p></li>
+                        <li><p class="product-text">Category:<span class="product-text-black"> ${e}</span>Size:<span class="product-text-black"> ${p}</span></p></li>
+                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${r}</span></p></li>
                 </ul>
                 <div class="wrap-prise-and-btn">
-                    <p class="price">$${r}</p>
+                    <p class="price">$${u}</p>
                     <button type="button" class="btn btn-shopping-cart js-add-btn">
                         <svg class="icon-shopping-cart" width="18" height="18">
-                            <use href="${u}#icon-shopping-cart" class="products-desc-basket"></use>
+                            <use href="${m}#icon-shopping-cart" class="products-desc-basket"></use>
 
                             <use
-                              href="${u}#icon-check"
+                              href="${m}#icon-check"
                               class="products-desc-added"
                             ></use>
                         </svg>
                         
                     </button>
                 </div>
-            </li>`).join("")}function Z(t,e){t.innerHTML=K(e)}function tt(t,e){t.innerHTML=st(e)}function et(t,e){t.innerHTML=ot(e)}function st(t){return t.map(e=>{const{_id:s,name:a,img:o,category:c,size:r,popularity:l}=e;return`<li class="popular-item js-card-item" data-id="${s}">
+            </li>`).join("")}function lt(t,e){t.innerHTML=dt(e)}function ut(t,e){t.innerHTML=gt(e)}function pt(t,e){t.innerHTML=mt(e)}function gt(t){return t.map(e=>{const{_id:s,name:l,img:a,category:r,size:u,popularity:p}=e;return`<li class="popular-item js-card-item" data-id="${s}">
         <div class="popular-img-wrapper">
          <a class="products-card-link" href="#"> 
           <img
-            src="${o}"
-            alt="${a}"
+            src="${a}"
+            alt="${l}"
             class="popular-img"
           />
           </a>
         </div>
         <div class="popular-desc-wrapper">
           <a class="products-card-link" href="#">
-          <h3 class="popular-desc-name">${a}</h3>
+          <h3 class="popular-desc-name">${l}</h3>
           </a>
           <h4 class="popular-desc-text">
-            Category: <span class="popular-desc-span">${c}</span>
+            Category: <span class="popular-desc-span">${r}</span>
           </h4>
           <div class="popular-desc-inner">
             <h4 class="popular-desc-text">
-              Size: <span class="popular-desc-span">${r}</span>
+              Size: <span class="popular-desc-span">${u}</span>
             </h4>
             <h4 class="popular-desc-text">
-              Popularity: <span class="popular-desc-span">${l}</span>
+              Popularity: <span class="popular-desc-span">${p}</span>
             </h4>
           </div>
         </div>
@@ -52,31 +52,31 @@ import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./ass
         >
           <svg class="popular-desc-svg">
             <use
-              href="${u}#icon-shopping-cart"
+              href="${m}#icon-shopping-cart"
               class="popular-desc-basket"
             ></use>
             <use
-              href="${u}#icon-check"
+              href="${m}#icon-check"
               class="popular-desc-added"
             ></use>
           </svg>
         </button>
-      </li>`}).join("")}function ot(t){return t.slice(0,2).map(s=>{const{_id:a,name:o,img:c,price:r}=s;return`<li class="discount-item js-card-item" data-id="${a}">
+      </li>`}).join("")}function mt(t){return t.slice(0,2).map(s=>{const{_id:l,name:a,img:r,price:u}=s;return`<li class="discount-item js-card-item" data-id="${l}">
         <a class="products-card-link" href="#">
         <div class="discount-img-wrapper">
           <img
-            src="${c}"
-            alt="${o}"
+            src="${r}"
+            alt="${a}"
             class="discount-img"
           />   
         </div>
         </a>
         <div class="discount-desc-wrapper">    
         <a class="products-card-link" href="#">      
-            <p class="discount-desc-text">${o}</p> 
+            <p class="discount-desc-text">${a}</p> 
             </a> 
           <div class="discount-box">    
-            <p class="discount-desc-text">$${r}</p>
+            <p class="discount-desc-text">$${u}</p>
             <button
               type="button"
               class="discount-btn btn js-add-btn"
@@ -84,11 +84,11 @@ import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./ass
             >
               <svg class="discount-desc-svg">
                 <use
-                  href="${u}#icon-shopping-cart"
+                  href="${m}#icon-shopping-cart"
                   class="discount-desc-basket "
                 ></use>
                 <use
-                  href="${u}#icon-check"
+                  href="${m}#icon-check"
                   class="discount-desc-added"
                 ></use>
               </svg>
@@ -97,14 +97,30 @@ import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./ass
         </div>
         <div class="discount-box-label">
           <svg class="discount-label-svg">
-            <use href="${u}#icon-discount"></use>
+            <use href="${m}#icon-discount"></use>
           </svg>
         </div>
-      </li>`}).join("")}const nt="filter-storage",ct="category-storage",at="product-storage",rt="popularity-storage",it="discount-storage",dt="shop-storage",lt={keyword:null,category:null,page:1,limit:9},ut=document.querySelector(".product-card-list"),pt=document.querySelector(".popular-list"),mt=document.querySelector(".discount-list"),ft=document.querySelector(".content-wrapper"),gt=document.querySelector(".js-header-navSpan"),B=new V,N=new h(nt),bt=new h(ct),A=new h(at),_=new h(rt),q=new h(it),f=new j(dt);let U;ft.addEventListener("click",Ct);const vt=N.getItem??lt;ht(vt);async function ht(t){await yt(),await St(t),await kt(),await wt(),U=Lt()}G(f.getAllProducts());async function yt(){try{const t=await B.getProductCategories();bt.setValue(t)}catch(t){console.log(t)}finally{}}async function St(t){try{const e=await B.getProducts(t);A.setValue(e),N.setValue(t),Z(ut,A.getValue().results)}catch(e){console.log(e)}finally{}}async function kt(){try{const t=await B.getPopularProducts();_.setValue(t),tt(pt,_.getValue())}catch(t){console.log(t)}finally{}}async function wt(){try{const t=await B.getDiscountedProducts();q.setValue(t),et(mt,q.getValue())}catch(t){console.log(t)}finally{}}function Lt(){const t=document.querySelectorAll(".js-card-item");return Bt(t),t}function Bt(t){const e=[...t],s=f.getAllProducts();return e.map(a=>s.filter(o=>{if(a.dataset.id===o._id){const c=document.querySelectorAll(`[data-id="${o._id}"] .js-add-btn`);if(typeof c=="object")[...c].map(r=>(r.classList.contains("popular-btn")&&(r.style.backgroundColor="#6d8434"),r.classList.add("is-added")));else return c.classList.contains("popular-btn")&&(c.style.backgroundColor="#6d8434"),console.log(c),c.classList.add("is-added")}}))}function Ct(t){if(!t.target.closest(".js-add-btn"))return;const s=t.target.closest("li").dataset.id;if($t(s))return;t.target.closest("button").classList.add("is-added"),t.target.closest(".popular-btn")&&(t.target.closest(".popular-btn").style.backgroundColor="#6d8434");const o=A.getValue().results,c=_.getValue(),r=q.getValue(),l=E(o,s),n=E(c,s),i=E(r,s);switch("object"){case typeof l:f.setProduct(l);break;case typeof n:f.setProduct(n);break;case typeof i:f.setProduct(i);break;default:alert("Нет таких значений")}Et(t,s),G(f.getAllProducts());function y(Q,J){return[...J].forEach(M=>{M.dataset.id===Q&&M.classList.add("is-added")})}y(s,U)}function $t(t){const e=f.getAllProducts();if(e!==null)return e.some(s=>s._id===t)}function E(t,e){return t.find(a=>a._id===e)}function G(t){let e=t.length;gt.textContent=e}function Et(t,e){const s=document.querySelector(".product-card-list"),a=document.querySelector(".popular-list"),o=document.querySelector(".discount-list"),c=[...s.children],r=[...o.children],l=[...a.children];t.target.closest(".products-wrapper")&&(l.forEach(n=>{if(n.dataset.id===e){const i=document.querySelector(`.popular-list [data-id="${n.dataset.id}"] .js-add-btn`);i.classList.add("is-added"),i.style.backgroundColor="#6d8434"}}),r.forEach(n=>{n.dataset.id===e&&document.querySelector(`.discount-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")})),t.target.closest(".popular-list")&&(c.forEach(n=>{n.dataset.id===e&&document.querySelector(`.product-card-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")}),r.forEach(n=>{if(n.dataset.id===e){const i=document.querySelector(`.discount-list [data-id="${n.dataset.id}"] .js-add-btn`);console.log(i),i.classList.add("is-added")}})),t.target.closest(".discount-list")&&(l.forEach(n=>{if(n.dataset.id===e){const i=document.querySelector(`.popular-list [data-id="${n.dataset.id}"] .js-add-btn`);i.classList.add("is-added"),i.style.backgroundColor="#6d8434"}}),c.forEach(n=>{n.dataset.id===e&&document.querySelector(`.product-card-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")}))}const xt=document.querySelector(".content-wrapper");xt.addEventListener("click",Tt);function Tt(t){t.preventDefault();const e=t.target;if(e.closest("a")&&e.closest(".products-card-link")){const s=e.closest("li").dataset.id;_t(s)}else return}const w=document.querySelector(".modal-prod-wrapper"),At="shop-storage",k=new j(At);async function _t(t){console.log(t);const s=await new V().getProductDetails(t);Pt(s),qt(s)}function qt(t){const e=document.querySelector(".modal-prod-add-text"),s=t._id;k.getAllProducts().some(o=>o._id===s)?e.textContent="Remove from":e.textContent="Add to"}async function Pt(t){try{w.classList.add("modal-active"),document.body.classList.add("stop-scroll"),w.innerHTML=`
+      </li>`}).join("")}class ft{constructor(){}numBtnCreateMarkUp(e){return`<li class="buttons-item">
+        <button class="pagination-btn num-btn" type="button" data-button-id="${e}">${e}</button>
+      </li>`}numBtnSetActive(e){}numBtnSetInactive(e){}numBtnChangeNum(){}intervalBtnCreateMarkUp(){return`<li class="buttons-item">
+        <button class="pagination-btn interval-btn" type="button" data-button-id="interval">...</button>
+      </li>`}intervalBtnShow(){}intervalBtnHide(){}prevBtnCreateMarkUp(){return`<li class="buttons-item">
+        <button class="pagination-btn prev-btn" type="button" data-button-id="prev-btn">
+          <svg class="icon-shopping-cart" width="24" height="24">
+            <use href="${m}#icon-caret-left" class="pagination-arrows" />
+          </svg>
+        </button>
+      </li>`}nextBtnCreateMarkUp(){return`<li class="buttons-item">
+        <button class="pagination-btn next-btn" type="button" data-button-id="next-btn">
+          <svg class="icon-shopping-cart" width="24" height="24">
+            <use href="${m}#icon-caret-right" class="pagination-arrows" />
+          </svg>
+        </button>
+      </li>`}prevBtnSetActive(e){}prevBtnSetInactive(e){}nextBtnSetActive(e){}nextBtnSetInactive(e){}}function bt(){const t="variant1",e="variant2",s="variant3",l="active-pagination-btn",a="prev-btn",r="next-btn",p="product-storage",n="filter-storage",c=new h(n),B=new h(p),q=new ft,k=document.querySelector(".buttons-list");k.addEventListener("click",ot);let i=null,g=1,b=g;B.getValue()&&(b=+B.getValue().totalPages,i=+B.getValue().page,C(g,b,i));function C(d,o,f){if(o===d){k.innerHTML;return}k.innerHTML=it(d,o,f),$(f),f===d&&L(a),f===o&&L(r)}function $(d){k.querySelector(`[data-button-id='${d}']`).classList.add(l)}function L(d){const o=k.querySelector(`[data-button-id='${d}']`);o.setAttribute("disabled",""),o.classList.add("disabled")}function ot(d){const{target:o}=d;o.classList.contains("pagination-btn")&&(o.classList.contains("num-btn")&&(console.dir(`Запускаем обработчик нажатия на номер ${o.dataset.buttonId}`),nt(+o.dataset.buttonId),c.setValue({...c.getValue(),page:+o.dataset.buttonId}),x(c.getValue())),o.classList.contains("prev-btn")&&(console.dir(`Запускаем обработчик нажатия на ${o.dataset.buttonId}`),ct(),c.setValue({...c.getValue(),page:i}),x(c.getValue())),o.classList.contains("next-btn")&&(console.dir(`Запускаем обработчик нажатия на ${o.dataset.buttonId}`),at(),c.setValue({...c.getValue(),page:i}),x(c.getValue())))}function nt(d){i=d,C(g,b,i),$(i),i===g&&L(a),i===b&&L(r)}function ct(){i!==g&&(i-=1,C(g,b,i),$(i),i===g&&L(a))}function at(){i!==b&&(i+=1,C(g,b,i),$(i),i===b&&L(r))}function rt(d,o,f){return o<=5?t:f>=d+2&f<=o-2?e:s}function it(d,o,f=1){const{prevBtnCreateMarkUp:O,numBtnCreateMarkUp:v,intervalBtnCreateMarkUp:I,nextBtnCreateMarkUp:M}=q;let E="";const T=rt(d,o,f);if(console.log(T),T===t){let X="";for(let V=d;V<=o;V+=1)X+=v(V);E=O()+X+M()}return T===e&&(E=O()+v(d)+I()+v(f)+I()+v(o)+M()),T===s&&(E=O()+v(d)+v(d+1)+I()+v(o-1)+v(o)+M()),E}}const vt="filter-storage",ht="category-storage",yt="product-storage",St="popularity-storage",kt="discount-storage",wt="shop-storage",Lt={keyword:null,category:null,page:1,limit:9},Bt=document.querySelector(".product-card-list"),Ct=document.querySelector(".popular-list"),$t=document.querySelector(".discount-list"),Et=document.querySelector(".content-wrapper"),Tt=document.querySelector(".js-header-navSpan"),P=new Q,G=new h(vt),xt=new h(ht),F=new h(yt),D=new h(St),H=new h(kt),w=new Y(wt);let J;Et.addEventListener("click",Mt);G.getValue()||G.setValue(Lt);const At=G.getValue();_t(At);async function _t(t){await Rt(),await x(t),await Pt(),await qt(),J=Ot(),bt()}K(w.getAllProducts());async function Rt(){try{const t=await P.getProductCategories();xt.setValue(t)}catch(t){console.log(t)}finally{}}async function x(t){try{const e=await P.getProducts(t);F.setValue(e),lt(Bt,F.getValue().results)}catch(e){console.log(e)}finally{}}async function Pt(){try{const t=await P.getPopularProducts();D.setValue(t),ut(Ct,D.getValue())}catch(t){console.log(t)}finally{}}async function qt(){try{const t=await P.getDiscountedProducts();H.setValue(t),pt($t,H.getValue())}catch(t){console.log(t)}finally{}}function Ot(){const t=document.querySelectorAll(".js-card-item");return It(t),t}function It(t){return[...t].filter(s=>w.getAllProducts().map(a=>{if(s.dataset.id===a._id){const r=document.querySelectorAll(`[data-id="${a._id}"] .js-add-btn`);typeof r=="object"?[...r].map(u=>(u.classList.contains("popular-btn")&&(u.style.backgroundColor="#6d8434"),u.classList.add("is-added"))):(r.classList.contains("popular-btn")&&(r.style.backgroundColor="#6d8434"),r.classList.add("is-added"))}}))}function Mt(t){if(!t.target.closest(".js-add-btn"))return;const s=t.target.closest("li").dataset.id;if(Vt(s))return;t.target.closest("button").classList.add("is-added"),t.target.closest(".popular-btn")&&(t.target.closest(".popular-btn").style.backgroundColor="#6d8434");const a=F.getValue().results,r=D.getValue(),u=H.getValue(),p=j(a,s),n=j(r,s),c=j(u,s);switch("object"){case typeof p:w.setProduct(p);break;case typeof n:w.setProduct(n);break;case typeof c:w.setProduct(c);break;default:alert("Нет таких значений")}jt(t,s),K(w.getAllProducts());function B(q,k){return[...k].forEach(g=>{g.dataset.id===q&&g.classList.add("is-added")})}B(s,J)}function Vt(t){const e=w.getAllProducts();if(e!==null)return e.some(s=>s._id===t)}function j(t,e){return t.find(l=>l._id===e)}function K(t){let e=t.length;Tt.textContent=e}function jt(t,e){const s=document.querySelector(".product-card-list"),l=document.querySelector(".popular-list"),a=document.querySelector(".discount-list"),r=[...s.children],u=[...a.children],p=[...l.children];t.target.closest(".products-wrapper")&&(p.forEach(n=>{if(n.dataset.id===e){const c=document.querySelector(`.popular-list [data-id="${n.dataset.id}"] .js-add-btn`);c.classList.add("is-added"),c.style.backgroundColor="#6d8434"}}),u.forEach(n=>{n.dataset.id===e&&document.querySelector(`.discount-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")})),t.target.closest(".popular-list")&&(r.forEach(n=>{n.dataset.id===e&&document.querySelector(`.product-card-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")}),u.forEach(n=>{if(n.dataset.id===e){const c=document.querySelector(`.discount-list [data-id="${n.dataset.id}"] .js-add-btn`);console.log(c),c.classList.add("is-added")}})),t.target.closest(".discount-list")&&(p.forEach(n=>{if(n.dataset.id===e){const c=document.querySelector(`.popular-list [data-id="${n.dataset.id}"] .js-add-btn`);c.classList.add("is-added"),c.style.backgroundColor="#6d8434"}}),r.forEach(n=>{n.dataset.id===e&&document.querySelector(`.product-card-list [data-id="${n.dataset.id}"] .js-add-btn`).classList.add("is-added")}))}const Ut=document.querySelector(".content-wrapper");Ut.addEventListener("click",Nt);function Nt(t){t.preventDefault();const e=t.target;if(e.closest("a")&&e.closest(".products-card-link")){const s=e.closest("li").dataset.id;Ft(s)}else return}const _=document.querySelector(".modal-prod-wrapper"),Gt="shop-storage",A=new Y(Gt);async function Ft(t){console.log(t);const s=await new Q().getProductDetails(t);Ht(s),Dt(s)}function Dt(t){const e=document.querySelector(".modal-prod-add-text"),s=t._id;A.getAllProducts().some(a=>a._id===s)?e.textContent="Remove from":e.textContent="Add to"}async function Ht(t){try{_.classList.add("modal-active"),document.body.classList.add("stop-scroll"),_.innerHTML=`
   <div class="modal-prod-card">
   <button type="button" class="modal-prod-close-btn">
     <svg class="modal-prod-close-icon" width="22" height="22">
-      <use href="${u}#icon-close"></use>
+      <use href="${m}#icon-close"></use>
     </svg>
   </button>
   <div class="modal-prod-information-wrap">
@@ -132,12 +148,12 @@ import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./ass
   <button class="modal-prod-add-btn">
       <p class="modal-prod-add-text">Add to</p>
       <svg class="modal-prod-basket-icon" >
-        <use href="${u}#icon-shopping-cart"></use>
+        <use href="${m}#icon-shopping-cart"></use>
       </svg>
   </button>
   </div>
   </div>
-  `,document.querySelector(".modal-prod-add-btn").addEventListener("click",()=>Rt(t)),document.querySelector(".modal-prod-close-btn").addEventListener("click",()=>P()),window.addEventListener("click",D),window.addEventListener("keydown",F)}catch(e){console.error(e)}}function Rt(t){const e=t._id,a=k.getAllProducts().some(c=>c._id===e),o=document.querySelector(".modal-prod-add-text");a?(o.textContent="Add to",k.removeProduct(e)):(o.textContent="Remove from",k.setProduct(t))}function P(){w.classList.remove("modal-active"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",D),window.removeEventListener("keydown",F)}function D(t){t.target===w&&P()}function F(t){t.keyCode===27&&P()}const p=document.querySelector(".custom-select-ctg"),It=p.querySelector(".categories-btn"),Ot=p.querySelectorAll(".text-options"),Mt=p.querySelector(".selected-option");It.addEventListener("click",()=>{p.classList.toggle("active")});let x=null;Ot.forEach(t=>{t.addEventListener("click",()=>{let e=t.innerText;x&&(x.style.color="rgba(1, 1, 1, 0.5)"),Mt.value=e,t.style.color="var(--text)",p.classList.remove("active"),console.log(e),x=t})});const m=document.querySelector(".custom-select-sort"),jt=m.querySelector(".sort-btn"),Vt=m.querySelectorAll(".text-options-sort"),Nt=m.querySelector(".selected-option");jt.addEventListener("click",()=>{m.classList.toggle("active")});let T=null;Vt.forEach(t=>{t.addEventListener("click",()=>{let e=t.innerText;T&&(T.style.color="rgba(1, 1, 1, 0.5)"),Nt.value=e,t.style.color="var(--text)",m.classList.remove("active"),console.log(e),T=t})});document.addEventListener("click",function(t){const e=p.contains(t.target),s=m.contains(t.target);e||p.classList.remove("active"),s||m.classList.remove("active")});document.addEventListener("keyup",function(t){t.code==="Escape"&&(p.classList.remove("active"),m.classList.remove("active"))});const Ut="shop-storage";new h(Ut);const L=document.querySelector(".modal-order-wrap"),Gt=document.querySelector(".open");Gt.addEventListener("click",()=>Dt());function Dt(t){console.log(t),L.classList.add("modal-show-order"),document.body.classList.add("stop-scroll"),L.innerHTML=`
+  `,document.querySelector(".modal-prod-add-btn").addEventListener("click",()=>zt(t)),document.querySelector(".modal-prod-close-btn").addEventListener("click",()=>z()),window.addEventListener("click",Z),window.addEventListener("keydown",tt)}catch(e){console.error(e)}}function zt(t){const e=t._id,l=A.getAllProducts().some(r=>r._id===e),a=document.querySelector(".modal-prod-add-text");l?(a.textContent="Add to",A.removeProduct(e)):(a.textContent="Remove from",A.setProduct(t))}function z(){_.classList.remove("modal-active"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",Z),window.removeEventListener("keydown",tt)}function Z(t){t.target===_&&z()}function tt(t){t.keyCode===27&&z()}const y=document.querySelector(".custom-select-ctg"),Wt=y.querySelector(".categories-btn"),Xt=y.querySelectorAll(".text-options"),Yt=y.querySelector(".selected-option");Wt.addEventListener("click",()=>{y.classList.toggle("active")});let U=null;Xt.forEach(t=>{t.addEventListener("click",()=>{let e=t.innerText;U&&(U.style.color="rgba(1, 1, 1, 0.5)"),Yt.value=e,t.style.color="var(--text)",y.classList.remove("active"),console.log(e),U=t})});const S=document.querySelector(".custom-select-sort"),Qt=S.querySelector(".sort-btn"),Jt=S.querySelectorAll(".text-options-sort"),Kt=S.querySelector(".selected-option");Qt.addEventListener("click",()=>{S.classList.toggle("active")});let N=null;Jt.forEach(t=>{t.addEventListener("click",()=>{let e=t.innerText;N&&(N.style.color="rgba(1, 1, 1, 0.5)"),Kt.value=e,t.style.color="var(--text)",S.classList.remove("active"),console.log(e),N=t})});document.addEventListener("click",function(t){const e=y.contains(t.target),s=S.contains(t.target);e||y.classList.remove("active"),s||S.classList.remove("active")});document.addEventListener("keyup",function(t){t.code==="Escape"&&(y.classList.remove("active"),S.classList.remove("active"))});const Zt="shop-storage";new h(Zt);const R=document.querySelector(".modal-order-wrap"),te=document.querySelector(".open");te.addEventListener("click",()=>ee());function ee(t){console.log(t),R.classList.add("modal-show-order"),document.body.classList.add("stop-scroll"),R.innerHTML=`
     <div class="modal-order-succ">
     <button type="button" class="modal-order-succ-btn">
       <svg class="modal-prod-close-icon">
@@ -196,21 +212,5 @@ import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./ass
       be part of your journey to better health and happiness.
     </p>
   </div>
-  `,document.querySelector(".modal-order-succ-btn").addEventListener("click",R),window.addEventListener("click",H),window.addEventListener("keydown",z)}function R(){L.classList.remove("modal-show-order"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",H),window.removeEventListener("keydown",z)}function H(t){t.target===L&&R()}function z(t){t.keyCode===27&&R()}class Ft{constructor(){}numBtnCreateMarkUp(e){return`<li class="buttons-item">
-        <button class="pagination-btn num-btn" type="button" data-button-id="${e}">${e}</button>
-      </li>`}numBtnSetActive(e){}numBtnSetInactive(e){}numBtnChangeNum(){}intervalBtnCreateMarkUp(){return`<li class="buttons-item">
-        <button class="pagination-btn interval-btn" type="button" data-button-id="interval">...</button>
-      </li>`}intervalBtnShow(){}intervalBtnHide(){}prevBtnCreateMarkUp(){return`<li class="buttons-item">
-        <button class="pagination-btn prev-btn" type="button" data-button-id="prev-btn">
-          <svg class="icon-shopping-cart" width="24" height="24">
-            <use href="${u}#icon-caret-left" class="pagination-arrows" />
-          </svg>
-        </button>
-      </li>`}nextBtnCreateMarkUp(){return`<li class="buttons-item">
-        <button class="pagination-btn next-btn" type="button" data-button-id="next-btn">
-          <svg class="icon-shopping-cart" width="24" height="24">
-            <use href="${u}#icon-caret-right" class="pagination-arrows" />
-          </svg>
-        </button>
-      </li>`}prevBtnSetActive(e){}prevBtnSetInactive(e){}nextBtnSetActive(e){}nextBtnSetInactive(e){}}const W="variant1",Y="variant2",X="variant3",Ht="active-pagination-btn",I="prev-btn",O="next-btn",zt=5,Wt=new Ft,S=document.querySelector(".buttons-list");S.addEventListener("click",Yt);let d=null,g=1,b=10;d=1;C(g,b,d);function C(t,e,s){if(e===t){S.innerHTML;return}S.innerHTML=Zt(t,e,s),$(s),s===t&&v(I),s===e&&v(O)}function $(t){S.querySelector(`[data-button-id='${t}']`).classList.add(Ht)}function v(t){const e=S.querySelector(`[data-button-id='${t}']`);e.setAttribute("disabled",""),e.classList.add("disabled")}function Yt(t){const{target:e}=t;e.classList.contains("pagination-btn")&&(e.classList.contains("num-btn")&&(console.dir(`Запускаем обработчик нажатия на номер ${e.dataset.buttonId}`),Xt(+e.dataset.buttonId)),e.classList.contains("prev-btn")&&(console.dir(`Запускаем обработчик нажатия на ${e.dataset.buttonId}`),Qt()),e.classList.contains("next-btn")&&(console.dir(`Запускаем обработчик нажатия на ${e.dataset.buttonId}`),Jt()))}function Xt(t){d=t,C(g,b,d),$(d),d===g&&v(I),d===b&&v(O)}function Qt(){d!==g&&(d-=1,C(g,b,d),$(d),d===g&&v(I))}function Jt(){d!==b&&(d+=1,C(g,b,d),$(d),d===b&&v(O))}function Kt(t,e,s){return e<=zt?W:s>=t+2&s<=e-2?Y:X}function Zt(t,e,s=1){const{prevBtnCreateMarkUp:a,numBtnCreateMarkUp:o,intervalBtnCreateMarkUp:c,nextBtnCreateMarkUp:r}=Wt;let l="";const n=Kt(t,e,s);if(console.log(n),n===W){let i="";for(let y=t;y<=e;y+=1)i+=o(y);l=a()+i+r()}return n===Y&&(l=a()+o(t)+c()+o(s)+c()+o(e)+r()),n===X&&(l=a()+o(t)+o(t+1)+c()+o(e-1)+o(e)+r()),l}
+  `,document.querySelector(".modal-order-succ-btn").addEventListener("click",W),window.addEventListener("click",et),window.addEventListener("keydown",st)}function W(){R.classList.remove("modal-show-order"),document.body.classList.remove("stop-scroll"),window.removeEventListener("click",et),window.removeEventListener("keydown",st)}function et(t){t.target===R&&W()}function st(t){t.keyCode===27&&W()}
 //# sourceMappingURL=commonHelpers2.js.map
