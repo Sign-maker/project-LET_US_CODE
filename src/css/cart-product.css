@@ -117,3 +117,7 @@
 
 @media screen and (min-width: 1440px) {
 }
+.cart-list{
+  max-width: 540px;
+  min-width: 540px;
+}
