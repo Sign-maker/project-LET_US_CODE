@@ -46,6 +46,7 @@ async function initLoad(filterParams) {
   await getPopularProducts();
   await getDiscountedProducts();
   addListenerToAllCard();
+  filterHandler();
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -103,7 +104,6 @@ async function getDiscountedProducts() {
   }
 }
 //-----------filter--------------------------------------------------------------------------
-filterHandler();
 
 async function addListenerToAllCard() {
   //////////////////////////////////////////////////////////////////////////////
