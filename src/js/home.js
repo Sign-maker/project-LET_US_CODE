@@ -46,6 +46,8 @@ async function initLoad(filterParams) {
   await getPopularProducts();
   await getDiscountedProducts();
   allItem = addListenerToAllCard();
+  filterHandler();
+
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -103,7 +105,6 @@ async function getDiscountedProducts() {
   }
 }
 //-----------filter--------------------------------------------------------------------------
-filterHandler();
 
 function addListenerToAllCard() {
   const li = document.querySelectorAll('.js-card-item');
