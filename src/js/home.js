@@ -40,11 +40,12 @@ contentWrapperRef.addEventListener('click', onButtonCartClick);
 const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
 initLoad(filterParams);
 
-function initLoad(filterParams) {
-  getCategories();
-  getProducts(filterParams);
-  getPopularProducts();
-  getDiscountedProducts();
+async function initLoad(filterParams) {
+  await getCategories();
+  await getProducts(filterParams);
+  await getPopularProducts();
+  await getDiscountedProducts();
+  addListenerToAllCard();
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -106,7 +107,7 @@ filterHandler();
 
 async function addListenerToAllCard() {
   //////////////////////////////////////////////////////////////////////////////
-  const li = document.getElementsByClassName('js-card-item');
+  const li = document.querySelectorAll('.js-card-item');
   console.log(li);
 
   //-------------------------------------------------------------------------------------------
@@ -155,7 +156,7 @@ async function addListenerToAllCard() {
   // console.log(shopStorage.getAllProducts());
 }
 
-addListenerToAllCard();
+// addListenerToAllCard();
 
 function onButtonCartClick(e) {
   if (!e.target.closest('.js-add-btn')) return;
