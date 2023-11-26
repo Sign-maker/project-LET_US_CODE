@@ -7,8 +7,10 @@
 .pagination {
 }
 .buttons-container {
+  min-height: 40px;
   display: flex;
   justify-content: center;
+  margin-bottom: 80px;
 }
 .buttons-list {
   display: flex;
@@ -95,6 +97,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .buttons-container {
+    margin-bottom: 100px;
+  }
   .buttons-list {
     gap: 8px;
   }
@@ -104,5 +109,10 @@
 
   .next-btn {
     margin-left: 72px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .buttons-container {
+    margin-bottom: 61px;
   }
 }

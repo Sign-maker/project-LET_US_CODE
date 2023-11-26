@@ -3,6 +3,7 @@ import { Storage, ShopStorage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
 import { renderPopularProd, renderDiscountProd } from './aside';
 import { filterHandler } from './filter';
+import { paginationHandler } from './pagination/pagination-handler';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -23,7 +24,6 @@ const discountProductListRef = document.querySelector('.discount-list');
 const contentWrapperRef = document.querySelector('.content-wrapper');
 const spanCartRef = document.querySelector('.js-header-navSpan');
 
-
 const foodBoutique = new FoodBoutiqueAPI();
 const filterStorage = new Storage(FILTER_STORAGE);
 const categoryStorage = new Storage(CATEGORY_STORAGE);
@@ -34,10 +34,12 @@ const shopStorage = new ShopStorage(SHOP_STORAGE);
 
 let allItem;
 
-
 contentWrapperRef.addEventListener('click', onButtonCartClick);
+if (!filterStorage.getValue()) {
+  filterStorage.setValue(INIT_FILTER_PARAMS);
+}
 
-const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
+const filterParams = filterStorage.getValue();
 initLoad(filterParams);
 
 async function initLoad(filterParams) {
@@ -47,7 +49,7 @@ async function initLoad(filterParams) {
   await getDiscountedProducts();
   allItem = addListenerToAllCard();
   filterHandler();
-
+  paginationHandler();
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -65,12 +67,14 @@ async function getCategories() {
   }
 }
 
-async function getProducts(filterParams) {
+export async function getProducts(filterParams) {
   try {
     // loader show
     const products = await foodBoutique.getProducts(filterParams);
     productStorage.setValue(products);
-    filterStorage.setValue(filterParams);
+    // if (!filterStorage.getValue()) {
+    //   filterStorage.setValue(filterParams);
+    // }
     renderProductList(productListRef, productStorage.getValue().results);
   } catch (error) {
     console.log(error);
@@ -109,41 +113,41 @@ async function getDiscountedProducts() {
 function addListenerToAllCard() {
   const li = document.querySelectorAll('.js-card-item');
 
-  getOverItems(li)
-  return li
+  getOverItems(li);
+  return li;
 }
 
-function getOverItems (arrNodeList) {
-  const arr = [...arrNodeList]
+function getOverItems(arrNodeList) {
+  const arr = [...arrNodeList];
 
-  return arr.filter(item=>{
-    const arrFromShop = shopStorage.getAllProducts()
+  return arr.filter(item => {
+    const arrFromShop = shopStorage.getAllProducts();
 
-    return arrFromShop.map(obj=>{
+    return arrFromShop.map(obj => {
       if (item.dataset.id === obj._id) {
         // console.log(item);
-        const btnItemRef = document.querySelectorAll(`[data-id="${obj._id}"] .js-add-btn`);
+        const btnItemRef = document.querySelectorAll(
+          `[data-id="${obj._id}"] .js-add-btn`
+        );
         // console.log(btnItemRef);
 
-        if (typeof btnItemRef === "object") {
-          [...btnItemRef].map(el=>{
-           if (el.classList.contains('popular-btn')) {
-            el.style.backgroundColor = '#6d8434'
+        if (typeof btnItemRef === 'object') {
+          [...btnItemRef].map(el => {
+            if (el.classList.contains('popular-btn')) {
+              el.style.backgroundColor = '#6d8434';
             }
-            return  el.classList.add('is-added')
-          })
-         
+            return el.classList.add('is-added');
+          });
         } else {
           if (btnItemRef.classList.contains('popular-btn')) {
-                btnItemRef.style.backgroundColor = '#6d8434'
-              }
-              btnItemRef.classList.add('is-added')
+            btnItemRef.style.backgroundColor = '#6d8434';
+          }
+          btnItemRef.classList.add('is-added');
         }
       }
-    })
-  })
+    });
+  });
 }
-
 
 function onButtonCartClick(e) {
   if (!e.target.closest('.js-add-btn')) return;
@@ -152,7 +156,7 @@ function onButtonCartClick(e) {
   const idCard = item.dataset.id;
   const isNewIDinBasket = checkNewIDinBasket(idCard);
 
-  if (isNewIDinBasket) return
+  if (isNewIDinBasket) return;
 
   e.target.closest('button').classList.add('is-added');
 
@@ -184,22 +188,21 @@ function onButtonCartClick(e) {
 
   changeQuantityOrderedInBasket(shopStorage.getAllProducts());
 
-  function getOverItems (cardId, arrNodeList) {
-    const arr = [...arrNodeList]
+  function getOverItems(cardId, arrNodeList) {
+    const arr = [...arrNodeList];
     // const newArrById = arr.filter(item=>{
     //   return item.dataset.id === cardId
     // })
-  return arr.forEach(item=>{ 
+    return arr.forEach(item => {
       if (item.dataset.id === cardId) {
         // console.dir(item.children);
-        item.classList.add("is-added")
+        item.classList.add('is-added');
       }
-    })
+    });
     // console.log(newArrById);
   }
 
-
-  getOverItems(idCard, allItem)
+  getOverItems(idCard, allItem);
 }
 
 function checkNewIDinBasket(id) {
