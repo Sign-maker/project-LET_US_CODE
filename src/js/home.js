@@ -23,6 +23,7 @@ const popularProductListRef = document.querySelector('.popular-list');
 const discountProductListRef = document.querySelector('.discount-list');
 const contentWrapperRef = document.querySelector('.content-wrapper');
 const spanCartRef = document.querySelector('.js-header-navSpan');
+const categoryListRef = document.querySelector('.js-category');
 
 const foodBoutique = new FoodBoutiqueAPI();
 const filterStorage = new Storage(FILTER_STORAGE);
@@ -61,7 +62,8 @@ async function getCategories() {
     // loader show
     const productCategories = await foodBoutique.getProductCategories();
     categoryStorage.setValue(productCategories);
-    // fillCategoryList (categoryListRef, categoryStorage.getValue());
+    // fillCategoryList(categoryListRef, categoryStorage.getValue());
+    // categoryStorage.getValue();
   } catch (error) {
     console.log(error);
   } finally {
