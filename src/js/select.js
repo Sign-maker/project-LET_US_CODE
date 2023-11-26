@@ -7,12 +7,23 @@ selectBtnCtg.addEventListener('click', () => {
   optionMenu.classList.toggle('active');
 });
 
+let lastSelectedOption = null;
+
 options.forEach(option => {
   option.addEventListener('click', () => {
     let selectedOption = option.innerText;
+
+    if (lastSelectedOption) {
+      lastSelectedOption.style.color = 'gray';
+    }
+
     selectCtgInput.value = selectedOption;
+    option.style.color = 'black';
     optionMenu.classList.remove('active');
-    console.log(selectedOption)
+    console.log(selectedOption);
+
+    lastSelectedOption = option;
+
     // Здесь должен быть код для выполнения запроса к API с параметром selectedOption
   });
 });
@@ -26,11 +37,25 @@ selectBtnSort.addEventListener('click', () => {
   sortMenu.classList.toggle('active');
 });
 
+let lastSelectedOptionSort = null;
+
 optionsSort.forEach(option => {
   option.addEventListener('click', () => {
     let selectedOptionSort = option.innerText;
+
+   
+    if (lastSelectedOptionSort) {
+      lastSelectedOptionSort.style.color = 'gray';
+    }
+
     selectInputSort.value = selectedOptionSort;
+    option.style.color = 'black';
     sortMenu.classList.remove('active');
+    console.log(selectedOptionSort);
+
+
+    lastSelectedOptionSort = option;
+
     // Здесь должен быть код для выполнения запроса к API с параметром selectedOptionSort
   });
 });
@@ -53,6 +78,8 @@ document.addEventListener('keyup', function(event) {
       sortMenu.classList.remove('active');
     }
   });
+
+
 
 // sortMenu.addEventListener('keydown', (event) => {
 //   if (event.code === 'Space') {
