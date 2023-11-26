@@ -29,16 +29,12 @@
 .logo-link-icon:hover .logo-footer-svg {
     background-color: rgba(232, 232, 226, 0.7);
     fill: var(--btn-gray);
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: fill var(--transition-duration) var(--transition-timing-function) background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .logo-link-icon:hover .logo-footer-text {
     color: rgba(232, 232, 226, 0.7);
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .logo-footer-svg {
@@ -82,8 +78,8 @@
 
 .social-item-link {
     position: relative;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -92,9 +88,7 @@
 .social-item-link:hover::before,
 .social-item-link:focus::before {
     background-color: rgba(232, 232, 226, 0.2);
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .social-item-link::before {
@@ -137,7 +131,7 @@
 }
 
 .discover-box {
-    max-width: 335px;
+    max-width: 336px;
 }
 
 .container-form {
@@ -148,7 +142,7 @@
 .footer-form-par {
     color: var(--btn-gray);
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.33;
     font-weight: 400;
     margin-bottom: 20px;
     text-align: left;
@@ -162,7 +156,7 @@
 
 .label-subscribe {
     display: flex;
-    max-width: 335px;
+    max-width: 336px;
     width: 100%;
 }
 
@@ -184,9 +178,7 @@
 .form-footer-input:hover, 
 .form-footer-input:hover{
     background-color: rgba(232, 232, 226, 0.2);
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
 
 .form-footer-input::placeholder {
@@ -208,19 +200,13 @@
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
-
 }
 
 .footer-form-button:hover,
 .footer-form-button:focus {
     color: var(--second-bg);
     /*#6D8434*/
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .terms {
@@ -238,15 +224,13 @@
     color: var(--btn-gray);
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.3;
+    line-height: 1.33;
 }
 
 .terms-par:hover,
 .terms-par:focus {
     color: rgba(232, 232, 226, 0.7);
-    transition-duration: var(--transition-duration, 250ms);
-    transition-timing-function: var(--transition-timing-function, ease-in-out);
-    transition-delay: var(--transition-delay, 250ms);
+    transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .slash {
@@ -273,6 +257,11 @@
         font-style: normal;
     }
 
+    .social-item-link{
+        width: 44px;
+        height: 44px;
+    }
+
     .footer-title {
         font-size: 40px;
         font-style: normal;
@@ -284,6 +273,7 @@
 
     .footer-text {
         font-size: 18px;
+        line-height: 1.33;
         max-width: none;
         width: 429px;
         margin-bottom: 0;
@@ -299,6 +289,7 @@
 
     .footer-form-par {
         font-size: 18px;
+    
     }
 
     .footer-form-button {
@@ -341,6 +332,7 @@
     .footer-form-button {
         margin-bottom: 148px;
     }
+
 
 }
 
