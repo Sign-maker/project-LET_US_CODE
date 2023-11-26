@@ -65,6 +65,14 @@
   line-height: 1.29;
 }
 
+.btn-header-home:hover,
+.btn-header-home:focus {
+  background-color: var(--btn-green-dark);
+  transition-duration: var(--transition-duration, 250ms);
+  transition-timing-function: var(--transition-timing-function, ease-in-out);
+  transition-delay: var(--transition-delay, 250ms);
+}
+
 .button-buy {
   display: flex;
   align-items: center;
@@ -80,6 +88,14 @@
   border-radius: 50%;
   background-color: var(--second-bg);
   border: none;
+}
+
+.nav-wripper:hover,
+.nav-wripper:focus {
+  background-color: var(--btn-green-dark);
+  transition-duration: var(--transition-duration, 250ms);
+  transition-timing-function: var(--transition-timing-function, ease-in-out);
+  transition-delay: var(--transition-delay, 250ms);
 }
 
 .add-product-icon {
