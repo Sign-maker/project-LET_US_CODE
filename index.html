@@ -118,15 +118,15 @@
           <div class="filters">
   <p class="filter-text">Filters:</p>
   <div class="filter-container">
-    <form class="custom-input">
+    <form class="custom-input js-search-form">
       <input
-        class="search-input"
+        class="search-input js-search-input"
         type="text"
         name="search"
         placeholder="Search for anything"
       />
 
-      <button class="search-btn filter-btn" type="button">
+      <button class="search-btn filter-btn" type="submit">
         <span>
           <svg width="20" height="20">
             <use href="/project-LET_US_CODE/assets/icons-b681127c.svg#icon-mag-search" />
@@ -138,7 +138,7 @@
     <div class="custom-select custom-select-ctg">
       <input
         type="text"
-        class="selected-option selected-option-ctgr"
+        class="selected-option selected-option-ctgr js-category"
         tabindex="-1"
         placeholder="Categories"
         readonly
@@ -151,10 +151,11 @@
           </svg>
         </span>
       </button>
-      <div class="select-options select-opt" tabindex="0">
-        <div class="text-options" tabindex="0">Breads / Bakery</div>
+      <div class="select-options select-opt js-select-option" tabindex="0">
+        <div class="text-options" tabindex="0">Show all</div>
+        <!-- <div class="text-options" tabindex="0">Breads / Bakery</div>
         <div class="text-options" tabindex="0">Prepared Foods</div>
-        <div class="text-options" tabindex="0">Eggs</div>
+        <div class="text-options" tabindex="0">Eggs</div> -->
       </div>
     </div>
 
@@ -184,13 +185,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
           <div class="content-wrapper">
             <div class="products-wrapper">
