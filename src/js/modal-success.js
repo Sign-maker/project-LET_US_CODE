@@ -15,7 +15,7 @@ export function openSuccessModal(id) {
     <div class="modal-order-succ">
     <button type="button" class="modal-order-succ-btn">
       <svg class="modal-prod-close-icon">
-        <use href="./img/icons.svg#icon-close"></use>
+      <use href="${icons}#icon-close"></use>
       </svg>
     </button>
     <div class="modal-prod-close-img-wrap">
