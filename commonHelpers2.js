@@ -1,4 +1,4 @@
-import{S as j,F as V,a as h}from"./assets/subscription-7881ce38.js";import"./assets/vendor-bb007519.js";const u="/project-LET_US_CODE/assets/icons-b681127c.svg";function K(t){return t.map(({category:e,img:s,is10PercentOff:a,name:o,popularity:c,price:r,size:l,_id:n})=>`<li class="products-card-item js-card-item" data-id="${n}">
+import{S as j,F as V,a as h}from"./assets/subscription-dc3647ec.js";import"./assets/vendor-bb007519.js";const u="/project-LET_US_CODE/assets/icons-b681127c.svg";function K(t){return t.map(({category:e,img:s,is10PercentOff:a,name:o,popularity:c,price:r,size:l,_id:n})=>`<li class="products-card-item js-card-item" data-id="${n}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${s}" alt="${o}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${o}</h4></a>
                 <ul class="product-description-list">
