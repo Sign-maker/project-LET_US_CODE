@@ -23,17 +23,17 @@ const discountProductListRef = document.querySelector('.discount-list');
 const contentWrapperRef = document.querySelector('.content-wrapper');
 const spanCartRef = document.querySelector('.js-header-navSpan');
 
+
 const foodBoutique = new FoodBoutiqueAPI();
 const filterStorage = new Storage(FILTER_STORAGE);
 const categoryStorage = new Storage(CATEGORY_STORAGE);
 const productStorage = new Storage(PRODUCT_STORAGE);
 const popularityStorage = new Storage(POPULARITY_STORAGE);
 const discountStorage = new Storage(DISCOUNT_STORAGE);
-
-// Это удалить и проверить по коду
-// const shopStorage = new Storage(SHOP_STORAGE);
-
 const shopStorage = new ShopStorage(SHOP_STORAGE);
+
+let allItem;
+
 
 contentWrapperRef.addEventListener('click', onButtonCartClick);
 
@@ -45,8 +45,9 @@ async function initLoad(filterParams) {
   await getProducts(filterParams);
   await getPopularProducts();
   await getDiscountedProducts();
-  addListenerToAllCard();
+  allItem = addListenerToAllCard();
   filterHandler();
+
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -105,67 +106,53 @@ async function getDiscountedProducts() {
 }
 //-----------filter--------------------------------------------------------------------------
 
-async function addListenerToAllCard() {
-  //////////////////////////////////////////////////////////////////////////////
+function addListenerToAllCard() {
   const li = document.querySelectorAll('.js-card-item');
-  console.log(li);
 
-  //-------------------------------------------------------------------------------------------
-
-  const product1 = {
-    _id: '640c2dd963a319ea671e383b',
-    name: 'Ackee',
-    desc: 'A fruit that is native to West Africa, but is also grown in the Caribbean, and is often used in traditional Jamaican dishes such as ackee and saltfish.',
-    img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e383b.png',
-    category: 'Fresh_Produce',
-    price: 8.99,
-    size: '16 oz',
-    is10PercentOff: false,
-    popularity: 2,
-  };
-  const product2 = {
-    _id: '640c2dd963a319ea671e3864',
-    name: 'Black Beans',
-    img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e3864.png',
-    category: 'Pantry_Items',
-    price: 1.99,
-    size: '16oz',
-    is10PercentOff: false,
-    popularity: 0,
-  };
-  const product3 = {
-    _id: '640c2dd963a319ea671e37ad',
-    name: 'Black Olives',
-    img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e37ad.png',
-    category: 'Fresh_Produce',
-    price: 3.99,
-    size: '1 jar (16 oz)',
-    is10PercentOff: false,
-    popularity: 0,
-  };
-
-  // console.log(shopStorage.getAllProducts());
-  // // shopStorage.setProduct();
-  // shopStorage.setProduct(product1);
-  // shopStorage.setProduct(product2);
-  // shopStorage.setProduct(product3);
-  // console.log(shopStorage.getAllProducts());
-  // shopStorage.removeProduct('640c2dd963a319ea671e37ad');
-  // console.log(shopStorage.getAllProducts());
-  // shopStorage.removeAllProducts();
-  // console.log(shopStorage.getAllProducts());
+  getOverItems(li)
+  return li
 }
 
-// addListenerToAllCard();
+function getOverItems (arrNodeList) {
+  const arr = [...arrNodeList]
+
+  return arr.filter(item=>{
+    const arrFromShop = shopStorage.getAllProducts()
+
+    return arrFromShop.map(obj=>{
+      if (item.dataset.id === obj._id) {
+        // console.log(item);
+        const btnItemRef = document.querySelectorAll(`[data-id="${obj._id}"] .js-add-btn`);
+        // console.log(btnItemRef);
+
+        if (typeof btnItemRef === "object") {
+          [...btnItemRef].map(el=>{
+           if (el.classList.contains('popular-btn')) {
+            el.style.backgroundColor = '#6d8434'
+            }
+            return  el.classList.add('is-added')
+          })
+         
+        } else {
+          if (btnItemRef.classList.contains('popular-btn')) {
+                btnItemRef.style.backgroundColor = '#6d8434'
+              }
+              btnItemRef.classList.add('is-added')
+        }
+      }
+    })
+  })
+}
+
 
 function onButtonCartClick(e) {
   if (!e.target.closest('.js-add-btn')) return;
 
-  const li = e.target.closest('li');
-  const idCard = li.dataset.id;
+  const item = e.target.closest('li');
+  const idCard = item.dataset.id;
   const isNewIDinBasket = checkNewIDinBasket(idCard);
 
-  if (isNewIDinBasket) return;
+  if (isNewIDinBasket) return
 
   e.target.closest('button').classList.add('is-added');
 
@@ -196,7 +183,23 @@ function onButtonCartClick(e) {
   }
 
   changeQuantityOrderedInBasket(shopStorage.getAllProducts());
-  console.log(idCard);
+
+  function getOverItems (cardId, arrNodeList) {
+    const arr = [...arrNodeList]
+    // const newArrById = arr.filter(item=>{
+    //   return item.dataset.id === cardId
+    // })
+  return arr.forEach(item=>{ 
+      if (item.dataset.id === cardId) {
+        // console.dir(item.children);
+        item.classList.add("is-added")
+      }
+    })
+    // console.log(newArrById);
+  }
+
+
+  getOverItems(idCard, allItem)
 }
 
 function checkNewIDinBasket(id) {
