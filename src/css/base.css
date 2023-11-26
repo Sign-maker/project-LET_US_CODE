@@ -106,6 +106,8 @@ body {
 .btn {
   background-color: var(--second-bg);
   color: var(--main-bg);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
 }
 
 .btn:is(:hover, :focus) {
