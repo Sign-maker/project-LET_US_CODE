@@ -20,14 +20,22 @@ const INIT_FILTER_PARAMS = {
 const productListRef = document.querySelector('.product-card-list');
 const popularProductListRef = document.querySelector('.popular-list');
 const discountProductListRef = document.querySelector('.discount-list');
+const contentWrapperRef = document.querySelector('.content-wrapper');
+const spanCartRef = document.querySelector('.js-header-navSpan');
 
 const foodBoutique = new FoodBoutiqueAPI();
-
 const filterStorage = new Storage(FILTER_STORAGE);
 const categoryStorage = new Storage(CATEGORY_STORAGE);
 const productStorage = new Storage(PRODUCT_STORAGE);
 const popularityStorage = new Storage(POPULARITY_STORAGE);
 const discountStorage = new Storage(DISCOUNT_STORAGE);
+
+
+const newShopStorage = new ShopStorage(SHOP_STORAGE);
+
+contentWrapperRef.addEventListener('click', onButtonCartClick);
+
+
 
 const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
 initLoad(filterParams);
@@ -38,6 +46,8 @@ function initLoad(filterParams) {
   getPopularProducts();
   getDiscountedProducts();
 }
+
+changeQuantityOrderedInBasket(newShopStorage.getAllProducts())
 
 async function getCategories() {
   try {
@@ -94,6 +104,12 @@ async function getDiscountedProducts() {
 //-----------filter--------------------------------------------------------------------------
 filterHandler();
 
+
+async function addListenerToAllCard () {
+  //////////////////////////////////////////////////////////////////////////////
+const li = document.getElementsByClassName('js-card-item');
+console.log(li);
+
 //-------------------------------------------------------------------------------------------
 
 const product1 = {
@@ -138,15 +154,12 @@ const product3 = {
 // console.log(shopStorage.getAllProducts());
 // shopStorage.removeAllProducts();
 // console.log(shopStorage.getAllProducts());
-const shopStorage = new ShopStorage(SHOP_STORAGE);
 
-///delete this fucking storage
-// shopStorage.setProduct(product1);
-// shopStorage.setProduct(product2);
 
-const contentWrapperRef = document.querySelector('.content-wrapper');
 
-contentWrapperRef.addEventListener('click', onButtonCartClick);
+}
+
+addListenerToAllCard()
 
 function onButtonCartClick(e) {
   if (!e.target.closest('.js-add-btn')) return;
@@ -184,6 +197,12 @@ function onButtonCartClick(e) {
     default:
       alert('Нет таких значений');
   }
+
+
+  changeQuantityOrderedInBasket(newShopStorage.getAllProducts())
+  console.log(idCard);
+
+
 }
 
 function checkNewIDinBasket(id) {
@@ -195,3 +214,10 @@ function objFromLocStor(arrDataLocalStorage, idCard) {
   const obj = arrDataLocalStorage.find(el => el._id === idCard);
   return obj;
 }
+
+
+function changeQuantityOrderedInBasket (arrFromLocStor) {
+  let quantityOrdered = arrFromLocStor.length
+  spanCartRef.textContent = quantityOrdered
+}
+
