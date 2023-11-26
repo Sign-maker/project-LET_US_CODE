@@ -6,4 +6,5 @@ import './js/select';
 import './js/modal-success';
 import './js/product-list-click';
 import './js/subscription';
+import './js/pagination/pagination-handler';
 // import './js/markup-product-list';
