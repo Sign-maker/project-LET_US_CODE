@@ -14,11 +14,11 @@ options.forEach(option => {
     let selectedOption = option.innerText;
 
     if (lastSelectedOption) {
-      lastSelectedOption.style.color = 'gray';
+      lastSelectedOption.style.color = 'rgba(1, 1, 1, 0.5)';
     }
 
     selectCtgInput.value = selectedOption;
-    option.style.color = 'black';
+    option.style.color = 'var(--text)';
     optionMenu.classList.remove('active');
     console.log(selectedOption);
 
@@ -45,11 +45,11 @@ optionsSort.forEach(option => {
 
    
     if (lastSelectedOptionSort) {
-      lastSelectedOptionSort.style.color = 'gray';
+      lastSelectedOptionSort.style.color = 'rgba(1, 1, 1, 0.5)';
     }
 
     selectInputSort.value = selectedOptionSort;
-    option.style.color = 'black';
+    option.style.color = 'var(--text)';
     sortMenu.classList.remove('active');
     console.log(selectedOptionSort);
 
