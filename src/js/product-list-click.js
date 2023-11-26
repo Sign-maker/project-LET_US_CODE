@@ -1,7 +1,9 @@
 import { markupProductsList } from './markup-product-list';
 import { openModal } from './modal-markup';
+import { ShopStorage } from './local-storage-api';
 const listEl = document.querySelector('.product-card-list');
 listEl.addEventListener('click', onClickCart);
+
 
 // export function onClickCart(e) {
 //   e.preventDefault();
