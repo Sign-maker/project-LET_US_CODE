@@ -48,13 +48,13 @@ async function renderModal(productDetails) {
   <h2 class="modal-prod-name">${productDetails.name}</h2>
   <ul class="modal-prod-list">
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Category: ${productDetails.category}</h3>
+      <h3 class="modal-prod-text">Category: <span>${productDetails.category}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Size: ${productDetails.size}</h3>
+      <h3 class="modal-prod-text">Size: <span>${productDetails.size}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Popularity: ${productDetails.popularity}</h3>
+      <h3 class="modal-prod-text">Popularity: <span>${productDetails.popularity}</span></h3>
     </li>
   </ul>
   <p class="modal-prod-desc">${productDetails.desc}</p>
