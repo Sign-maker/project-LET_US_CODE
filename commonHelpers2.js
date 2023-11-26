@@ -1,4 +1,4 @@
-import{a as v,S as X,F as Q}from"./assets/subscription-99a8ffbd.js";import"./assets/vendor-bb007519.js";const b="/project-LET_US_CODE/assets/icons-b681127c.svg";function lt(t){return t.map(({category:e,img:o,is10PercentOff:d,name:n,popularity:r,price:u,size:p,_id:c})=>`<li class="products-card-item js-card-item" data-id="${c}">
+import{a as v,S as X,F as Q}from"./assets/subscription-e3724da0.js";import"./assets/vendor-bb007519.js";const b="/project-LET_US_CODE/assets/icons-b681127c.svg";function lt(t){return t.map(({category:e,img:o,is10PercentOff:d,name:n,popularity:r,price:u,size:p,_id:c})=>`<li class="products-card-item js-card-item" data-id="${c}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${o}" alt="${n}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${n}</h4></a>
                 <ul class="product-description-list">
@@ -131,13 +131,13 @@ import{a as v,S as X,F as Q}from"./assets/subscription-99a8ffbd.js";import"./ass
   <h2 class="modal-prod-name">${t.name}</h2>
   <ul class="modal-prod-list">
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Category: ${t.category}</h3>
+      <h3 class="modal-prod-text">Category: <span>${t.category}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Size: ${t.size}</h3>
+      <h3 class="modal-prod-text">Size: <span>${t.size}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Popularity: ${t.popularity}</h3>
+      <h3 class="modal-prod-text">Popularity: <span>${t.popularity}</span></h3>
     </li>
   </ul>
   <p class="modal-prod-desc">${t.desc}</p>
