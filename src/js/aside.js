@@ -16,7 +16,7 @@ function markupPopular(obj) {
   return obj
     .map(item => {
       const { _id, name, img, category, size, popularity } = item;
-      return `<li class="popular-item" data-id="${_id}">
+      return `<li class="popular-item js-card-item" data-id="${_id}">
         <div class="popular-img-wrapper">
          <a class="products-card-link" href="#"> 
           <img
