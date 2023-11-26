@@ -1,19 +1,20 @@
 import icons from '../img/icons.svg';
 
 export function markupProductsList(productsObj) {
-  return productsObj
-    .map(
-      ({
-        category,
-        img,
-        is10PercentOff,
-        name,
-        popularity,
-        price,
-        size,
-        _id,
-      }) => {
-        return `<li class="products-card-item js-card-item" data-id="${_id}">
+  if (productsObj) {
+    return productsObj
+      .map(
+        ({
+          category,
+          img,
+          is10PercentOff,
+          name,
+          popularity,
+          price,
+          size,
+          _id,
+        }) => {
+          return `<li class="products-card-item js-card-item" data-id="${_id}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
                 <ul class="product-description-list">
@@ -35,7 +36,9 @@ export function markupProductsList(productsObj) {
                     </button>
                 </div>
             </li>`;
-      }
-    )
-    .join('');
+        }
+      )
+      .join('');
+  }
+  return `нічого не знайдено`;
 }

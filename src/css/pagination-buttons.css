@@ -5,12 +5,12 @@
 }
 
 .pagination {
+  margin-bottom: 80px;
 }
 .buttons-container {
   min-height: 40px;
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
 }
 .buttons-list {
   display: flex;
@@ -97,7 +97,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .buttons-container {
+  .pagination {
     margin-bottom: 100px;
   }
   .buttons-list {
@@ -112,7 +112,7 @@
   }
 }
 @media screen and (min-width: 1440px) {
-  .buttons-container {
-    margin-bottom: 61px;
+  .pagination {
+    margin-bottom: 0px;
   }
 }

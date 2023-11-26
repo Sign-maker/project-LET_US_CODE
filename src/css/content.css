@@ -2,6 +2,7 @@
   .content-wrapper {
     display: flex;
     column-gap: 40px;
+    padding-bottom: 61px;
   }
   .products-wrapper {
     flex: 1 1 auto;
