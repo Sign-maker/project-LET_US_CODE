@@ -6,7 +6,7 @@
 }
 
 .pagination {
-  max-width: 472px;
+  max-width: 334px;
   display: flex;
   justify-content: space-between;
 }
@@ -15,7 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
 }
 span {
   display: flex;
@@ -24,17 +23,19 @@ span {
   width: 100%;
   height: 100%;
 }
-
+li {
+  border-radius: 60px;
+  gap: 4px;
+}
 .dots {
   width: 40px;
   height: 40px;
-  /* border-radius: 4px; */
+  border-radius: 4px;
   color: var(--second-bg);
   text-align: center;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.42;
-  /* padding: 8px; */
 }
 button {
   display: inline-block;
@@ -43,13 +44,16 @@ button {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.42;
-  /* padding: 8px; */
   border-radius: 60px;
-  background: var(--third-bg);
+  background: transparent;
   color: var(--second-text);
   border-color: transparent;
   width: 40px;
   height: 40px;
+}
+.btn_back,
+.btn_next {
+  background: var(--third-bg);
 }
 numb {
   display: inline-block;
@@ -65,7 +69,6 @@ numb {
   border-color: transparent;
   width: 40px;
   height: 40px;
-  opacity: 0.7;
 }
 .paginations__icon {
   fill: var(--second-text);
@@ -84,11 +87,18 @@ button:active {
   background-color: var(--second-bg);
 }
 .btn_back {
-  margin-right: 40px;
+  margin-right: 15px;
 }
 .btn_next {
-  margin-left: 40px;
+  margin-left: 15px;
 }
 li.active {
   background-color: transparent;
+}
+@media screen and (min-width: 768px) {
+  .pagination {
+    max-width: 472px;
+  }
+}
+@media screen and (min-width: 1158px) {
 }
