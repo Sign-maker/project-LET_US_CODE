@@ -50,9 +50,7 @@ async function initLoad(filterParams) {
   await getDiscountedProducts();
   allItem = addListenerToAllCard();
   filterHandler();
-
   paginationHandler();
-
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -76,6 +74,7 @@ export async function getProducts(filterParams) {
     // loader show
     const products = await foodBoutique.getProducts(filterParams);
     productStorage.setValue(products);
+
     // if (!filterStorage.getValue()) {
     //   filterStorage.setValue(filterParams);
     // }
@@ -124,7 +123,6 @@ function addListenerToAllCard() {
 function getOverItems(arrNodeList) {
   const arr = [...arrNodeList];
 
-
   return arr.filter(item => {
     const arrFromShop = shopStorage.getAllProducts();
 
@@ -132,11 +130,9 @@ function getOverItems(arrNodeList) {
       if (item.dataset.id === obj._id) {
         // console.log(item);
         const btnItemRef = document.querySelectorAll(
-
           `[data-id="${obj._id}"] .js-add-btn`
         );
         // console.log(btnItemRef);
-
 
         if (typeof btnItemRef === 'object') {
           [...btnItemRef].map(el => {
@@ -150,7 +146,6 @@ function getOverItems(arrNodeList) {
             btnItemRef.style.backgroundColor = '#6d8434';
           }
           btnItemRef.classList.add('is-added');
-
         }
       }
     });
@@ -217,7 +212,7 @@ function onButtonCartClick(e) {
 
 function checkNewIDinBasket(id) {
   const shopStorageProducts = shopStorage.getAllProducts();
-  if (shopStorageProducts === null) return
+  if (shopStorageProducts === null) return;
   return shopStorageProducts.some(el => el._id === id);
 }
 
@@ -232,66 +227,74 @@ function changeQuantityOrderedInBasket(arrFromLocStor) {
 }
 
 function changeButtonsOnClick(eventFromHandler, cardId) {
-
   const productList = document.querySelector('.product-card-list');
   const popularList = document.querySelector('.popular-list');
   const discountList = document.querySelector('.discount-list');
 
-  const arrProduct = [...productList.children]
-  const arrDiscount = [...discountList.children]
-  const arrPopular = [...popularList.children]
+  const arrProduct = [...productList.children];
+  const arrDiscount = [...discountList.children];
+  const arrPopular = [...popularList.children];
 
   if (eventFromHandler.target.closest('.products-wrapper')) {
-
-    arrPopular.forEach(el=>{
+    arrPopular.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.popular-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.popular-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         elBtnRef.classList.add('is-added');
-        elBtnRef.style.backgroundColor = '#6d8434'
+        elBtnRef.style.backgroundColor = '#6d8434';
       }
-    })
+    });
 
-    arrDiscount.forEach(el=>{
+    arrDiscount.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.discount-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.discount-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         elBtnRef.classList.add('is-added');
       }
-    })
+    });
   }
 
   if (eventFromHandler.target.closest('.popular-list')) {
-
-    arrProduct.forEach(el=>{
+    arrProduct.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.product-card-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.product-card-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         elBtnRef.classList.add('is-added');
       }
-    })
+    });
 
-    arrDiscount.forEach(el=>{
+    arrDiscount.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.discount-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.discount-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         console.log(elBtnRef);
         elBtnRef.classList.add('is-added');
       }
-    })
+    });
   }
 
   if (eventFromHandler.target.closest('.discount-list')) {
-
-    arrPopular.forEach(el=>{
+    arrPopular.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.popular-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.popular-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         elBtnRef.classList.add('is-added');
-        elBtnRef.style.backgroundColor = '#6d8434'
+        elBtnRef.style.backgroundColor = '#6d8434';
       }
-    })
+    });
 
-    arrProduct.forEach(el=>{
+    arrProduct.forEach(el => {
       if (el.dataset.id === cardId) {
-        const elBtnRef = document.querySelector(`.product-card-list [data-id="${el.dataset.id}"] .js-add-btn`);
+        const elBtnRef = document.querySelector(
+          `.product-card-list [data-id="${el.dataset.id}"] .js-add-btn`
+        );
         elBtnRef.classList.add('is-added');
       }
-    })
+    });
   }
 }

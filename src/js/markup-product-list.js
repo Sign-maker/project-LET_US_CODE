@@ -1,7 +1,7 @@
 import icons from '../img/icons.svg';
 
 export function markupProductsList(productsObj) {
-  if (productsObj) {
+  if (productsObj.length) {
     return productsObj
       .map(
         ({
@@ -40,5 +40,15 @@ export function markupProductsList(productsObj) {
       )
       .join('');
   }
-  return `нічого не знайдено`;
+
+  return `<div class="wrap-noting-found">
+  <p class="title-noting-found">
+    Nothing was found for the selected
+    <span class="acent-noting-found"> filters...</span>
+  </p>
+  <p class="paragraf-noting-found">
+    Try adjusting your search parameters or browse our range by other criteria
+    to find the perfect product for you.
+  </p>
+</div>`;
 }

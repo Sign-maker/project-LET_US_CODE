@@ -18,6 +18,7 @@ export function paginationHandler() {
   const productStorage = new Storage(PRODUCT_STORAGE);
   const pagButtons = new PaginationButtons();
   const buttonsListRef = document.querySelector('.buttons-list');
+
   buttonsListRef.addEventListener('click', onPagButtonsClick);
   let currentPage = null;
   let prevPage = null;
@@ -33,10 +34,10 @@ export function paginationHandler() {
   }
 
   function renderMarkup(firstPage, lastPage, currentPage) {
-    if (lastPage === firstPage) {
+    if (lastPage === firstPage || !lastPage) {
       //render empty list
       //не забыть зафиксировать высоту, если нужно
-      buttonsListRef.innerHTML;
+      buttonsListRef.innerHTML = '';
       return;
     }
     buttonsListRef.innerHTML = createButtonsMarkup(
