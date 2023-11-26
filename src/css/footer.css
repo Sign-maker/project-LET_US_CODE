@@ -248,6 +248,14 @@
         display: flex;
     }
 
+    .discover-box {
+        max-width: 336px;
+    }
+
+    .label-subscribe {
+        max-width: 336px;
+    }
+
     .logo-footer {
         margin-right: 78px;
     }
@@ -257,7 +265,7 @@
         font-style: normal;
     }
 
-    .social-item-link{
+    .social-item-link {
         width: 44px;
         height: 44px;
     }
@@ -289,7 +297,6 @@
 
     .footer-form-par {
         font-size: 18px;
-    
     }
 
     .footer-form-button {
@@ -304,6 +311,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: 1.5;
+        /* 150% */
     }
 
     .terms {
@@ -315,10 +323,17 @@
 
     .terms-privacy {
         margin-top: 0;
+        /* margin-left: auto;*/
     }
 }
 
+
 @media (min-width: 1440px) {
+
+    .logo-footer {
+        margin-right: 0;
+    }
+
     .footer-wrap {
         justify-content: space-between;
     }
@@ -329,11 +344,21 @@
         gap: 148px;
     }
 
+    .container-form {
+        width: 336px;
+    }
+
+    .footer-title {
+        width: 410px;
+    }
+
+    .footer-text {
+        width: 410px;
+    }
+
     .footer-form-button {
         margin-bottom: 148px;
     }
-
-
 }
 
 /* ---sweetalert2--- */
