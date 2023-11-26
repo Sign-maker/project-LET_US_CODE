@@ -1,4 +1,4 @@
-import{a as v,S as X,F as Q}from"./assets/subscription-e3724da0.js";import"./assets/vendor-bb007519.js";const b="/project-LET_US_CODE/assets/icons-b681127c.svg";function lt(t){return t.map(({category:e,img:o,is10PercentOff:d,name:n,popularity:r,price:u,size:p,_id:c})=>`<li class="products-card-item js-card-item" data-id="${c}">
+import{a as v,S as X,F as Q}from"./assets/subscription-a1cf8182.js";import"./assets/vendor-bb007519.js";const b="/project-LET_US_CODE/assets/icons-b681127c.svg";function lt(t){return t?t.map(({category:e,img:o,is10PercentOff:d,name:n,popularity:r,price:u,size:p,_id:c})=>`<li class="products-card-item js-card-item" data-id="${c}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${o}" alt="${n}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${n}</h4></a>
                 <ul class="product-description-list">
@@ -19,7 +19,7 @@ import{a as v,S as X,F as Q}from"./assets/subscription-e3724da0.js";import"./ass
                         
                     </button>
                 </div>
-            </li>`).join("")}function dt(t,e){t.innerHTML=lt(e)}function ut(t,e){t.innerHTML=gt(e)}function pt(t,e){t.innerHTML=mt(e)}function gt(t){return t.map(e=>{const{_id:o,name:d,img:n,category:r,size:u,popularity:p}=e;return`<li class="popular-item js-card-item" data-id="${o}">
+            </li>`).join(""):"нічого не знайдено"}function dt(t,e){t.innerHTML=lt(e)}function ut(t,e){t.innerHTML=gt(e)}function pt(t,e){t.innerHTML=mt(e)}function gt(t){return t.map(e=>{const{_id:o,name:d,img:n,category:r,size:u,popularity:p}=e;return`<li class="popular-item js-card-item" data-id="${o}">
         <div class="popular-img-wrapper">
          <a class="products-card-link" href="#"> 
           <img
