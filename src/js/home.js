@@ -1,7 +1,8 @@
 import { FoodBoutiqueAPI } from './food-api';
 import { Storage, ShopStorage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
-import { renderPopularProd, renderDiscountProd} from './aside';
+import { renderPopularProd, renderDiscountProd } from './aside';
+import { filterHandler } from './filter';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -28,10 +29,13 @@ const categoryStorage = new Storage(CATEGORY_STORAGE);
 const productStorage = new Storage(PRODUCT_STORAGE);
 const popularityStorage = new Storage(POPULARITY_STORAGE);
 const discountStorage = new Storage(DISCOUNT_STORAGE);
-const shopStorage = new Storage(SHOP_STORAGE);
+
+
 const newShopStorage = new ShopStorage(SHOP_STORAGE);
 
 contentWrapperRef.addEventListener('click', onButtonCartClick);
+
+
 
 const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
 initLoad(filterParams);
@@ -77,7 +81,7 @@ async function getPopularProducts() {
     // loader show
     const popularProducts = await foodBoutique.getPopularProducts();
     popularityStorage.setValue(popularProducts);
-    renderPopularProd (popularProductListRef, popularityStorage.getValue());
+    renderPopularProd(popularProductListRef, popularityStorage.getValue());
   } catch (error) {
     console.log(error);
   } finally {
@@ -90,18 +94,68 @@ async function getDiscountedProducts() {
     // loader show
     const discountedProducts = await foodBoutique.getDiscountedProducts();
     discountStorage.setValue(discountedProducts);
-    renderDiscountProd (discountProductListRef, discountStorage.getValue());
+    renderDiscountProd(discountProductListRef, discountStorage.getValue());
   } catch (error) {
     console.log(error);
   } finally {
     //  loader hide
   }
 }
+//-----------filter--------------------------------------------------------------------------
+filterHandler();
+
 
 async function addListenerToAllCard () {
   //////////////////////////////////////////////////////////////////////////////
 const li = document.getElementsByClassName('js-card-item');
 console.log(li);
+
+//-------------------------------------------------------------------------------------------
+
+const product1 = {
+  _id: '640c2dd963a319ea671e383b',
+  name: 'Ackee',
+  desc: 'A fruit that is native to West Africa, but is also grown in the Caribbean, and is often used in traditional Jamaican dishes such as ackee and saltfish.',
+  img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e383b.png',
+  category: 'Fresh_Produce',
+  price: 8.99,
+  size: '16 oz',
+  is10PercentOff: false,
+  popularity: 2,
+};
+const product2 = {
+  _id: '640c2dd963a319ea671e3864',
+  name: 'Black Beans',
+  img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e3864.png',
+  category: 'Pantry_Items',
+  price: 1.99,
+  size: '16oz',
+  is10PercentOff: false,
+  popularity: 0,
+};
+const product3 = {
+  _id: '640c2dd963a319ea671e37ad',
+  name: 'Black Olives',
+  img: 'https://ftp.goit.study/img/so-yummy/ingredients/640c2dd963a319ea671e37ad.png',
+  category: 'Fresh_Produce',
+  price: 3.99,
+  size: '1 jar (16 oz)',
+  is10PercentOff: false,
+  popularity: 0,
+};
+
+// console.log(shopStorage.getAllProducts());
+// // shopStorage.setProduct();
+// shopStorage.setProduct(product1);
+// shopStorage.setProduct(product2);
+// shopStorage.setProduct(product3);
+// console.log(shopStorage.getAllProducts());
+// shopStorage.removeProduct('640c2dd963a319ea671e37ad');
+// console.log(shopStorage.getAllProducts());
+// shopStorage.removeAllProducts();
+// console.log(shopStorage.getAllProducts());
+
+
 
 }
 
@@ -130,27 +184,29 @@ function onButtonCartClick(e) {
   const objFromPopStor = objFromLocStor(arrPopStor, idCard);
   const objFromDiscStor = objFromLocStor(arrDiscStor, idCard);
 
-  switch ("object") {
+  switch ('object') {
     case typeof objFromProdStor:
-      newShopStorage.setProduct(objFromProdStor);
+      shopStorage.setProduct(objFromProdStor);
       break;
     case typeof objFromPopStor:
-      newShopStorage.setProduct(objFromPopStor);
+      shopStorage.setProduct(objFromPopStor);
       break;
     case typeof objFromDiscStor:
-      newShopStorage.setProduct(objFromDiscStor);
+      shopStorage.setProduct(objFromDiscStor);
       break;
     default:
       alert('Нет таких значений');
   }
 
+
   changeQuantityOrderedInBasket(newShopStorage.getAllProducts())
   console.log(idCard);
+
 
 }
 
 function checkNewIDinBasket(id) {
-  const shopStorageProducts = newShopStorage.getAllProducts();
+  const shopStorageProducts = shopStorage.getAllProducts();
   return shopStorageProducts.some(el => el._id === id);
 }
 
@@ -158,6 +214,7 @@ function objFromLocStor(arrDataLocalStorage, idCard) {
   const obj = arrDataLocalStorage.find(el => el._id === idCard);
   return obj;
 }
+
 
 function changeQuantityOrderedInBasket (arrFromLocStor) {
   let quantityOrdered = arrFromLocStor.length
