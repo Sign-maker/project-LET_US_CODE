@@ -309,6 +309,7 @@ margin-top: 40px;
 @media only screen and (min-width: 375px) {
     .modal-order-succ {
         width: 335px;
+        max-height: 428px;
     }
 }
 /* tablet */
@@ -365,8 +366,8 @@ margin-top: 40px;
 .modal-prod-close-img {
     max-width: 100%;
     height: 140px;
-    outline: 2px solid red;
-    outline-offset: -2px;    
+    /* outline: 2px solid red;
+    outline-offset: -2px;     */
 }
 /* tablet */
 @media only screen and (min-width: 768px){
@@ -377,7 +378,7 @@ margin-top: 40px;
 /* mobile */
 .modal-prod-close-shadow {
     position: absolute;
-    top: 109px;
+    top: 92px;
     left: auto;
     width: 145px;
 }

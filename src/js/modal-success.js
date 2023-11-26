@@ -1,18 +1,17 @@
-import { Storage } from "./local-storage-api";
+import { Storage } from './local-storage-api';
 const SHOP_STORAGE = 'shop-storage';
 const shopStorage = new Storage(SHOP_STORAGE);
 
-const modalSuccesEl = document.querySelector('.modal-order-wrap')
+const modalSuccesEl = document.querySelector('.modal-order-wrap');
 const opnBtn = document.querySelector('.open');
 opnBtn.addEventListener('click', () => openSuccessModal());
 
-
 export function openSuccessModal(id) {
-    console.log(id);
-    modalSuccesEl.classList.add('modal-show-order');
-    document.body.classList.add('stop-scroll');
-  
-    modalSuccesEl.innerHTML = `
+  console.log(id);
+  modalSuccesEl.classList.add('modal-show-order');
+  document.body.classList.add('stop-scroll');
+
+  modalSuccesEl.innerHTML = `
     <div class="modal-order-succ">
     <button type="button" class="modal-order-succ-btn">
       <svg class="modal-prod-close-icon">
@@ -20,7 +19,9 @@ export function openSuccessModal(id) {
       </svg>
     </button>
     <div class="modal-prod-close-img-wrap">
-      <img class="modal-prod-close-img" src="" alt="product picture" />
+      <img class="modal-prod-close-img" srcset="../img/order-success/image 2@1x-min.png 1x, ../img/order-success/image 2@2x-min.png 2x" 
+      src='../img/order-success/image 2@1x-min.png'
+      alt="product picture" />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="68"
@@ -72,38 +73,36 @@ export function openSuccessModal(id) {
     </p>
   </div>
   `;
-    const closeBtn = document.querySelector('.modal-order-succ-btn');
-    closeBtn.addEventListener('click', closeSuccessModal);
-  
-    // Додаю слухачі подій
-    window.addEventListener('click', closeModalSuccess);
-    window.addEventListener('keydown', closeModalSuccessEsc);
-  }
-  
-  //! Функція закриття модалки при кліку на хрестик
-  
-  function closeSuccessModal() {
-    modalSuccesEl.classList.remove('modal-show-order');
-    document.body.classList.remove('stop-scroll');
-  
-    // Видаляю слухачі подій
-    window.removeEventListener('click', closeModalSuccess);
-    window.removeEventListener('keydown', closeModalSuccessEsc);
-}
-  
-  
-  //! Закриття модалки при кліку по бекдропу
-  function closeModalSuccess(e) {
-    if (e.target === modalSuccesEl) {
-        closeSuccessModal();
-    }
-  }
-  
-  //! Закриття модалки при кліку на кнопку ESC
-  
-  function closeModalSuccessEsc(e) {
-    if (e.keyCode === 27) {
-        closeSuccessModal();
-    }
-  }
+  const closeBtn = document.querySelector('.modal-order-succ-btn');
+  closeBtn.addEventListener('click', closeSuccessModal);
 
+  // Додаю слухачі подій
+  window.addEventListener('click', closeModalSuccess);
+  window.addEventListener('keydown', closeModalSuccessEsc);
+}
+
+//! Функція закриття модалки при кліку на хрестик
+
+function closeSuccessModal() {
+  modalSuccesEl.classList.remove('modal-show-order');
+  document.body.classList.remove('stop-scroll');
+
+  // Видаляю слухачі подій
+  window.removeEventListener('click', closeModalSuccess);
+  window.removeEventListener('keydown', closeModalSuccessEsc);
+}
+
+//! Закриття модалки при кліку по бекдропу
+function closeModalSuccess(e) {
+  if (e.target === modalSuccesEl) {
+    closeSuccessModal();
+  }
+}
+
+//! Закриття модалки при кліку на кнопку ESC
+
+function closeModalSuccessEsc(e) {
+  if (e.keyCode === 27) {
+    closeSuccessModal();
+  }
+}
