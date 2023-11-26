@@ -12,14 +12,15 @@
 
     <main>
       <section class="cart-content-section">
-        <h1 class="visually-hidden">Cart</h1>
-        <div class="container cart-content-container">
+        <div class="container">
+          <h1 class="visually-hidden">Cart</h1>
           <load src="partials/cart-header.html" />
           <div class="cart-content-wrapper">
-            <ul class="cart-list">
-              cart-list
-            </ul>
-            <load src="partials/order.html" />
+            <load src="partials/empty-cart.html" />
+            <div class="cart-content-container">
+              <load src="partials/cart-products.html" />
+              <load src="partials/order.html" />
+            </div>
           </div>
         </div>
       </section>
@@ -27,6 +28,6 @@
 
     <load src="partials/footer.html" />
 
-    <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./cart.js"></script>
   </body>
 </html>

@@ -1,14 +1,15 @@
 <div class="filters">
   <p class="filter-text">Filters:</p>
   <div class="filter-container">
-    <form class="search-form">
+    <form class="custom-input">
       <input
         class="search-input"
         type="text"
         name="search"
         placeholder="Search for anything"
       />
-      <button class="search-btn">
+
+      <button class="search-btn filter-btn" type="button">
         <span>
           <svg width="20" height="20">
             <use href="./img/icons.svg#icon-mag-search" />
@@ -17,17 +18,59 @@
       </button>
     </form>
 
-    <select class="categories-select" name="categories">
-      <option value="" disabled selected hidden>Categories</option>
-      <option value="">Breads / Bakery</option>
-      <option value="">Prepared Foods</option>
-      <option value="">Eggs</option>
-    </select>
-    <select class="sort-select" name="sort">
-      <option value="">A to Z</option>
-      <option value="">Z to A</option>
-      <option value="">Less than 10$</option>
-      <option value="">Greater than 10$</option>
-    </select>
+    <div class="custom-select custom-select-ctg">
+      <input
+        type="text"
+        class="selected-option selected-option-ctgr"
+        tabindex="-1"
+        placeholder="Categories"
+        readonly
+        disabled
+      />
+      <button class="categories-btn filter-btn" type="button">
+        <span>
+          <svg width="20" height="20">
+            <use href="./img/icons.svg#icon-chevron-down" />
+          </svg>
+        </span>
+      </button>
+      <div class="select-options select-opt" tabindex="0">
+        <div class="text-options" tabindex="0">Breads / Bakery</div>
+        <div class="text-options" tabindex="0">Prepared Foods</div>
+        <div class="text-options" tabindex="0">Eggs</div>
+      </div>
+    </div>
+
+    <div class="custom-select custom-select-sort">
+      <input
+        type="text"
+        class="selected-option sort-select"
+        tabindex="0"
+        placeholder="Sort"
+        tabindex="-1"
+        readonly
+        disabled
+      />
+      <button class="sort-btn filter-btn" type="button">
+        <span>
+          <svg width="20" height="20">
+            <use href="./img/icons.svg#icon-chevron-down" />
+          </svg>
+        </span>
+      </button>
+      <div class="select-options" tabindex="0">
+        <div class="text-options-sort" tabindex="0">A to Z</div>
+        <div class="text-options-sort" tabindex="0">Z to A</div>
+        <div class="text-options-sort" tabindex="0">Less than 10$</div>
+        <div class="text-options-sort" tabindex="0">Greater than 10$</div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+

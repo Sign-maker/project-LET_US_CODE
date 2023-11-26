@@ -1,0 +1,112 @@
+.hero-section {
+  padding-top: 72px;
+  padding-bottom: 74px;
+}
+
+.hero-title {
+  max-width: 335px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.09;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.span-title {
+  color: #6d8434;
+}
+
+.hero-subtitle {
+  margin: 0 auto;
+  max-width: 292px;
+  text-align: center;
+  color: var(--sixth-transparent);
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.29;
+  margin-bottom: 32px;
+}
+
+.hero-img {
+  border-radius: 30px;
+}
+
+/* .herodiscount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--discount);
+  border-radius: 50%;
+  border: none;
+} */
+
+.wripper-hero-pic {
+  position: relative;
+}
+
+.hero-icon-cont {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--discount);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  left: 83%;
+  top: 9.5%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-organic-food-icon {
+  width: 82px;
+  height: 82px;
+  transform: rotate (-90deg);
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 116px;
+    padding-bottom: 74px;
+  }
+  .hero-title {
+    max-width: 658px;
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .hero-subtitle {
+    max-width: 492px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.33;
+    margin-bottom: 40px;
+  }
+  .hero-img {
+    border-radius: 60px;
+  }
+  .hero-icon-cont {
+    left: 91.2%;
+    top: 5%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-section {
+    padding-top: 77px;
+    padding-bottom: 74px;
+  }
+  .hero-title {
+    max-width: 1042px;
+    letter-spacing: -0.02em;
+  }
+  .hero-icon-cont {
+    left: 94.5%;
+    top: 1.5%;
+  }
+}

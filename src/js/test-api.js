@@ -56,6 +56,7 @@
 //     const placeOrder = await foodBoutique.placeOrder(orderData);
 //     console.log('placeOrder', placeOrder);
 
+
 //     // ==========================================
 
 //     const userData = {
@@ -65,6 +66,37 @@
 //       userData
 //     );
 //     console.log('subscribeToNewsletter', subscribeToNewsletter);
+
+    //   const userData = {
+    //     email: 'test@gmail.com',
+    //   };
+    //   const subscribeToNewsletter = await foodBoutique.subscribeToNewsletter(
+    //     userData
+    //   );
+    //   console.log('subscribeToNewsletter', subscribeToNewsletter);
+
+    //   // ==========================================
+    // } catch (error) {
+    //   console.log('помилка', error.response.data.message);
+    // } finally {
+    // }
+    // ==========================================
+
+    const userData = {
+      email: '12345@cdfbgdfgbhdfgh.com',
+    };
+    const subscribeToNewsletter = await foodBoutique.subscribeToNewsletter(
+      userData
+    );
+    console.log('subscribeToNewsletter', subscribeToNewsletter);
+
+    // ==========================================
+  } catch (error) {
+    console.log('помилка', error.response.data.message);
+  } finally {
+  }
+}
+
 
 //     // ==========================================
 //   } catch {
