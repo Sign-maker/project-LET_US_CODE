@@ -3,6 +3,7 @@ import { Storage, ShopStorage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
 import { renderPopularProd, renderDiscountProd } from './aside';
 import { filterHandler } from './filter';
+import { paginationHandler } from './pagination/pagination-handler';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -34,8 +35,11 @@ const shopStorage = new ShopStorage(SHOP_STORAGE);
 let allItem;
 
 contentWrapperRef.addEventListener('click', onButtonCartClick);
+if (!filterStorage.getValue()) {
+  filterStorage.setValue(INIT_FILTER_PARAMS);
+}
 
-const filterParams = filterStorage.getItem ?? INIT_FILTER_PARAMS;
+const filterParams = filterStorage.getValue();
 initLoad(filterParams);
 
 async function initLoad(filterParams) {
@@ -45,6 +49,9 @@ async function initLoad(filterParams) {
   await getDiscountedProducts();
   allItem = addListenerToAllCard();
   filterHandler();
+
+  paginationHandler();
+
 }
 
 changeQuantityOrderedInBasket(shopStorage.getAllProducts());
@@ -62,12 +69,14 @@ async function getCategories() {
   }
 }
 
-async function getProducts(filterParams) {
+export async function getProducts(filterParams) {
   try {
     // loader show
     const products = await foodBoutique.getProducts(filterParams);
     productStorage.setValue(products);
-    filterStorage.setValue(filterParams);
+    // if (!filterStorage.getValue()) {
+    //   filterStorage.setValue(filterParams);
+    // }
     renderProductList(productListRef, productStorage.getValue().results);
   } catch (error) {
     console.log(error);
@@ -112,30 +121,34 @@ function addListenerToAllCard() {
 
 function getOverItems(arrNodeList) {
   const arr = [...arrNodeList];
-  const arrFromShopStorage = shopStorage.getAllProducts();
-  return arr.map(item => {
-    return arrFromShopStorage.filter(obj => {
+
+
+  return arr.filter(item => {
+    const arrFromShop = shopStorage.getAllProducts();
+
+    return arrFromShop.map(obj => {
       if (item.dataset.id === obj._id) {
         // console.log(item);
-        const btnItemsRef = document.querySelectorAll(
+        const btnItemRef = document.querySelectorAll(
+
           `[data-id="${obj._id}"] .js-add-btn`
         );
         // console.log(btnItemRef);
 
-        if (typeof btnItemsRef === 'object') {
-          [...btnItemsRef].map(el => {
+
+        if (typeof btnItemRef === 'object') {
+          [...btnItemRef].map(el => {
             if (el.classList.contains('popular-btn')) {
               el.style.backgroundColor = '#6d8434';
             }
-
             return el.classList.add('is-added');
           });
         } else {
-          if (btnItemsRef.classList.contains('popular-btn')) {
-            btnItemsRef.style.backgroundColor = '#6d8434';
+          if (btnItemRef.classList.contains('popular-btn')) {
+            btnItemRef.style.backgroundColor = '#6d8434';
           }
-          console.log(btnItemsRef);
-          return btnItemsRef.classList.add('is-added');
+          btnItemRef.classList.add('is-added');
+
         }
       }
     });
