@@ -13,7 +13,7 @@ export function markupProductsList(productsObj) {
         size,
         _id,
       }) => {
-        return `<li class="products-card-item" data-id="${_id}">
+        return `<li class="products-card-item js-card-item" data-id="${_id}">
                 <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
                 <ul class="product-description-list">

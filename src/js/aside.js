@@ -69,7 +69,7 @@ function markupDiscount(obj) {
     .map(item => {
       const { _id, name, img, price } = item;
 
-      return `<li class="discount-item" data-id="${_id}">
+      return `<li class="discount-item js-card-item" data-id="${_id}">
         <a class="products-card-link" href="#">
         <div class="discount-img-wrapper">
           <img
