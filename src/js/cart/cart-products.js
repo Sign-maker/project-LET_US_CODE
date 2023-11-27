@@ -1,65 +1,50 @@
 import { markupCartProduct } from './markup-cart-product';
 import { ShopStorage } from '../local-storage-api';
 
-let countInCart = 0;
 let arrCarts = [];
-
-const navSpanForCartRef = document.querySelector('.nav-span');
+const navSpanForCartRef = document.querySelector('.number-of-product');
+const headerNavSpanRef = document.querySelector('.nav-span');
+const totalAmountRef = document.querySelector('.total-amount');
 const cardListOrder = document.querySelector('.cart-list');
-
 const shopStorage = new ShopStorage('shop-storage');
 
 cardListOrder.addEventListener('click', onRemoveOrderFromCartClick);
 
-// Видалення всіх товарів з корзини та з ShopStorage
 const deleteAllBtn = document.querySelector('.js-delete-all-btn');
-
 deleteAllBtn.addEventListener('click', () => {
-  // Очищення корзини (UI)
   cardListOrder.innerHTML = '';
-
-  // Очищення корзини (ShopStorage)
   shopStorage.removeAllProducts();
-
-  // Оновлення кількості товарів в корзині в інтерфейсі
   changeNumberInCart(0);
+  updateTotalPrice(0); // Оновлюємо загальну вартість після видалення всіх товарів
 });
-
 
 function checkedShopStorage() {
   const getLocalCart = shopStorage.getAllProducts() ?? [];
   arrCarts = getLocalCart;
-
   cardListOrder.innerHTML = markupCartProduct(arrCarts);
-
-  totalPrice(arrCarts);
   changeNumberInCart(arrCarts.length);
+  updateTotalPrice(arrCarts.reduce((acc, item) => acc + item.price, 0)); // Оновлюємо загальну вартість при завантаженні сторінки
 }
 
 checkedShopStorage();
 
-function changeNumberInCart(number) {
+export function changeNumberInCart(number) {
   navSpanForCartRef.textContent = number;
+  headerNavSpanRef.textContent = number;
 }
 
-function totalPrice(arr) {
-  if (!arr.length) return;
-
-  return arr.reduce((acc, item) => {
-    return (acc += item.price);
-  }, 0);
+export function updateTotalPrice(total) {
+  totalAmountRef.textContent = total.toFixed(2); // Оновлюємо загальну вартість
 }
 
 function onRemoveOrderFromCartClick(e) {
   if (!e.target.closest('.cart-product-close-btn')) return;
-
   const objFromLi = e.target.closest('li');
   const dataIdItem = objFromLi.dataset.id;
-
   const findElementFromShopStorage = shopStorage.getAllProducts().filter(
     item => item._id !== dataIdItem
   );
-
   shopStorage.setAllProduct(findElementFromShopStorage);
   checkedShopStorage();
+  updateTotalPrice(findElementFromShopStorage.reduce((acc, item) => acc + item.price, 0)); // Оновлюємо загальну вартість при видаленні товарів
 }
