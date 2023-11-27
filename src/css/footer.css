@@ -26,16 +26,6 @@
     margin-bottom: 20px;
 }
 
-.logo-link-icon:hover .logo-footer-svg {
-    background-color: rgba(232, 232, 226, 0.7);
-    fill: var(--btn-gray);
-    transition: fill var(--transition-duration) var(--transition-timing-function) background-color var(--transition-duration) var(--transition-timing-function);
-}
-
-.logo-link-icon:hover .logo-footer-text {
-    color: rgba(232, 232, 226, 0.7);
-    transition: color var(--transition-duration) var(--transition-timing-function);
-}
 
 .logo-footer-svg {
     fill: var(--second-bg);
@@ -364,11 +354,12 @@
 /* ---sweetalert2--- */
 
 .small-popup {
-    width: 450px;
+    width: 335px;
+    align-items: center;
 }
 
 .custom-title {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .custom-icon svg {
@@ -376,3 +367,11 @@
     height: 24px;
 }
 
+@media (min-width: 768px) {
+.small-popup {
+    width: 450px;
+    }
+.custom-title {
+    font-size: 20px;
+}
+}
