@@ -205,7 +205,7 @@ flex-wrap: wrap;
   .modal-prod-desc {
     font-size: 16px;
     line-height: 1.25;
-    max-height: 80px;
+    max-height: 120px;
   }
 }
 .modal-prod-price-elem {
