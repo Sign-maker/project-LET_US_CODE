@@ -1,5 +1,6 @@
 import { markupCartProduct } from './markup-cart-product';
 import { ShopStorage } from '../local-storage-api';
+import { changeCartContentVisibillity } from './cartHandler';
 
 let arrCarts = [];
 const navSpanForCartRef = document.querySelector('.number-of-product');
@@ -15,7 +16,8 @@ deleteAllBtn.addEventListener('click', () => {
   cardListOrder.innerHTML = '';
   shopStorage.removeAllProducts();
   changeNumberInCart(0);
-  updateTotalPrice(0); // Оновлюємо загальну вартість після видалення всіх товарів
+  updateTotalPrice(0);
+  changeCartContentVisibillity(); // Оновлюємо загальну вартість після видалення всіх товарів
 });
 
 function checkedShopStorage() {
@@ -41,10 +43,13 @@ function onRemoveOrderFromCartClick(e) {
   if (!e.target.closest('.cart-product-close-btn')) return;
   const objFromLi = e.target.closest('li');
   const dataIdItem = objFromLi.dataset.id;
-  const findElementFromShopStorage = shopStorage.getAllProducts().filter(
-    item => item._id !== dataIdItem
-  );
+  const findElementFromShopStorage = shopStorage
+    .getAllProducts()
+    .filter(item => item._id !== dataIdItem);
   shopStorage.setAllProduct(findElementFromShopStorage);
   checkedShopStorage();
-  updateTotalPrice(findElementFromShopStorage.reduce((acc, item) => acc + item.price, 0)); // Оновлюємо загальну вартість при видаленні товарів
+  updateTotalPrice(
+    findElementFromShopStorage.reduce((acc, item) => acc + item.price, 0)
+  ); // Оновлюємо загальну вартість при видаленні товарів
+  if (!shopStorage.getAllProducts.length) changeCartContentVisibillity();
 }
