@@ -8,8 +8,8 @@
     
     <script type="module" crossorigin src="/project-LET_US_CODE/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/vendor-bb007519.js">
-    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/subscription-11c29152.js">
-    <link rel="stylesheet" href="/project-LET_US_CODE/assets/subscription-370ccb8c.css">
+    <link rel="modulepreload" crossorigin href="/project-LET_US_CODE/assets/subscription-bf7a7a86.js">
+    <link rel="stylesheet" href="/project-LET_US_CODE/assets/subscription-9fcaa521.css">
   </head>
   <body>
     <header class="header">
@@ -113,7 +113,7 @@
       <section class="content-section">
         <div class="container content-container">
           <h2 class="visually-hidden">Product cards</h2>
-          <div class="filters">
+          <div class="filters" id="filters">
   <p class="filter-text">Filters:</p>
   <div class="filter-container">
     <form class="custom-input js-search-form">
@@ -186,7 +186,11 @@
 
           <div class="content-wrapper">
             <div class="products-wrapper">
-              <ul class="product-card-list"></ul>
+              <ul
+                class="product-card-list"
+                data-ls-name="product"
+                id="products"
+              ></ul>
               <div class="pagination">
   <div class="buttons-container">
     <ul class="buttons-list">
@@ -225,7 +229,7 @@
   <section class="popular">
     <h2 class="popular-caption">Popular products</h2>
 
-    <ul class="popular-list">
+    <ul class="popular-list" data-ls-name="popular">
       <a href=""></a>
     </ul>
   </section>
@@ -233,9 +237,7 @@
   <section class="discount">
     <h2 class="discount-caption">Discount products</h2>
 
-    <ul class="discount-list">
-      
-    </ul>
+    <ul class="discount-list" data-ls-name="discount"></ul>
   </section>
 </div>
 

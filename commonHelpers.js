@@ -1,4 +1,4 @@
-import{S as i,F as S}from"./assets/subscription-11c29152.js";import{S as m}from"./assets/vendor-bb007519.js";const C="shop-storage";new i(C);function h(e){return e.map(({category:o,img:r,name:c,price:t,size:l,_id:f})=>`<li class="cart-item" data-id="${f}">
+import{S as i,F as S}from"./assets/subscription-bf7a7a86.js";import{S as m}from"./assets/vendor-bb007519.js";const C="shop-storage";new i(C);function h(e){return e.map(({category:o,img:r,name:c,price:t,size:l,_id:f})=>`<li class="cart-item" data-id="${f}">
       <img class="cart-img-product" src="${r}" alt="${c}" />
       <div class="cart-product-description">
           <p class="cart-product-name">${c}</p>
