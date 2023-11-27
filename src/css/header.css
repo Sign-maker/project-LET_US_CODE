@@ -63,6 +63,18 @@
   font-style: normal;
   font-weight: 500;
   line-height: 1.29;
+  transition: background-color var(--transition-duration),
+    var(--transition-timing-function), var(--transition-delay);
+}
+
+.btn-header-home:hover,
+.btn-header-home:focus {
+  background-color: var(--btn-green-dark);
+}
+
+.nav-wripper:hover,
+.nav-wripper:focus {
+  background-color: var(--btn-green-dark);
 }
 
 .button-buy {
@@ -80,6 +92,8 @@
   border-radius: 50%;
   background-color: var(--second-bg);
   border: none;
+  transition: background-color var(--transition-duration),
+    var(--transition-timing-function), var(--transition-delay);
 }
 
 .add-product-icon {

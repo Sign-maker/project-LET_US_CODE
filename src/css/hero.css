@@ -34,17 +34,6 @@
   border-radius: 30px;
 }
 
-/* .herodiscount {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  background-color: var(--discount);
-  border-radius: 50%;
-  border: none;
-} */
-
 .wripper-hero-pic {
   position: relative;
 }

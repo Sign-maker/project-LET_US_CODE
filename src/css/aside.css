@@ -1,35 +1,21 @@
-@media screen and (min-width: 1440px) {
-  .aside-wrappeer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 275px;
-    /* BULLSHIT */
-    padding-top: 60px;
-  }
-}
-
-.popular {
-  padding-bottom: 80px;
-}
-
 .discount-desc-text {
   font-size: 18px;
 }
-
-@media screen and (min-width: 768px) {
-  .popular {
-    padding-bottom: 64px;
-  }
+.popular {
+  margin-bottom: 80px;
 }
-
-@media screen and (min-width: 1440px) {
-    .popular {
-        padding-bottom: 40px;
-  }
-  }
-
-
+.aside-wrappeer {
+  padding-bottom: 80px;
+}
 @media screen and (min-width: 768px) {
+  .aside-wrappeer {
+    padding-bottom: 100px;
+  }
+
+  .popular {
+    margin-bottom: 64px;
+  }
+
   .popular-list {
     display: flex;
     flex-wrap: wrap;
@@ -90,10 +76,12 @@
   font-size: 18px;
   line-height: 1.1;
   margin-bottom: 12px;
-
 }
 
 @media screen and (min-width: 768px) {
+  .popular {
+    margin-bottom: 64px;
+  }
   .popular-desc-name {
     font-size: 20px;
     line-height: 1.1;
@@ -114,7 +102,6 @@
   font-size: 12px;
   line-height: 1.2;
   color: var(--black-transparent);
-
 }
 
 @media screen and (min-width: 768px) {
@@ -124,7 +111,14 @@
     line-height: 1.1;
   }
 }
-
+@media screen and (min-width: 1440px) {
+  .aside-wrappeer {
+    flex-wrap: wrap;
+    width: 275px;
+    /* BULLSHIT */
+    padding-bottom: 0px;
+  }
+}
 .popular-desc-inner > .popular-desc-text:not(:last-child) {
   margin-right: 9px;
 }
@@ -174,33 +168,25 @@
   visibility: hidden;
 }
 
-.popular-btn .popular-desc-added{
+.popular-btn .popular-desc-added {
   display: none;
 }
 
-.popular-btn.is-added .popular-desc-added{
+.popular-btn.is-added .popular-desc-added {
   display: block;
 }
 
-.popular-btn.is-added .popular-desc-basket{
+.popular-btn.is-added .popular-desc-basket {
   display: none;
 }
 
 /*--------------------------------------------*/
 .popular-item,
-.discount-item{
+.discount-item {
   cursor: default;
 }
 
-.discount {
-  padding-bottom: 80px;
-
-}
-
 @media screen and (min-width: 768px) {
-    .discount {
-        padding-bottom: 64px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -210,7 +196,9 @@
     width: 100%;
   }
 }
-
+.popular {
+  margin-bottom: 40px;
+}
 .discount-caption {
   font-weight: 500;
   font-size: 24px;
@@ -255,7 +243,6 @@
   }
 }
 
-
 .discount-img-wrapper {
   position: relative;
   /* width: 100%; */
@@ -295,20 +282,17 @@
   border-radius: 50%;
 }
 
-
-.discount-btn .discount-desc-added{
+.discount-btn .discount-desc-added {
   display: none;
 }
 
-.discount-btn.is-added .discount-desc-added{
+.discount-btn.is-added .discount-desc-added {
   display: block;
 }
 
-.discount-btn.is-added .discount-desc-basket{
+.discount-btn.is-added .discount-desc-basket {
   display: none;
 }
-
-
 
 .discount-desc-svg {
   position: absolute;

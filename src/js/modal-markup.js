@@ -1,16 +1,30 @@
 import { FoodBoutiqueAPI } from './food-api';
 import icons from '../img/icons.svg';
 import { onClickCart } from './product-list-click';
-import { Storage } from './local-storage-api';
+import { ShopStorage } from './local-storage-api';
 const modalEl = document.querySelector('.modal-prod-wrapper');
 const SHOP_STORAGE = 'shop-storage';
-const shopStorage = new Storage(SHOP_STORAGE);
+const shopStorage = new ShopStorage(SHOP_STORAGE);
 
 export async function openModal(Id) {
   console.log(Id);
   const api = new FoodBoutiqueAPI();
   const productDetails = await api.getProductDetails(Id);
   renderModal(productDetails);
+  isCurrentCart(productDetails);
+}
+
+//! Функція яка зберігає стан кнопки залежно від стану корзини
+function isCurrentCart (productDetails) {
+  const addBtnText = document.querySelector('.modal-prod-add-text');
+  const productId = productDetails._id;
+  const currentCart = shopStorage.getAllProducts();
+
+  if (currentCart.some(item => item._id === productId)) {
+    addBtnText.textContent = 'Remove from';
+  } else {
+    addBtnText.textContent = 'Add to';
+  }
 }
 
 //! Функція рендеру розмітки
@@ -34,13 +48,13 @@ async function renderModal(productDetails) {
   <h2 class="modal-prod-name">${productDetails.name}</h2>
   <ul class="modal-prod-list">
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Category: ${productDetails.category}</h3>
+      <h3 class="modal-prod-text">Category: <span>${productDetails.category}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Size: ${productDetails.size}</h3>
+      <h3 class="modal-prod-text">Size: <span>${productDetails.size}</span></h3>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Popularity: ${productDetails.popularity}</h3>
+      <h3 class="modal-prod-text">Popularity: <span>${productDetails.popularity}</span></h3>
     </li>
   </ul>
   <p class="modal-prod-desc">${productDetails.desc}</p>
@@ -49,7 +63,7 @@ async function renderModal(productDetails) {
   <div class="modal-prod-price-elem">
   <p class="modal-prod-price">&#36;${productDetails.price}</p>
   <button class="modal-prod-add-btn">
-      <p class="modal-prod-add-text" data-ation = ''>Add to</p>
+      <p class="modal-prod-add-text">Add to</p>
       <svg class="modal-prod-basket-icon" >
         <use href="${icons}#icon-shopping-cart"></use>
       </svg>
@@ -72,6 +86,22 @@ async function renderModal(productDetails) {
   }
 }
 
+//! Функція додавання в корзину и зміни стану кнопки
+ export function addToCart(productDetails) {
+  const productId = productDetails._id;
+
+  const currentCart = shopStorage.getAllProducts();
+  const isProductInCart = currentCart.some(item => item._id === productId);
+  const addBtnText = document.querySelector('.modal-prod-add-text');
+
+  if (isProductInCart) {
+    addBtnText.textContent = 'Add to';
+    shopStorage.removeProduct(productId);
+  } else {
+    addBtnText.textContent = 'Remove from';
+    shopStorage.setProduct(productDetails);
+  }
+}
 //! Функція закриття модалки при кліку на хрестик
 
 function closeModal() {

@@ -1,0 +1,51 @@
+.wrap-noting-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 60px;
+  margin-bottom: 180px;
+  width: 100%;
+}
+.title-noting-found {
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.11;
+  text-align: center;
+  width: 261px;
+}
+.acent-noting-found {
+  color: var(--second-bg);
+}
+.paragraf-noting-found {
+  width: 279px;
+  text-align: center;
+  color: rgba(1, 1, 1, 0.7);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+}
+
+@media screen and (min-width: 768px) {
+  .wrap-noting-found {
+    padding-top: 110px;
+    margin-bottom: 300px;
+  }
+  .title-noting-found {
+    width: 367px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .paragraf-noting-found {
+    width: 371px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .wrap-noting-found {
+    padding-top: 141px;
+  }
+}

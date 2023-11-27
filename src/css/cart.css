@@ -48,7 +48,6 @@
 }
 .order-input {
   border-radius: 30px;
-  border: 1px solid rgba(1, 1, 1, 0.3);
   display: inline-flex;
   padding: 12px 20px;
   justify-content: center;
@@ -58,14 +57,35 @@
   margin-bottom: 14px;
   background: inherit;
   padding-left: 47px;
+  outline: none;
+  border: 1px solid rgba(1, 1, 1, 0.3);
+}
+.order-input:hover,
+.order-input:focus,
+.order-input:active {
+  border: 1px solid var(--second-bg);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(-transition-timing-function);
+  transition-delay: var(--transition-delay);
 }
 .order-input::placeholder {
   color: var(--btn-black);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.3;
- 
+}
 
+:focus::-webkit-input-placeholder{
+  color: transparent;
+}
+:focus::-moz-placeholder{
+  color: transparent;
+}
+:focus:-moz-placeholder{
+  color: transparent;
+}
+:focus:-ms-input-placeholder{
+  color: transparent;
 }
 
 .order-btn {
@@ -81,6 +101,13 @@
   color: var(--main-bg);
   font-size: 14px;
   font-weight: 500;
+}
+.order-btn:hover,
+.order-btn:focus {
+  background: var(--btn-green-dark);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(-transition-timing-function);
+  transition-delay: var(--transition-delay);
 }
 
 .form-span {
@@ -116,7 +143,6 @@
   .order-prise-total {
     font-size: 32px;
     line-height: 1;
-    
   }
 
   .order-input {
@@ -129,7 +155,6 @@
   .order-input::placeholder {
     font-size: 18px;
     line-height: 1.3;
-    
   }
   .order-btn {
     max-width: 215px;
@@ -139,7 +164,7 @@
   }
   .form-span {
     font-size: 18px;
-    top:16px
+    top: 17px;
   }
 }
 
@@ -169,6 +194,9 @@
   }
   .cart-list {
     width: 100%;
+  }
+  .form-span {
+    top: 16px;
   }
 
   .order-btn {

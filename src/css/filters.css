@@ -1,3 +1,6 @@
+.filters {
+  margin-bottom: 60px;
+}
 .filter-container {
   display: flex;
   flex-direction: column;
@@ -56,7 +59,6 @@
   margin-bottom: 8px;
 }
 .select-options {
-  
   display: none;
   position: absolute;
   width: 100%;
@@ -85,18 +87,16 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
-  
 }
 .custom-select .select-options {
   display: none;
-  
 }
 .custom-select.active .select-options {
   display: block;
   cursor: pointer;
   display: inline-flex;
-    flex-direction: column;
-    gap: 8px;
+  flex-direction: column;
+  gap: 8px;
 }
 .custom-select.active .sort-select {
   display: block;
@@ -106,6 +106,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .text-options:hover {
   color: var(--text);
 }
@@ -126,14 +127,13 @@
 .custom-select .text-options {
   position: relative;
 }
-.selected-option-ctgr::placeholder{
+.selected-option-ctgr::placeholder {
   color: var(--text);
 }
-.sort-select::placeholder{
+.sort-select::placeholder {
   color: var(--text);
 }
 @media (min-width: 768px) {
- 
   .selected-option-ctgr {
     max-width: 189px;
   }
@@ -168,15 +168,12 @@
   }
   .text-options {
     display: inline-flex;
-    width: 189px;
     font-size: 18px;
     line-height: 1.33;
-   
   }
   .text-options-sort {
     font-size: 18px;
     line-height: 1.33;
-   
   }
   .text-options .text-options-sort {
     width: 189px;
@@ -192,5 +189,4 @@
   }
 }
 @media (min-width: 1440px) {
- 
 }
