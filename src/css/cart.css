@@ -75,16 +75,16 @@
   line-height: 1.3;
 }
 
-:focus::-webkit-input-placeholder{
+:focus::-webkit-input-placeholder {
   color: transparent;
 }
-:focus::-moz-placeholder{
+:focus::-moz-placeholder {
   color: transparent;
 }
-:focus:-moz-placeholder{
+:focus:-moz-placeholder {
   color: transparent;
 }
-:focus:-ms-input-placeholder{
+:focus:-ms-input-placeholder {
   color: transparent;
 }
 
@@ -204,4 +204,8 @@
     line-height: 1.2;
     width: 215px;
   }
+}
+
+.cart-content-container.is-hidden {
+  display: none;
 }
