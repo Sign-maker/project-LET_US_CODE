@@ -180,6 +180,19 @@
   display: none;
 }
 
+.js-add-btn svg {
+  pointer-events: none;
+}
+
+.js-add-btn.is-added {
+  pointer-events: none;
+}
+
+.popular-btn.is-added {
+  background-color: var(--second-bg);
+  fill: var(--btn-gray);
+}
+
 /*--------------------------------------------*/
 .popular-item,
 .discount-item {

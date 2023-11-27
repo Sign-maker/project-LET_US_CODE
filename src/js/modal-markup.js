@@ -2,12 +2,15 @@ import { FoodBoutiqueAPI } from './food-api';
 import icons from '../img/icons.svg';
 import { onClickCart } from './product-list-click';
 import { ShopStorage } from './local-storage-api';
+import { setCartStateForOneProduct } from './home';
+import { changeQuantityOrderedInBasket } from './home';
 const modalEl = document.querySelector('.modal-prod-wrapper');
+// const spanCartRef = document.querySelector('.js-header-navSpan');
 const SHOP_STORAGE = 'shop-storage';
 const shopStorage = new ShopStorage(SHOP_STORAGE);
 
 export async function openModal(Id) {
-  console.log(Id);
+  // console.log(Id);
   const api = new FoodBoutiqueAPI();
   const productDetails = await api.getProductDetails(Id);
   renderModal(productDetails);
@@ -15,7 +18,7 @@ export async function openModal(Id) {
 }
 
 //! Функція яка зберігає стан кнопки залежно від стану корзини
-function isCurrentCart (productDetails) {
+function isCurrentCart(productDetails) {
   const addBtnText = document.querySelector('.modal-prod-add-text');
   const productId = productDetails._id;
   const currentCart = shopStorage.getAllProducts();
@@ -87,7 +90,7 @@ async function renderModal(productDetails) {
 }
 
 //! Функція додавання в корзину и зміни стану кнопки
- export function addToCart(productDetails) {
+export function addToCart(productDetails) {
   const productId = productDetails._id;
 
   const currentCart = shopStorage.getAllProducts();
@@ -97,9 +100,13 @@ async function renderModal(productDetails) {
   if (isProductInCart) {
     addBtnText.textContent = 'Add to';
     shopStorage.removeProduct(productId);
+    setCartStateForOneProduct(productId, false);
+    changeQuantityOrderedInBasket(shopStorage.getAllProducts());
   } else {
     addBtnText.textContent = 'Remove from';
     shopStorage.setProduct(productDetails);
+    setCartStateForOneProduct(productId, true);
+    changeQuantityOrderedInBasket(shopStorage.getAllProducts());
   }
 }
 //! Функція закриття модалки при кліку на хрестик
@@ -128,9 +135,3 @@ function closeModalOnEsc(e) {
     closeModal();
   }
 }
-
-
-
-
-
-
