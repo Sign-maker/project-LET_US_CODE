@@ -6,6 +6,16 @@ import { updateTotalPrice } from '../cart/cart-products';
 import { changeNumberInCart } from '../cart/cart-products';
 import { changeCartContentVisibillity } from './cartHandler';
 
+// Функція для форматування повідомлення
+function formatSuccessMessage(message) {
+  const successText = 'Order Success! ';
+  const index = message.indexOf(successText);
+  if (index !== -1) {
+    return message.slice(index + successText.length);
+  }
+  return message;
+}
+
 const shopStorage = new ShopStorage('shop-storage');
 const foodAPI = new FoodBoutiqueAPI();
 
@@ -13,7 +23,7 @@ const orderForm = document.getElementById('subscription-form');
 const cardListOrder = document.querySelector('.cart-list');
 const emailInput = document.getElementById('email');
 
-orderForm.addEventListener('submit', async event => {
+orderForm.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const cartItems = shopStorage.getAllProducts();
@@ -35,7 +45,8 @@ orderForm.addEventListener('submit', async event => {
         const modalMessage = document.querySelector('.modal-success-message');
 
         modalTitle.textContent = 'Order success';
-        modalMessage.textContent = response.message;
+        // Використовуємо функцію для форматування повідомлення
+        modalMessage.textContent = formatSuccessMessage(response.message);
 
         // Очистити корзину на інтерфейсі після успішного замовлення
         cardListOrder.innerHTML = '';
