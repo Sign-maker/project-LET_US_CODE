@@ -1,11 +1,14 @@
-.loader {
+.js-loader::before {
+  content: '';
+  position: absolute;
+  left: calc((100% / 2) - 24px);
+  top: 15px;
+
   width: 48px;
   height: 48px;
-  border: 5px dotted #fff;
+  border: 5px dotted rgb(99, 99, 99);
+
   border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  box-sizing: border-box;
   animation: rotation 2s linear infinite;
 }
 
@@ -16,4 +19,10 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.modal-order-wrap.js-loader::before,
+.modal-prod-wrapper.js-loader::before {
+  left: calc((100% / 2) - 24px);
+  top: calc((100vh / 2) - 24px);
+  z-index: 9999;
 }

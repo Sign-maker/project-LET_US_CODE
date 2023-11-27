@@ -343,3 +343,9 @@
 .is-hidden {
   visibility: hidden;
 }
+
+/* loader in loader.css======================================== */
+.popular-list,
+.discount-list {
+  position: relative;
+}
