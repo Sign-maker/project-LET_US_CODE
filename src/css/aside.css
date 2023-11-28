@@ -20,6 +20,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 13px;
+    width: 563px;
   }
 }
 
@@ -34,7 +35,7 @@
 .popular-item {
   position: relative;
   display: flex;
-  width: 335px;
+  width: 275px;
   padding: 12px;
   border-radius: 10px;
   background-color: var(--third-bg);
@@ -205,7 +206,6 @@
 @media screen and (min-width: 1440px) {
   .discount,
   .popular {
-    /* padding-bottom: 0; */
     width: 100%;
   }
 }
@@ -348,4 +348,13 @@
 .popular-list,
 .discount-list {
   position: relative;
+}
+@media screen and (min-width: 1440px) {
+  .text-overflow {
+    width: 124px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
