@@ -2,8 +2,12 @@ import { FoodBoutiqueAPI } from './food-api';
 import { Storage, ShopStorage } from './local-storage-api';
 import { renderProductList } from './render-product-list';
 import { renderPopularProd, renderDiscountProd } from './aside';
-import { filterHandler } from './filter';
 import { initPagination } from './pagination/pagination-handler';
+import {
+  initSelectedOption,
+  initCategoryInFilter,
+  initKeywordInFilter,
+} from './filter';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -51,9 +55,12 @@ async function initLoad(filterParams) {
     getPopularProducts(),
     getDiscountedProducts(),
   ]);
+  initKeywordInFilter();
+  initCategoryInFilter();
+  initSelectedOption();
   initPagination();
   // allItem = addListenerToAllCard();
-  filterHandler();
+  // filterHandler();
   setCartStateForAllProducts();
 }
 
