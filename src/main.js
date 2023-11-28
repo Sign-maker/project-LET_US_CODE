@@ -7,4 +7,5 @@ import './js/modal-success';
 import './js/product-list-click';
 import './js/subscription';
 import './js/pagination/pagination-handler';
+import './js/scroll-up';
 // import './js/markup-product-list';
