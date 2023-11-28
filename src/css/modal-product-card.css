@@ -35,23 +35,23 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   width: 100%;
-  min-height: 535px;
+  max-height: 535px;
   background-color: var(--third-bg);
   border-radius: 20px;
   padding: 40px 20px;
   position: relative;
 }
 /* mobile */
-@media only screen and (min-width: 374.8px) {
+@media only screen and (min-width: 375px) {
   .modal-prod-card {
-    min-height: 535px;
+  
     width: 335px;
   }
 }
 /* tablet */
 @media only screen and (min-width: 768px) {
   .modal-prod-card {
-    min-height: 380px;
+    max-height: 380px;
     width: 600px;
     padding: 40px;
   }
@@ -184,12 +184,15 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
+  overflow: auto;
+  max-height: 54px;
 }
 /* tablet */
 @media only screen and (min-width: 768px) {
   .modal-prod-desc {
     font-size: 16px;
     line-height: 1.25;
+    max-height: 120px;
   }
 }
 .modal-prod-price-elem {
