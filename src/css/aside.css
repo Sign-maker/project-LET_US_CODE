@@ -34,7 +34,7 @@
 .popular-item {
   position: relative;
   display: flex;
-  width: 275px;
+  max-width: 100%;
   padding: 12px;
   border-radius: 10px;
   background-color: var(--third-bg);
@@ -200,6 +200,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .popular-list {
+    justify-content: start;
+  }
+  .popular-item {
+    width: 275px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
