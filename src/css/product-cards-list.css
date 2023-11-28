@@ -11,6 +11,24 @@
   border-radius: 20px;
   background: #fafafa;
   padding: 20px;
+  position: relative;
+}
+.prod-list-discount-label {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--third-bg);
+}
+.prod-list-discount-label-svg {
+  width: 100%;
+  height: 100%;
 }
 .product-image {
   border-radius: 10px;
@@ -97,6 +115,9 @@
   }
   .products-card-item {
     flex-basis: calc((100% - 40px) / 3);
+  }
+  .prod-list-discount-label {
+    top: -3px;
   }
   .product-image {
     padding: 19px 58px;
