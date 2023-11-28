@@ -8,13 +8,20 @@ const modalEl = document.querySelector('.modal-prod-wrapper');
 // const spanCartRef = document.querySelector('.js-header-navSpan');
 const SHOP_STORAGE = 'shop-storage';
 const shopStorage = new ShopStorage(SHOP_STORAGE);
+const api = new FoodBoutiqueAPI();
 
 export async function openModal(Id) {
   // console.log(Id);
-  const api = new FoodBoutiqueAPI();
-  const productDetails = await api.getProductDetails(Id);
-  renderModal(productDetails);
-  isCurrentCart(productDetails);
+  try {
+    modalEl.classList.add('modal-active');
+    modalEl.classList.add('js-loader');
+    const productDetails = await api.getProductDetails(Id);
+    modalEl.classList.remove('js-loader');
+    renderModal(productDetails);
+    isCurrentCart(productDetails);
+  } catch (error) {
+  } finally {
+  }
 }
 
 //! Функція яка зберігає стан кнопки залежно від стану корзини
@@ -112,8 +119,9 @@ export function addToCart(productDetails) {
 //! Функція закриття модалки при кліку на хрестик
 
 function closeModal() {
-  modalEl.classList.remove('modal-active');
   document.body.classList.remove('stop-scroll');
+  modalEl.classList.remove('modal-active');
+  modalEl.innerHTML = '';
 
   // Видаляю слухачі подій
   window.removeEventListener('click', closeModalOnWindowClick);

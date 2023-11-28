@@ -1,7 +1,6 @@
 import { PaginationButtons } from './buttons';
 import { Storage } from '../local-storage-api';
 import { getProducts } from '../home';
-import { pageIsLoaded } from '../home';
 
 const FIRST_VARIANT = 'variant1';
 const SECOND_VARIANT = 'variant2';

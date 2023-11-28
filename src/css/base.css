@@ -84,7 +84,7 @@ body {
   max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 @media (min-width: 768px) {
   .container {
