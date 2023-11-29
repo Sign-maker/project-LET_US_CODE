@@ -23,6 +23,7 @@ function markupPopular(obj) {
             src="${img}"
             alt="${name}"
             class="popular-img"
+            loading="lazy"
           />
           </a>
         </div>
@@ -76,6 +77,7 @@ function markupDiscount(obj) {
             src="${img}"
             alt="${name}"
             class="discount-img"
+            loading="lazy"
           />   
         </div>
         </a>
