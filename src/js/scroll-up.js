@@ -1,25 +1,54 @@
-const backToTopBtn = document.querySelector(".back-to-top");
 
-window.addEventListener("scroll", trackScroll);
+// const backToTopBtn = document.querySelector(".back-to-top");
 
-backToTopBtn.addEventListener("click", scrollToTop);
+// window.addEventListener("scroll", trackScroll);
 
-function trackScroll() {
-  const scrolled = window.pageYOffset;
-  const coords = document.documentElement.clientHeight;
+// backToTopBtn.addEventListener("click", scrollToTop);
 
-  if (scrolled > coords) {
-    backToTopBtn.classList.add("show");
-  } else {
-    backToTopBtn.classList.remove("show");
+// function trackScroll() {
+//   const scrolled = window.pageYOffset;
+//   const coords = document.documentElement.clientHeight;
+
+//   if (scrolled > coords) {
+//     backToTopBtn.classList.add("show");
+//   } else {
+//     backToTopBtn.classList.remove("show");
+//   }
+// }
+
+// function scrollToTop() {
+//   if (window.pageYOffset > 0) {
+//     window.scrollBy(0, -20); 
+//     setTimeout(scrollToTop, 0);
+//   }
+// }
+
+export function goToTopBtnHandler () {
+
+  const backToTopBtn = document.querySelector(".back-to-top");
+  window.addEventListener("scroll", trackScroll);
+  backToTopBtn.addEventListener("click", scrollToTop);
+  
+  function trackScroll() {
+
+    const scrolled = window.scrollY;
+
+    const coords = document.documentElement.clientHeight;
+
+    if (scrolled > coords) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
   }
-}
-
-function scrollToTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -20); 
-    setTimeout(scrollToTop, 0);
+  function scrollToTop() {
+  window.scroll({
+    top: 0,
+    behavior: 'smooth'
+  });
   }
-}
+  };
+
+  goToTopBtnHandler();
 
 

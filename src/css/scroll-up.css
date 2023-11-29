@@ -18,7 +18,7 @@ button.back-to-top {
     font-size: 0;
     outline: 0;
     z-index: 99;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s var(--transition-timing-function);
   }
   
   button.back-to-top:hover,
@@ -69,8 +69,5 @@ button.back-to-top {
   button.back-to-top.show:active {
     box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.25);
   }
-
-  /* @media only screen and (min-width: 320px) and (max-width: 768px) {
-} */
   
   
