@@ -101,7 +101,7 @@
     <p class="order-prise-total">$<span class="total-amount"></span></p>
   </div>
   <div class="order-form">
-    <form id="subscription-form">
+    <form id="subscription-form" aria-labelledby="order-text">
       <label for="email"></label>
       <input
         class="order-input"
@@ -113,7 +113,9 @@
         required
         placeholder="Enter your email"
       /><span class="form-span">Mail:</span>
-      <button class="order-btn" type="submit">Checkout</button>
+      <button class="order-btn" type="submit" aria-label="Complete Purchase">
+        Checkout
+      </button>
     </form>
   </div>
 </div>
@@ -128,8 +130,17 @@
   <div class="footer-container container">
     <div class="footer-wrap">
       <div class="logo-footer">
-        <a href="./index.html" class="logo-link-icon" aria-label="minimal-logo">
-          <svg class="logo-footer-svg" width="18" height="18">
+        <a
+          href="./index.html"
+          class="logo-link-icon"
+          aria-label="Food Boutique Logo"
+        >
+          <svg
+            class="logo-footer-svg"
+            width="18"
+            height="18"
+            alt="Food Boutique Logo"
+          >
             <use href="/project-LET_US_CODE/assets/icons-b681127c.svg#icon-logo"></use>
           </svg>
           <span class="logo-footer-text">Food Boutique</span>
@@ -191,7 +202,7 @@
         <div class="container-form">
           <p class="footer-form-par">Subscribe and learn about new products!</p>
           <form class="form-footer" name="email_address" autocomplete="off">
-            <label class="label-subscribe">
+            <label class="label-subscribe" for="footer-input-email">
               <input
                 class="form-footer-input"
                 type="email"
@@ -200,10 +211,17 @@
                 maxlength="200"
                 pattern="^([^ ]+@[^ ]+\.[a-z]{2,6}|)$"
                 title="Use the format: test@gmail.com"
+                aria-label="Subscribe to our newsletter. Enter your email address here."
                 required
               />
             </label>
-            <button class="footer-form-button" type="submit">Send</button>
+            <button
+              class="footer-form-button"
+              type="submit"
+              aria-label="Subscribe to Newsletter"
+            >
+              Send
+            </button>
           </form>
         </div>
       </div>
