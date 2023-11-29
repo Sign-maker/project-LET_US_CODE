@@ -31,7 +31,7 @@
 
         <li class="header-item item-link">
           <a class="button-buy js-add-product" href="./cart.html">
-            <div class="nav-wripper">
+            <div class="nav-wripper" aria-label="Shopping Cart">
               <svg class="add-product-icon" width="14" height="14">
                 <use href="/project-LET_US_CODE/assets/icons-b681127c.svg#icon-shopping-cart"></use>
               </svg>
@@ -125,7 +125,7 @@
         placeholder="Search for anything"
       />
 
-      <button class="search-btn filter-btn" type="submit" aria-label="Choose">
+      <button class="search-btn filter-btn" type="submit" aria-label="search">
         <span>
           <svg width="20" height="20">
             <use href="/project-LET_US_CODE/assets/icons-b681127c.svg#icon-mag-search" />
@@ -146,7 +146,7 @@
       <button
         class="categories-btn filter-btn"
         type="button"
-        aria-label="Choose"
+        area-label="Category option"
       >
         <span>
           <svg width="20" height="20">
@@ -172,7 +172,11 @@
         readonly
         disabled
       />
-      <button class="sort-btn filter-btn" type="button">
+      <button
+        class="sort-btn filter-btn"
+        type="button"
+        area-label="Category option"
+      >
         <span>
           <svg width="20" height="20">
             <use href="/project-LET_US_CODE/assets/icons-b681127c.svg#icon-chevron-down" />
@@ -342,11 +346,7 @@
                 required
               />
             </label>
-            <button
-              class="footer-form-button"
-              type="submit"
-              aria-label="Subscribe to Newsletter"
-            >
+            <button class="footer-form-button" type="submit" aria-label="Send">
               Send
             </button>
           </form>
