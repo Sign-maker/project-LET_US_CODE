@@ -34,7 +34,7 @@
 .popular-item {
   position: relative;
   display: flex;
-  width: 335px;
+  max-width: 100%;
   padding: 12px;
   border-radius: 10px;
   background-color: var(--third-bg);
@@ -200,12 +200,17 @@
 }
 
 @media screen and (min-width: 768px) {
+  .popular-list {
+    justify-content: start;
+  }
+  .popular-item {
+    width: 275px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .discount,
   .popular {
-    /* padding-bottom: 0; */
     width: 100%;
   }
 }
@@ -348,4 +353,13 @@
 .popular-list,
 .discount-list {
   position: relative;
+}
+@media screen and (min-width: 1440px) {
+  .text-overflow {
+    width: 124px;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

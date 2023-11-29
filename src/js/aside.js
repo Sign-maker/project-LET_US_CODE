@@ -9,7 +9,7 @@ function renderPopularProd(listenerPopularListRef, dataPopularProduct) {
 // EXPORT TO HOME.JS STRING --------->  79
 
 function renderDiscountProd(listenerDiscountListRef, dataDiscountProduct) {
-    listenerDiscountListRef.innerHTML = markupDiscount(dataDiscountProduct);
+  listenerDiscountListRef.innerHTML = markupDiscount(dataDiscountProduct);
 }
 
 function markupPopular(obj) {
@@ -30,16 +30,16 @@ function markupPopular(obj) {
           <a class="products-card-link" href="#">
           <h3 class="popular-desc-name">${name}</h3>
           </a>
-          <h4 class="popular-desc-text">
+          <p class="popular-desc-text">
             Category: <span class="popular-desc-span">${category}</span>
-          </h4>
+          </p>
           <div class="popular-desc-inner">
-            <h4 class="popular-desc-text">
+            <p class="popular-desc-text">
               Size: <span class="popular-desc-span">${size}</span>
-            </h4>
-            <h4 class="popular-desc-text">
+            </p>
+            <p class="popular-desc-text">
               Popularity: <span class="popular-desc-span">${popularity}</span>
-            </h4>
+            </p>
           </div>
         </div>
         <button
@@ -81,7 +81,7 @@ function markupDiscount(obj) {
         </a>
         <div class="discount-desc-wrapper">    
         <a class="products-card-link" href="#">      
-            <p class="discount-desc-text">${name}</p> 
+            <p class="discount-desc-text text-overflow">${name}</p> 
             </a> 
           <div class="discount-box">    
             <p class="discount-desc-text">$${price}</p>
@@ -113,4 +113,4 @@ function markupDiscount(obj) {
     .join('');
 }
 
-export {renderPopularProd, renderDiscountProd, markupPopular, markupDiscount}
+export { renderPopularProd, renderDiscountProd, markupPopular, markupDiscount };

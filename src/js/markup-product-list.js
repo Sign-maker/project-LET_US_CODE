@@ -14,7 +14,40 @@ export function markupProductsList(productsObj) {
           size,
           _id,
         }) => {
+          if (is10PercentOff) {
+            return `<li class="products-card-item js-card-item" data-id="${_id}">
+
+                  <div class="prod-list-discount-label">
+                    <svg class="prod-list-discount-label-svg">
+                        <use href="${icons}#icon-discount"></use>
+                    </svg>
+                  </div>
+
+                <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
+                <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
+                <ul class="product-description-list">
+                        <li><p class="product-text">Category:<span class="product-text-black"> ${category}</span>Size:<span class="product-text-black"> ${size}</span></p></li>
+                        <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${popularity}</span></p></li>
+                </ul>
+                <div class="wrap-prise-and-btn">
+                    <p class="price">$${price}</p>
+                    <button type="button" class="btn btn-shopping-cart js-add-btn">
+                        <svg class="icon-shopping-cart" width="18" height="18">
+                            <use href="${icons}#icon-shopping-cart" class="products-desc-basket"></use>
+
+                            <use
+                              href="${icons}#icon-check"
+                              class="products-desc-added"
+                            ></use>
+                        </svg>
+                        
+                    </button>
+                </div>
+            </li>`;
+          }
+
           return `<li class="products-card-item js-card-item" data-id="${_id}">
+
                 <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
                 <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
                 <ul class="product-description-list">

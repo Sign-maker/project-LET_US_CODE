@@ -10,6 +10,7 @@
 
   border-radius: 50%;
   animation: rotation 2s linear infinite;
+  z-index: 9999;
 }
 
 @keyframes rotation {

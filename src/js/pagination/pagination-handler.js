@@ -27,18 +27,13 @@ let lastPage = firstPage;
 
 export function initPagination() {
   if (productStorage.getValue()) {
+    // console.log('init pagination');
     lastPage = +productStorage.getValue().totalPages;
     currentPage = +productStorage.getValue().page;
     renderMarkup(firstPage, lastPage, currentPage);
   } else buttonsListRef.innerHTML = '';
 }
-function setPages() {
-  if (productStorage.getValue()) {
-    lastPage = +productStorage.getValue().totalPages;
-    currentPage = +productStorage.getValue().page;
-    renderMarkup(firstPage, lastPage, currentPage);
-  }
-}
+
 function renderMarkup(firstPage, lastPage, currentPage) {
   if (lastPage === firstPage || !lastPage) {
     //render empty list

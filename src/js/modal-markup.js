@@ -55,16 +55,16 @@ async function renderModal(productDetails) {
       <img class="modal-prod-img" src="${productDetails.img}" alt="${productDetails.name}" />
   </div> 
   <div class="modal-prod-name-wrap">
-  <h2 class="modal-prod-name">${productDetails.name}</h2>
+  <p class="modal-prod-name">${productDetails.name}</p>
   <ul class="modal-prod-list">
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Category: <span>${productDetails.category}</span></h3>
+      <p class="modal-prod-text">Category: <span>${productDetails.category}</span></p>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Size: <span>${productDetails.size}</span></h3>
+      <p class="modal-prod-text">Size: <span>${productDetails.size}</span></p>
     </li>
     <li class="modal-prod-item">
-      <h3 class="modal-prod-text">Popularity: <span>${productDetails.popularity}</span></h3>
+      <p class="modal-prod-text">Popularity: <span>${productDetails.popularity}</span></p>
     </li>
   </ul>
   <p class="modal-prod-desc">${productDetails.desc}</p>
