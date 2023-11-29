@@ -1,0 +1,73 @@
+button.back-to-top {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    border-radius: 50%;
+    color: transparent;
+    clear: both;
+    visibility: hidden;
+    position: fixed;
+    cursor: pointer;
+    display: block;
+    border: none;
+    right: 50px;
+    bottom: 75px;
+    font-size: 0;
+    outline: 0;
+    z-index: 99;
+    transition: all 0.3s var(--transition-timing-function);
+  }
+  
+  button.back-to-top:hover,
+  button.back-to-top:active,
+  button.back-to-top:focus {
+    outline: 0;
+  }
+  
+  button.back-to-top::before,
+  button.back-to-top::after {
+    content: "";
+    display: block;
+    border-bottom: solid 10px var(--btn-green-dark); 
+    border-left: solid 10px transparent;
+    line-height: 0;
+    border-right: solid 10px transparent;
+    height: 0;
+    margin: 18px auto 0;
+    width: 0;
+    border-radius: 20px;
+    visibility: hidden;
+  }
+  
+  button.back-to-top.show::after,
+  button.back-to-top.show::before {
+    visibility: visible;
+  }
+  
+  button.back-to-top::after {
+    border-bottom-color: #fff;
+    position: relative;
+    top: -24px;
+  }
+  
+  button.back-to-top.show {
+    display: block;
+    background: #fff;
+    color: var(--btn-green-dark); 
+    font-size: 25px;
+    right: 25px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+    visibility: visible;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+  }
+  
+  button.back-to-top.show:active {
+    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.25);
+  }
+  
+  
