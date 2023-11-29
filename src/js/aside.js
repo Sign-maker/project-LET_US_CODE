@@ -51,7 +51,7 @@ function markupPopular(obj) {
           <svg class="popular-desc-svg">
             <use
               href="${icons}#icon-shopping-cart"
-              class="popular-desc-basket" aria-label="Add to Cart"
+              class="popular-desc-basket"
             ></use>
             <use
               href="${icons}#icon-check"

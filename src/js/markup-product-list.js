@@ -47,9 +47,8 @@ export function markupProductsList(productsObj) {
           }
 
           return `<li class="products-card-item js-card-item" data-id="${_id}">
-
-                <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" loading="lazy" /></a>
-                <a class="products-card-link" href="#"><h4 class="product-name">${name}</h4></a>
+                <a class="products-card-link" href="#"><img class="product-image" src="${img}" alt="${name}" /></a>
+                <a class="products-card-link" href="#"><h3 class="product-name">${name}</h3></a>
                 <ul class="product-description-list">
                         <li><p class="product-text">Category:<span class="product-text-black"> ${category}</span>Size:<span class="product-text-black"> ${size}</span></p></li>
                         <li><p class="product-text product-text-popular">Popularity:<span class="product-text-black"> ${popularity}</span></p></li>
