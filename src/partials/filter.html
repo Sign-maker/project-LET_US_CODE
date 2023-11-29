@@ -2,6 +2,7 @@
   <p class="filter-text">Filters:</p>
   <div class="filter-container">
     <form class="custom-input js-search-form">
+      <label for="search" class="visually-hidden">Search for anything</label>
       <input
         class="search-input js-search-input"
         type="text"
@@ -9,7 +10,7 @@
         placeholder="Search for anything"
       />
 
-      <button class="search-btn filter-btn" type="submit">
+      <button class="search-btn filter-btn" type="submit" aria-label="Choose">
         <span>
           <svg width="20" height="20">
             <use href="./img/icons.svg#icon-mag-search" />
@@ -18,7 +19,7 @@
       </button>
     </form>
 
-    <div class="custom-select custom-select-ctg">
+    <div class="custom-select custom-select-ctg" aria-haspopup="listbox">
       <input
         type="text"
         class="selected-option selected-option-ctgr js-category"
@@ -27,7 +28,11 @@
         readonly
         disabled
       />
-      <button class="categories-btn filter-btn" type="button">
+      <button
+        class="categories-btn filter-btn"
+        type="button"
+        aria-label="Choose"
+      >
         <span>
           <svg width="20" height="20">
             <use href="./img/icons.svg#icon-chevron-down" />
@@ -42,7 +47,7 @@
       </div>
     </div>
 
-    <div class="custom-select custom-select-sort">
+    <div class="custom-select custom-select-sort" aria-haspopup="listbox">
       <input
         type="text"
         class="selected-option sort-select selected-option-sort"

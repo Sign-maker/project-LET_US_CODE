@@ -20,7 +20,7 @@ export class PaginationButtons {
 
   prevBtnCreateMarkUp() {
     return `<li class="buttons-item">
-        <button class="pagination-btn prev-btn" type="button" data-button-id="prev-btn">
+        <button class="pagination-btn prev-btn" type="button" data-button-id="prev-btn" aria-label="Previous">
           <svg class="icon-shopping-cart" width="24" height="24">
             <use href="${icons}#icon-caret-left" class="pagination-arrows" />
           </svg>
@@ -29,7 +29,7 @@ export class PaginationButtons {
   }
   nextBtnCreateMarkUp() {
     return `<li class="buttons-item">
-        <button class="pagination-btn next-btn" type="button" data-button-id="next-btn">
+        <button class="pagination-btn next-btn" type="button" data-button-id="next-btn" aria-label="Next">
           <svg class="icon-shopping-cart" width="24" height="24">
             <use href="${icons}#icon-caret-right" class="pagination-arrows" />
           </svg>
