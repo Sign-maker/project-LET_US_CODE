@@ -59,14 +59,13 @@
   padding-left: 47px;
   outline: none;
   border: 1px solid rgba(1, 1, 1, 0.3);
+  transition: border var(--transition-duration),
+    var(--transition-timing-function);
 }
 .order-input:hover,
 .order-input:focus,
 .order-input:active {
   border: 1px solid var(--second-bg);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(-transition-timing-function);
-  transition-delay: var(--transition-delay);
 }
 .order-input::placeholder {
   color: var(--btn-black);
@@ -101,13 +100,12 @@
   color: var(--main-bg);
   font-size: 14px;
   font-weight: 500;
+  transition: background-color var(--transition-duration),
+    var(--transition-timing-function);
 }
 .order-btn:hover,
 .order-btn:focus {
-  background: var(--btn-green-dark);
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(-transition-timing-function);
-  transition-delay: var(--transition-delay);
+  background-color: var(--btn-green-dark);
 }
 
 .form-span {

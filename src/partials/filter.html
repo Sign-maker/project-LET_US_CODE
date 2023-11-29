@@ -4,6 +4,7 @@
     <form class="custom-input js-search-form">
       <label for="search" class="visually-hidden">Search for anything</label>
       <input
+        id="search"
         class="search-input js-search-input"
         type="text"
         name="search"
@@ -31,7 +32,7 @@
       <button
         class="categories-btn filter-btn"
         type="button"
-        area-label="Category option"
+        aria-label="Category option"
       >
         <span>
           <svg width="20" height="20">
@@ -51,7 +52,6 @@
       <input
         type="text"
         class="selected-option sort-select selected-option-sort"
-        tabindex="0"
         placeholder="A to Z"
         tabindex="-1"
         readonly
@@ -60,7 +60,7 @@
       <button
         class="sort-btn filter-btn"
         type="button"
-        area-label="Category option"
+        aria-label="Category option"
       >
         <span>
           <svg width="20" height="20">
