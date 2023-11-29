@@ -4,10 +4,13 @@ import { renderProductList } from './render-product-list';
 import { renderPopularProd, renderDiscountProd } from './aside';
 import { initPagination } from './pagination/pagination-handler';
 import {
-  initSelectedOption,
-  initCategoryInFilter,
   initKeywordInFilter,
+  initCategoryInFilter,
+  initSelectedCtgOption,
+  initSortInFilter,
+  initSelectedSortOption,
 } from './filter';
+import debounce from 'debounce';
 
 const FILTER_STORAGE = 'filter-storage';
 const CATEGORY_STORAGE = 'category-storage';
@@ -19,9 +22,11 @@ const SHOP_STORAGE = 'shop-storage';
 const INIT_FILTER_PARAMS = {
   keyword: null,
   category: null,
+  byABC: true,
   page: 1,
-  limit: 9,
+  limit: getPageLimit(),
 };
+
 const productListRef = document.querySelector('.product-card-list');
 const popularProductListRef = document.querySelector('.popular-list');
 const discountProductListRef = document.querySelector('.discount-list');
@@ -40,13 +45,52 @@ const shopStorage = new ShopStorage(SHOP_STORAGE);
 // let allItem;
 
 contentWrapperRef.addEventListener('click', onButtonCartClick);
+window.addEventListener('resize', debounce(onWindowResize, 250));
 
 if (!filterStorage.getValue()) {
   filterStorage.setValue(INIT_FILTER_PARAMS);
+} else {
+  if (filterStorage.getValue().limit !== getPageLimit()) {
+    setPageLimit();
+  }
 }
 
 const filterParams = filterStorage.getValue();
 initLoad(filterParams);
+
+async function onWindowResize() {
+  // console.log('resize');
+  if (filterStorage.getValue().limit === getPageLimit()) {
+    return;
+  }
+  setPageLimit();
+  await getProducts(filterStorage.getValue());
+  initPagination();
+}
+
+function getPageLimit() {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    return 6;
+  }
+
+  if (
+    window.matchMedia('(min-width: 768px)' && '(max-width: 1439px)').matches
+  ) {
+    return 8;
+  }
+
+  if (window.matchMedia('(min-width: 1440px)').matches) {
+    return 9;
+  }
+}
+
+function setPageLimit() {
+  filterStorage.setValue({
+    ...filterStorage.getValue(),
+    page: 1,
+    limit: getPageLimit(),
+  });
+}
 
 async function initLoad(filterParams) {
   await Promise.allSettled([
@@ -57,7 +101,9 @@ async function initLoad(filterParams) {
   ]);
   initKeywordInFilter();
   initCategoryInFilter();
-  initSelectedOption();
+  initSelectedCtgOption();
+  initSortInFilter();
+  initSelectedSortOption();
   initPagination();
   // allItem = addListenerToAllCard();
   // filterHandler();
