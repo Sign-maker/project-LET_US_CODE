@@ -31,7 +31,7 @@ export function markupProductsList(productsObj) {
                 </ul>
                 <div class="wrap-prise-and-btn">
                     <p class="price">$${price}</p>
-                    <button type="button" class="btn btn-shopping-cart js-add-btn">
+                    <button type="button" class="btn btn-shopping-cart js-add-btn" aria-label="Add to Cart">
                         <svg class="icon-shopping-cart" width="18" height="18">
                             <use href="${icons}#icon-shopping-cart" class="products-desc-basket"></use>
 
@@ -56,7 +56,7 @@ export function markupProductsList(productsObj) {
                 </ul>
                 <div class="wrap-prise-and-btn">
                     <p class="price">$${price}</p>
-                    <button type="button" class="btn btn-shopping-cart js-add-btn">
+                    <button type="button" class="btn btn-shopping-cart js-add-btn" aria-label="Add to Cart">
                         <svg class="icon-shopping-cart" width="18" height="18">
                             <use href="${icons}#icon-shopping-cart" class="products-desc-basket"></use>
 
