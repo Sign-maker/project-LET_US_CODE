@@ -6,7 +6,7 @@
     <p class="order-prise-total">$<span class="total-amount"></span></p>
   </div>
   <div class="order-form">
-    <form id="subscription-form">
+    <form id="subscription-form" aria-labelledby="order-text">
       <label for="email"></label>
       <input
         class="order-input"
@@ -18,7 +18,9 @@
         required
         placeholder="Enter your email"
       /><span class="form-span">Mail:</span>
-      <button class="order-btn" type="submit">Checkout</button>
+      <button class="order-btn" type="submit" aria-label="Complete Purchase">
+        Checkout
+      </button>
     </form>
   </div>
 </div>
