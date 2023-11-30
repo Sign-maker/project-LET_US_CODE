@@ -59,7 +59,7 @@
   padding-left: 47px;
   outline: none;
   border: 1px solid rgba(1, 1, 1, 0.3);
-  transition: border var(--transition-duration),
+  transition: border var(--transition-duration)
     var(--transition-timing-function);
 }
 .order-input:hover,
@@ -100,7 +100,7 @@
   color: var(--main-bg);
   font-size: 14px;
   font-weight: 500;
-  transition: background-color var(--transition-duration),
+  transition: background-color var(--transition-duration)
     var(--transition-timing-function);
 }
 .order-btn:hover,
